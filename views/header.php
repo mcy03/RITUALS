@@ -1,0 +1,4 @@
+<!-- Cabecera HTML
+<?php
+    
+?>
