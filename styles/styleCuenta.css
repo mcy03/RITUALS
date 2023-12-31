@@ -1,0 +1,264 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #efedea;
+}
+.content{
+    margin: 0 170px;
+    padding: 70px 30px;
+}
+.title, .subtitle{
+    display: flex;
+    align-items: start;
+}
+.separate{
+    width: 100%;
+    color: #1A1919;
+}
+
+.title .user-img{
+    width: 48px;
+    margin-right: 30px;
+}
+.title h1{
+    width: 100%;
+    margin-right: 30px;
+    margin-bottom: 35px;
+    font-family: 'ClassicalGaramondBT-Roman';
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-size: 30px;
+    text-decoration:none;
+}
+.title a{
+    text-decoration:none;
+    color: #453F3F;
+}
+
+
+
+
+
+.menu-opciones ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: center;
+    padding: 0;
+}
+.menu-opciones li{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+    margin: 15px 0;
+    font-family: 'ClassicalGaramondBT-Roman';
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.menu-opciones li img{
+    width: 25px;
+    margin-right: 15px;
+}
+.menu-opciones li a{
+    color: #626262;
+    text-decoration:none;
+}
+.menu-opciones li a:hover{
+    color: #865;
+}
+
+
+.data-user{
+    margin-bottom: 87px;
+}
+.subtitle {
+    margin: 40px 0px;
+}
+.subtitle img{
+    max-width: 28px;
+    margin: 0 30px;
+}
+.subtitle h2{
+    width: 100%;
+    margin-bottom: 35px;
+    font-family: 'ClassicalGaramondBT-Roman';
+    text-transform: uppercase;
+    letter-spacing: 2.6px;
+    font-size: 18px;
+}
+
+
+.member-card{
+    background-color: #453f3f;
+    background-image: url("../img/background-member-card.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    height: 210px;
+    padding: 16px;
+    margin-bottom: 40px;
+    text-align: center;
+    max-width: 350px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column; 
+    align-content: center;
+    justify-content: center;
+}
+.member-card .info-card{
+    display: flex;
+    flex-direction: column;
+    align-content: space-evenly;
+    justify-content: center;
+    height: 33%;
+}
+.member-card .gratitud{
+    color: #9a7b69;
+    font-family: 'ClassicalGaramondBT-Roman';
+    font-size: 10px;
+    letter-spacing: 1.42px;
+    line-height: 16px;
+    text-transform: uppercase;
+    margin: 0;
+}
+.member-card .name-user{
+    font-family: 'ClassicalGaramondBT-Roman';
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 1.2px;
+    line-height: 24px;
+    margin: 0;
+}
+
+.member-card .user-code{
+    font-family: 'ClassicalGaramondBT-Roman';
+    color: #ffffff;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    line-height: 24px;
+    margin: 0;
+}
+
+.extra-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-extra-content{
+    font-family: "ScalaSansOT-CondRegular", sans-serif;
+    padding-left: 80px;
+    color: #453f3f;
+    display: block;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 20px;
+    margin-bottom: 12px;
+}
+
+
+.form-info-user{
+    margin-left: 47px;
+}
+label{
+    font-family: "ScalaSansOT-CondRegular", sans-serif;
+    color: #1a1919;
+    margin-top: 30px;
+    letter-spacing: .5px;
+    font-size: 14px;
+}
+.form-info-user .input-text, form select{
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #d8d8d8;
+    color: #1a1919;
+    appearance: none;
+    border-radius: 2px;
+    font-size: 16px;
+    letter-spacing: .5px;
+    margin-top: 8px;
+    order: 2;
+    padding: 12px 21px;
+}
+.pwd_error{
+    color: red;
+}
+.form-info-user button{
+    margin-top: 40px;
+    width: 30%;
+    
+    background-color: #1a1919;
+    border: 1px solid #1a1919;
+    border-radius: 0px;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-style: normal;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .2s ease-in-out;
+}
+
+.form-info-user button:hover {
+    background-color: #ffffff00;
+    border: 1px solid #1a1919;
+    color: #1a1919;
+}
+
+
+
+
+
+table{
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+    font-family: "ScalaSansOT-CondRegular", sans-serif;
+    font-size: 14px;
+}
+
+table .tituloTabla{
+    padding-bottom: 42px;
+}
+
+table td{
+    padding-bottom: 30px;
+}
+
+table button{
+    width: 100%;
+    background-color: #1a1919;
+    border: 1px solid #1a1919;
+    border-radius: 0px;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-style: normal;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .2s ease-in-out;
+}
+
+table button:hover {
+    background-color: #ffffff00;
+    border: 1px solid #1a1919;
+    color: #1a1919;
+}
+
+.td_separate{
+    padding-top: 15px;
+    padding-bottom: 45px;
+}
+
+
+.img-product{
+    width: 170px;
+}

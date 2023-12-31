@@ -1,0 +1,12 @@
+.footer-one{
+    position: relative;
+    background-color: #1A1919F5;
+    padding: 48px 96px 53px;
+}
+
+.footer-two{
+    padding: 35px 116px 55px;
+    display: flex;
+    position: relative;
+    background-color: #1A1919;
+}

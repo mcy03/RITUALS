@@ -1,0 +1,273 @@
+@font-face {
+
+    font-family: ScalaSans-Per;
+    
+    src: url(FontLocationOnServer);
+    
+    }
+/*** estilo para body ***/
+body{
+    padding: 0;
+}
+.div-body{
+    background: #efedea;
+}
+/*** estilo para header y footer***/
+
+/*-------------------------------*/
+
+/*** estilo para banner principal ***/
+.banner{
+    background-image: url("../img/imgBanner.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: #ffffff;
+    width: 100%;
+    height: 670px;
+    padding-left: 70px;
+    justify-content: center;
+}
+
+h1{
+    width: 800px;
+    height: 56px;
+    font-size: 50px;
+}
+h1, h3, .slide-item div p, .card-title, h4, .price{
+    font-family: 'ClassicalGaramondBT-Roman';
+}
+section .content, .btn, .card-text, .bodyProduct{
+    font-family: "ScalaSansOT-CondRegular", sans-serif;
+}
+section .content{
+    width: 800px;
+    height: 48px;
+    font-size: 16px;
+}
+.btn{
+    font-size: 12px;
+    border-radius: 0;
+    letter-spacing: 1.2px;
+}
+.btn-outline-light{
+    width: 240px;
+    height: 44px;
+}
+
+/*** estilo para carrusell ***/
+.slide {
+    position: relative;
+    /*box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);*/
+    margin-top: 26px;
+}
+
+.slide-inner {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+    background-color: #efedea;
+}
+
+.slide-open:checked + .slide-item {
+    position: static;
+    opacity: 100;
+}
+
+.slide-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.0s ease-out;
+    transition: opacity 0.0s ease-out;
+    padding-top: 20px;
+}
+
+.slide-item div {
+    display: flex;
+    height: auto;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slide-item div h3{
+    margin-bottom: 0px;
+    padding-bottom: 6px;
+}
+h3{
+    height: 24px;
+    font-size: 11;
+    color: #9a7b69;
+}
+
+.slide-item div p{
+    padding-top: 12px;
+    margin-top: 0px;
+}
+
+.slide-indicador {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 70px;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.slide-indicador li {
+    display:inline-block;
+}
+
+.slide-circulo {
+    color: #828282;
+    cursor: pointer;
+    display: block;
+    font-size: 20px;
+}
+
+#slide-1:checked ~  .slide-indicador 
+      li:nth-child(1) .slide-circulo,
+#slide-2:checked ~ .slide-indicador 
+      li:nth-child(2) .slide-circulo,
+#slide-3:checked ~ .slide-indicador 
+      li:nth-child(3) .slide-circulo {
+    color: #1a1919;
+}
+
+/*** Publicidad categoria ***/
+.card{
+    border-radius: 0;
+}
+.publi .card-body{
+    width: 640px;
+    height: 325px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.publi img{
+    border-radius: 0;
+    width: 640px;
+    height: 480px;
+}
+.publi h2{
+    font-size: 40;
+    width: 560px;
+    margin-bottom: 30px;
+}
+.publi p{
+    font-size: 16;
+    width: 388px;
+    height: 84px;
+
+}
+
+.publi h3{
+    width: 560px;
+}
+
+.publi .boton-simple{
+    padding: 18px;
+    background-color: #ffffff;
+    border-color: #B4B4B4;
+    color: #1A1919;
+}
+
+.publi .boton-simple:hover{
+    padding: 18px;
+    background-color: #ffffff;
+    border-color: #1A1919;
+    color: #1A1919;
+}
+
+.publi-entradas{
+    margin-bottom: 68px;
+}
+
+/*** Slider productos categoria ***/
+.slider-categorias{
+    display: flex;
+    justify-content:space-evenly;
+    margin-bottom: 68px;
+}
+.intro{
+    background-color: red;
+    width: 325px;
+    height: 429px;
+    background-color: #EFEDEA;
+    border: 0;
+}
+
+.intro .card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro h2{
+    font-size: 40px;
+    width: 210px;
+    height: 150px;
+}
+.intro p{
+    font-size: 16px;
+    width: 240px;
+    height: 110px;
+}
+
+.intro .boton-simple{
+    padding: 15px;
+    background-color: #1A1919;
+    border: 1px solid #1A1919;
+    color: #ffffff;
+    width: 220px;
+}
+
+.intro .boton-simple:hover{
+    padding: 15px;
+    background-color: #efedea;
+    border: 1px solid #1A1919;
+    color: #1A1919;
+}
+
+.cartaProducto{
+    width: 305px;
+    height: 528px;
+    background-color: #FFFFFF;
+    border: 0;
+}
+.addButton{
+    width: 40px;
+}
+
+.containerProduct img{
+    width: 257px;
+}
+.containerProduct{
+    width: 305px;
+    height: 342px;
+    background-color: #FAF9F7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+}
+.priceCarrito{
+    display: flex;
+    justify-content: space-between;
+}
+.bodyProduct{
+    padding: 30px 25px 20px;
+}
+.bodyProduct h4{
+    font-size: 18px;
+}
+.bodyProduct > p{
+    font-size: 14px;
+    color: #8D8E8F;
+}

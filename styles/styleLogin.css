@@ -1,0 +1,202 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #efedea;
+}
+.contenido{
+    padding: 45px 70px;
+}
+
+
+.text-back-button{
+    font-family: "ScalaSansOT-CondBold", sans-serif;
+    font-size: 11px;
+    color: #9A7B69;
+    letter-spacing: 1px;
+    margin-left: 5px;
+}
+#menor-que{
+    width: 6px;
+}
+.carrito-title{
+    margin-top: 45px;
+    margin-bottom: 35px;
+    font-family: 'ClassicalGaramondBT-Roman';
+    font-size: 40px;
+    color: #453F3F;
+}
+
+.cont{
+    font-family: "ScalaSansOT-CondRegular", sans-serif;
+    font-size: 14px;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.cont-form-login .input-text, .cont-form-login select{
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #d8d8d8;
+    color: #1a1919;
+    appearance: none;
+    border-radius: 2px;
+    font-size: 16px;
+    letter-spacing: .5px;
+    margin-top: 8px;
+    order: 2;
+    padding: 12px 21px;
+}
+
+.cont-form-login label{
+    margin-top: 22px;
+
+}
+
+.cont-form-login button{
+    margin-top: 40px;
+    width: 100%;
+    border-radius: 0;
+    background-color: #1a1919;
+    border: 1px solid #1a1919;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-style: normal;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .2s ease-in-out;
+}
+
+.cont-form-login button:hover {
+    background-color: #fff;
+    border: 1px solid #1a1919;
+    color: #1a1919;
+    width: 100%;
+    display: inline-block;
+    font-size: 12px;
+    font-style: normal;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .2s ease-in-out;
+}
+
+.p-error{
+    color: #d6122d;
+    text-align: left;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+
+#check{
+    width: 25px;
+    height: 25px;
+    margin-top: 30px;
+}
+
+.politicas{
+    margin-top: 15px;
+    font-size: 12px;
+    letter-spacing: .5px;
+    margin-bottom: 0;
+    padding: 0 100px 0 40px;
+    font-style: normal;
+    color: #453f3f;
+    font-family: "ScalaSansOT-CondRegular", sans-serif;
+    line-height: 3;
+}
+
+.pol-2{
+    margin-top: 0;
+    line-height: 2;
+    padding: 0 250px 0 40px;
+}
+.enlace-politicas{
+    color: #9A7B69;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.ventajas-subtitle {
+    color: #865;
+    text-transform: uppercase;
+    margin-bottom: 19px;
+    display: block;
+    font-family: 'ClassicalGaramondBT-Roman';
+    font-size: 12px;
+    letter-spacing: 1.7px;
+    line-height: 16px;
+    text-align: left;
+}
+
+.ventajas-title{
+    font-family: 'ClassicalGaramondBT-Roman';
+    font-style: normal;
+    font-size: 32px;
+    letter-spacing: 1.4px;
+    line-height: 40px;
+    max-width: none;
+    color: #1a1919;
+    margin: 0 auto 19px;
+    text-transform: none;
+}
+.ventajas-list{
+    list-style: none;
+    text-align: left;
+    margin: 0 auto;
+}
+.ventajas-list ul{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.ventajas-list span{
+    margin-left: 10px;
+    letter-spacing: 1px;
+    padding-top: 10px;
+    font-family: "ScalaSansOT-CondBold", sans-serif;
+    font-size: 12px;
+    line-height: 25px;
+    color: #626262;
+    width: calc(100% - 40px);
+    display: inline-block;
+}
+.ventajas-list img{
+    width: 15px;
+}
+
+.cont-ventajas{
+    position:relative;
+}
+
+.img-cinta{
+    position: absolute;
+    right: 57px;
+    top: 0px;
+    margin: 0;
+    width: 25px;
+    height: 25px;
+    color: #ffffff;
+}

@@ -1,0 +1,78 @@
+/*** estilo para header y footer***/
+
+.sub-header{
+    background-color: #242222;
+    height: 32px;
+}
+#nav{
+    padding:0;
+}
+.container-nav {
+    background-color: #1A1919;
+    padding: 8px 35px;
+    
+}
+#nav-link{
+    color: #aeaeae;
+    font-family: 'ClassicalGaramondBT-Roman';
+    letter-spacing: 1px;
+}
+#nav-link:hover{
+    color: #FFFFFF;
+}
+
+.form-search{
+    margin: 0;
+}
+.btn-lupa{
+    width: 27px;
+    height: 36px;
+    padding: 0;
+    margin-right: 10px;
+    margin-top: 8px;
+}
+.img-lupa{
+    width: 23px;
+    margin: 0px;
+}
+.input-search{
+    background-color: #1A1919;
+    border: 0;
+    color: #b4b4b4;
+    font-family: "ScalaSansOT-CondBold", sans-serif;
+    letter-spacing: .5px;
+    font-size: 12px;
+}
+.separe-search{
+    width: 19;
+    height: 50px;
+    margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.user-img{
+    width: 20px;
+}
+.btn-carrito-icon{
+    position:relative;
+}
+.carrito-img{
+    width: 25px;
+}
+.container-cont-command{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 25px;
+    height: 25px;
+    color: #ffffff;
+}
+.cont-command{
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    color: #ffffff;
+}
+/*-------------------------------*/

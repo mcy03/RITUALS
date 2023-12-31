@@ -1,0 +1,1073 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="82px" height="88px" viewBox="0 0 82 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>rituals-crm-myrituals-ribbon-gold-desktop-01</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="88" height="88"></rect>
+        <rect id="path-3" x="0" y="0" width="125.714286" height="18.8571429"></rect>
+        <filter x="-4.0%" y="-21.2%" width="108.0%" height="153.0%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.08 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-5">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-6">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-7">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-8">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-9">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-10">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-11">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-12">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-13">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-14">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-15">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-16">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-17">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-18">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-19">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-20">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-21">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-22">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-23">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-24">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-25">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-26">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-27">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-28">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-29">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-30">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-31">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-32">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-33">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-34">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-35">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-36">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-37">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-38">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-39">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-40">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-41">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-42">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-43">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-44">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-45">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-46">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-47">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-48">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-49">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-50">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-51">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-52">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-53">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-54">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-55">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-56">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-57">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-58">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-59">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-60">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-61">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-62">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-63">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-64">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-65">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-66">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-67">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-68">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-69">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-70">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-71">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-72">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-73">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-74">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-75">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-76">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-77">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-78">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-79">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-80">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-81">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-82">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-83">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-84">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-85">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.32" offset="50.038243%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-86" points="0 18.8571429 0 0 125.714286 0 125.714286 18.8571429"></polygon>
+        <filter x="-0.8%" y="-5.3%" width="101.6%" height="110.6%" filterUnits="objectBoundingBox" id="filter-87">
+            <feGaussianBlur stdDeviation="1" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.603921569   0 0 0 0 0.482352941   0 0 0 0 0.411764706  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <rect id="path-88" x="0" y="0" width="125.714286" height="18.8571429"></rect>
+        <filter x="-4.0%" y="-21.2%" width="108.0%" height="153.0%" filterUnits="objectBoundingBox" id="filter-89">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.08 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-90">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-91">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-92">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-93">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-94">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-95">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-96">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-97">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-98">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-99">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-100">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-101">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-102">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-103">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-104">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-105">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-106">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-107">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-108">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-109">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-110">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-111">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-112">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-113">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-114">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-115">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-116">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-117">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-118">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-119">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-120">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-121">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-122">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-123">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-124">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-125">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-126">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-127">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-128">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-129">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-130">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-131">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-132">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-133">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-134">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-135">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-136">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-137">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-138">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-139">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-140">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-141">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-142">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-143">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-144">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-145">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-146">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-147">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-148">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-149">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-150">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-151">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-152">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-153">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-154">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-155">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-156">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-157">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-158">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-159">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-160">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-161">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-162">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-163">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-164">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-165">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-166">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-167">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-168">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-169">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <polygon id="path-170" points="0 18.8571429 0 0 125.714286 0 125.714286 18.8571429"></polygon>
+        <filter x="-0.8%" y="-5.3%" width="101.6%" height="110.6%" filterUnits="objectBoundingBox" id="filter-171">
+            <feGaussianBlur stdDeviation="1" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.603921569   0 0 0 0 0.482352941   0 0 0 0 0.411764706  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <rect id="path-172" x="0" y="0" width="125.714286" height="18.8571429"></rect>
+        <filter x="-4.0%" y="-21.2%" width="108.0%" height="153.0%" filterUnits="objectBoundingBox" id="filter-173">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.08 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-174">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-175">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-176">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-177">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-178">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-179">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-180">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-181">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-182">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-183">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-184">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-185">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-186">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-187">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-188">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-189">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-190">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-191">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-192">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-193">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-194">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-195">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-196">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-197">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-198">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-199">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-200">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-201">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-202">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-203">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-204">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-205">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-206">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-207">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-208">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-209">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-210">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-211">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-212">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-213">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-214">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-215">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-216">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-217">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-218">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-219">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-220">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-221">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-222">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-223">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-224">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-225">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-226">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-227">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-228">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-229">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-230">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-231">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-232">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-233">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-234">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-235">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-236">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-237">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-238">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-239">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-240">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-241">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-242">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-243">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-244">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-245">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-246">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-247">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-248">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-249">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-250">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-251">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-252">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-253">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <polygon id="path-254" points="0 18.8571429 0 0 125.714286 0 125.714286 18.8571429"></polygon>
+        <filter x="-0.8%" y="-5.3%" width="101.6%" height="110.6%" filterUnits="objectBoundingBox" id="filter-255">
+            <feGaussianBlur stdDeviation="1" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.603921569   0 0 0 0 0.482352941   0 0 0 0 0.411764706  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="🖌-design-|-shopping-cart" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="rituals-web-desktop-crm-2.0-shopping-cart-member-01" transform="translate(-834.000000, -856.000000)">
+            <g id="Group-Copy" transform="translate(60.000000, 768.000000)">
+                <g id="components-/-desktop-/-lists-/-product-/-product_listing_cart_1.1-copy" transform="translate(0.000000, 88.000000)">
+                    <g id="rituals-crm-myrituals-ribbon-gold-desktop-01" transform="translate(768.000000, 0.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Rectangle"></g>
+                        <g id="Group" mask="url(#mask-2)">
+                            <g transform="translate(-7.857143, 24.357143)" id="components-/-mobile-/-ribbon-/-ribbon_gold_1.1">
+                                <g transform="translate(62.857143, 9.428571) rotate(50.000000) translate(-62.857143, -9.428571) ">
+                                    <g id="_frame">
+                                        <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                                        <use fill="#A7884D" fill-rule="evenodd" xlink:href="#path-3"></use>
+                                    </g>
+                                    <g id="_ribs" transform="translate(0.000000, 0.785714)" fill="#1A1919" opacity="0.08">
+                                        <rect id="_rib" filter="url(#filter-5)" x="124.142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-6)" x="122.571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-7)" x="121" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-8)" x="119.428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-9)" x="117.857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-10)" x="116.285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-11)" x="114.714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-12)" x="113.142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-13)" x="111.571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-14)" x="110" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-15)" x="108.428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-16)" x="106.857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-17)" x="105.285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-18)" x="103.714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-19)" x="102.142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-20)" x="100.571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-21)" x="99" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-22)" x="97.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-23)" x="95.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-24)" x="94.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-25)" x="92.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-26)" x="91.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-27)" x="89.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-28)" x="88" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-29)" x="86.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-30)" x="84.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-31)" x="83.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-32)" x="81.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-33)" x="80.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-34)" x="78.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-35)" x="77" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-36)" x="75.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-37)" x="73.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-38)" x="72.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-39)" x="70.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-40)" x="69.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-41)" x="67.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-42)" x="66" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-43)" x="64.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-44)" x="62.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-45)" x="61.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-46)" x="59.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-47)" x="58.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-48)" x="56.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-49)" x="55" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-50)" x="53.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-51)" x="51.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-52)" x="50.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-53)" x="48.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-54)" x="47.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-55)" x="45.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-56)" x="44" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-57)" x="42.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-58)" x="40.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-59)" x="39.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-60)" x="37.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-61)" x="36.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-62)" x="34.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-63)" x="33" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-64)" x="31.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-65)" x="29.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-66)" x="28.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-67)" x="26.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-68)" x="25.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-69)" x="23.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-70)" x="22" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-71)" x="20.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-72)" x="18.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-73)" x="17.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-74)" x="15.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-75)" x="14.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-76)" x="12.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-77)" x="11" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-78)" x="9.42857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-79)" x="7.85714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-80)" x="6.28571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-81)" x="4.71428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-82)" x="3.14285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-83)" x="1.57142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-84)" x="0" y="0" width="1" height="17.2857143"></rect>
+                                    </g>
+                                    <g id="_glow">
+                                        <use fill="url(#linearGradient-85)" fill-rule="evenodd" xlink:href="#path-86"></use>
+                                        <use fill="black" fill-opacity="1" filter="url(#filter-87)" xlink:href="#path-86"></use>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Group" mask="url(#mask-2)">
+                            <g transform="translate(-2.357143, 12.571429)" id="components-/-mobile-/-ribbon-/-ribbon_gold_1.1">
+                                <g transform="translate(62.857143, 9.428571) rotate(35.000000) translate(-62.857143, -9.428571) ">
+                                    <g id="_frame">
+                                        <use fill="black" fill-opacity="1" filter="url(#filter-89)" xlink:href="#path-88"></use>
+                                        <use fill="#A7884D" fill-rule="evenodd" xlink:href="#path-88"></use>
+                                    </g>
+                                    <g id="_ribs" transform="translate(0.000000, 0.785714)" fill="#1A1919" opacity="0.08">
+                                        <rect id="_rib" filter="url(#filter-90)" x="124.142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-91)" x="122.571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-92)" x="121" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-93)" x="119.428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-94)" x="117.857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-95)" x="116.285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-96)" x="114.714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-97)" x="113.142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-98)" x="111.571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-99)" x="110" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-100)" x="108.428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-101)" x="106.857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-102)" x="105.285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-103)" x="103.714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-104)" x="102.142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-105)" x="100.571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-106)" x="99" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-107)" x="97.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-108)" x="95.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-109)" x="94.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-110)" x="92.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-111)" x="91.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-112)" x="89.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-113)" x="88" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-114)" x="86.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-115)" x="84.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-116)" x="83.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-117)" x="81.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-118)" x="80.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-119)" x="78.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-120)" x="77" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-121)" x="75.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-122)" x="73.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-123)" x="72.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-124)" x="70.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-125)" x="69.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-126)" x="67.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-127)" x="66" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-128)" x="64.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-129)" x="62.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-130)" x="61.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-131)" x="59.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-132)" x="58.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-133)" x="56.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-134)" x="55" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-135)" x="53.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-136)" x="51.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-137)" x="50.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-138)" x="48.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-139)" x="47.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-140)" x="45.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-141)" x="44" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-142)" x="42.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-143)" x="40.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-144)" x="39.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-145)" x="37.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-146)" x="36.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-147)" x="34.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-148)" x="33" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-149)" x="31.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-150)" x="29.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-151)" x="28.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-152)" x="26.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-153)" x="25.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-154)" x="23.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-155)" x="22" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-156)" x="20.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-157)" x="18.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-158)" x="17.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-159)" x="15.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-160)" x="14.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-161)" x="12.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-162)" x="11" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-163)" x="9.42857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-164)" x="7.85714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-165)" x="6.28571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-166)" x="4.71428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-167)" x="3.14285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-168)" x="1.57142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-169)" x="0" y="0" width="1" height="17.2857143"></rect>
+                                    </g>
+                                    <g id="_glow">
+                                        <use fill="url(#linearGradient-85)" fill-rule="evenodd" xlink:href="#path-170"></use>
+                                        <use fill="black" fill-opacity="1" filter="url(#filter-171)" xlink:href="#path-170"></use>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Group" mask="url(#mask-2)">
+                            <g transform="translate(12.571429, 2.357143)" id="components-/-mobile-/-ribbon-/-ribbon_gold_1.1">
+                                <g transform="translate(62.857143, 9.428571) rotate(45.000000) translate(-62.857143, -9.428571) ">
+                                    <g id="_frame">
+                                        <use fill="black" fill-opacity="1" filter="url(#filter-173)" xlink:href="#path-172"></use>
+                                        <use fill="#A7884D" fill-rule="evenodd" xlink:href="#path-172"></use>
+                                    </g>
+                                    <g id="_ribs" transform="translate(0.000000, 0.785714)" fill="#1A1919" opacity="0.08">
+                                        <rect id="_rib" filter="url(#filter-174)" x="124.142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-175)" x="122.571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-176)" x="121" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-177)" x="119.428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-178)" x="117.857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-179)" x="116.285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-180)" x="114.714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-181)" x="113.142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-182)" x="111.571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-183)" x="110" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-184)" x="108.428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-185)" x="106.857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-186)" x="105.285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-187)" x="103.714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-188)" x="102.142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-189)" x="100.571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-190)" x="99" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-191)" x="97.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-192)" x="95.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-193)" x="94.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-194)" x="92.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-195)" x="91.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-196)" x="89.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-197)" x="88" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-198)" x="86.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-199)" x="84.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-200)" x="83.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-201)" x="81.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-202)" x="80.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-203)" x="78.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-204)" x="77" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-205)" x="75.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-206)" x="73.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-207)" x="72.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-208)" x="70.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-209)" x="69.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-210)" x="67.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-211)" x="66" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-212)" x="64.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-213)" x="62.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-214)" x="61.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-215)" x="59.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-216)" x="58.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-217)" x="56.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-218)" x="55" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-219)" x="53.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-220)" x="51.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-221)" x="50.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-222)" x="48.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-223)" x="47.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-224)" x="45.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-225)" x="44" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-226)" x="42.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-227)" x="40.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-228)" x="39.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-229)" x="37.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-230)" x="36.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-231)" x="34.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-232)" x="33" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-233)" x="31.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-234)" x="29.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-235)" x="28.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-236)" x="26.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-237)" x="25.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-238)" x="23.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-239)" x="22" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-240)" x="20.4285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-241)" x="18.8571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-242)" x="17.2857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-243)" x="15.7142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-244)" x="14.1428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-245)" x="12.5714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-246)" x="11" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-247)" x="9.42857143" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-248)" x="7.85714286" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-249)" x="6.28571429" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-250)" x="4.71428571" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-251)" x="3.14285714" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-252)" x="1.57142857" y="0" width="1" height="17.2857143"></rect>
+                                        <rect id="_rib" filter="url(#filter-253)" x="0" y="0" width="1" height="17.2857143"></rect>
+                                    </g>
+                                    <g id="_glow">
+                                        <use fill="url(#linearGradient-85)" fill-rule="evenodd" xlink:href="#path-254"></use>
+                                        <use fill="black" fill-opacity="1" filter="url(#filter-255)" xlink:href="#path-254"></use>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

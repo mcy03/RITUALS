@@ -1,0 +1,186 @@
+/*** estilo para body ***/
+.body{
+    padding: 0;
+    margin: 0;
+    background: #efedea;
+}
+/*** estilo para body ***/
+body{
+    padding: 0;
+}
+.div-body{
+    background: #efedea;
+}
+
+
+/*** estilo para banner***/
+.banner{    
+    height: 480px;
+    background-image: linear-gradient(90deg,#000000 15%,transparent 50%), url("../img/imgBannerCartaRecortada.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: #ffffff; 
+    padding-left: 70px;
+    justify-content: center;
+    margin: 0;
+}
+h1{
+    font-family: 'ClassicalGaramondBT-Roman';
+}
+/*** estilo para contenido carta***/
+.productos{
+    position: relative; /* Puedes usar 'absolute' en lugar de 'relative' según tus necesidades */
+    top: -150px; /* Ajusta la posición vertical según tu diseño */
+}
+.row{
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-1.5 * var(--bs-gutter-x));
+}
+
+.sel-categorias{
+    background-color: #231F20;
+    padding: 40px 20px 120px 40px;
+    width: 400px;
+}
+.producto, .promo{
+    width: 400px;
+}
+h4{
+    color: #968977;
+    font-size: 13px;
+    font-family: 'ClassicalGaramondBT-Roman';
+    margin-bottom: 40px;
+    letter-spacing: .9px;
+}
+h2{
+    color: #FFFFFF;
+    font-size: 11px;
+    font-family: "ScalaSansOT-CondBold", sans-serif;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    line-height: 14px;
+}
+.botones-categorias{
+    display: flex;
+    flex-wrap: wrap;
+    width: 280px;
+}
+.btn-cat, .btn-cat:hover{
+    font-family: "ScalaSansOT-CondBold", sans-serif;
+    font-size: 10px;
+    background-color: #231f20;
+    border: 1px solid #767676;
+    border-radius: 30px;
+    padding: 8px 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 1.3px;
+}
+.card, .sel-categorias{
+    margin-top: 80px;
+}
+.card{
+    border: 0;
+    border-radius: 0;
+}
+.producto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 15px 30px;
+}
+.cont-img-product{
+    width: 400px;
+    height: 408px;
+    background-color: #FAF9F7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+}
+.producto img{
+    width: 280px;
+    margin-top: 25px;
+}
+.producto .card-body .card-title{
+    font-size: 28px;
+    font-family: 'ClassicalGaramondBT-Roman';
+    color: #453F3F;
+}
+.producto .card-body .card-text{
+    font-size: 14px;
+    font-family: "ScalaSansOT-CondRegular", sans-serif;
+    color: #767676;
+    width: 290px;
+}
+.producto .card-body .price{
+    font-size: 19px;
+    font-family: 'ClassicalGaramondBT-Roman';
+    color: #000000;
+    margin-bottom: 30px;
+}
+.form-add{
+    margin-bottom: 0;
+}
+.producto .card-body .btn{
+    min-width: 220px;
+    font-size: 12px;
+    font-family: "ScalaSansOT-CondRegular", sans-serif;
+    letter-spacing: 2px;
+    border-radius: 0;
+    padding: 16px 44px 12px;
+    background-color: #ffffff00;
+    border-color: #B4B4B4;
+    color: #1A1919;
+}
+
+.producto .card-body .btn:hover, .promo .btn:hover{
+    background-color: #ffffff00;
+    border-color: #1A1919;
+}
+
+
+
+
+
+.promo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #efedea;
+}
+.promo img{
+    width: 220px;
+    height: 330px;
+}
+.promo h5{
+    color: #9A7B69;
+    font-size: 13px;
+    font-family: 'ClassicalGaramondBT-Roman';
+}
+
+.promo h3{
+    font-size: 20px;
+    font-family: 'ClassicalGaramondBT-Roman';
+    margin-bottom: 15px;
+}
+.promo .btn{
+    margin-top: 20px;
+    font-size: 12px;
+    font-family: "ScalaSansOT-CondRegular", sans-serif;
+    border-radius: 0;
+    padding: 10px 35px;
+    background-color: #ffffff00;
+    border-color: #B4B4B4;
+    color: #1A1919;
+}
+.sub-promo{
+    font-size: 12px;
+    font-family: "ScalaSansOT-CondRegular", sans-serif;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 165px;
+    height: 36px;
+}
