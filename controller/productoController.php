@@ -27,6 +27,7 @@ class productoController{
         require_once("views/home.php");
         //require_once("views/panelPedido.php");
         //footer
+        require_once("views/footer.php");
     }
 
     public function carta(){
@@ -56,11 +57,15 @@ class productoController{
         require_once("views/carta.php");
         //require_once("views/panelPedido.php");
         //footer
+        require_once("views/footer.php");
     }
 
     public function carrito(){
         session_start();
-        $cookie = unserialize($_COOKIE['ultimoPedido']);
+        if (isset($_COOKIE['ultimoPedido'])) {
+            $pedidoAnterior = unserialize($_COOKIE['ultimoPedido']);
+            $infoPedidoAnterior = unserialize($_COOKIE['infoPedido']);
+        }
 
         if(isset($_POST['cantidad'], $_POST['cantidadIntro'])){
             if ($_POST['cantidadIntro'] != $_POST['cantidad'] && $_POST['cantidadIntro'] > 0) {
@@ -213,6 +218,8 @@ class productoController{
             }
             include_once 'views/header.php';
             include_once 'views/cuenta.php';
+            //footer
+            require_once("views/footer.php");
         }else{
             header("location:".url.'?controller=producto&action=login');
         }
@@ -249,16 +256,17 @@ class productoController{
             $costeTotal = 0;
             if (sizeof($pedido) > 0) {
                 PedidosBBDD::procesarPedido($_SESSION["user"], $pedido);
+                $pedidoId = PedidosBBDD::getIdUltimoPedido();
                 $fecha = getdate();
                 $fechaPedido = $fecha["mday"]."/".$fecha["mon"]."/".$fecha["year"];;
                 $usuarioPedido = $_SESSION["user"];
                 foreach ($pedido as $producto) {
                     $costeTotal += $producto->calcPrice();
                 }
+                $infoPedido = array($pedidoId, $fechaPedido, $usuarioPedido->getEmail(), $costeTotal);
                 setcookie('ultimoPedido', serialize($pedido), time()+86400);
-                setcookie('fechaPedido', $fechaPedido, time()+86400);
-                setcookie('usuarioPedido', $usuarioPedido->getEmail(), time()+86400);
-                setcookie('costeTotal', $costeTotal, time()+86400);
+                setcookie('infoPedido', serialize($infoPedido), time()+86400);
+
                 header("location:".url.'?controller=producto&action=cuenta&pedidos');
             }else{
                 header("location:".url.'?controller=producto&action=carrito');

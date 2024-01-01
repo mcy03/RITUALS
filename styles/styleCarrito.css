@@ -47,6 +47,7 @@ body{
     padding-top: 30px;
     padding-right: 40px;
     padding-bottom: 40px;
+    margin-bottom: 200px;
 }
 
 .btn-carrito-vacio{
@@ -360,6 +361,18 @@ body{
     padding: 40px 47px 40px 0px;
 }
 
+
+.cont-header-last-comand{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-right: 50px;
+}
+
+.cont-button-ver button{
+    width: 180%;
+}
 .header-last-comand{
     margin-bottom: 50px;
 }
@@ -389,3 +402,4 @@ body{
     justify-content: right;
     margin-top: 40px;
 }
+

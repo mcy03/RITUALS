@@ -150,7 +150,7 @@
                                                     <td><?= $pedidos->getFechaPedido() ?></td>
                                                     <td><?= ProductosPedidosDAO::calcPricePedidoById($pedidos->getId()) ?> €</td>
                                                     <form action="#" method="post">
-                                                        <input type="hidden" name="pedido_id" value= "<?= $pedidos->getId()?>">
+                                                        <input type="hidden" name="pedido_id" value= "<?=$pedidos->getId()?>">
                                                         <td><button type="submit">VER</button></td>
                                                     </form>
                                                 </tr>
@@ -192,7 +192,6 @@
                                             </td>
                                         </tr>
                                     </table>
-                                    <p><?= var_dump($productosPedido) ?></p>
                                 <?php } ?>
                             </section>
                     <?php } ?>

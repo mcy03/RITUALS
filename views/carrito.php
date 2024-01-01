@@ -124,45 +124,56 @@
                                 <p class="pago-seguro"> PAGO SEGURO</p>
                             </div>
                         </section>
-
-                        <?php if (isset($cookie)) { ?>
+                    <?php } ?>
+                    <?php if (isset($sinProductos)) { ?>
+                        <div class="columna col col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <?php } ?>
+                        <?php if(isset($pedidoAnterior)){ ?>
                             <section class="recuperar-pedido">
                                 <div class="view-last-comand">
-                                    <h2 class="text-header header-last-comand">Último pedido</h2>
+                                    <div class="cont-header-last-comand">
+                                        <h2 class="text-header header-last-comand">Último pedido</h2>
+                                        <div class="cont-button-comprar cont-button-ver">
+                                            <form action=<?=url.'?controller=producto&action=cuenta&pedidos'?> method="post">
+                                                <input type="hidden" name="pedido_id" value="<?=$infoPedidoAnterior[0]?>">
+                                                <button type="submit" class="boton-simple btn btn-primary">VER</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    
                                     <hr class="separate-last-comand">
 
                                     <div class="fila-last-comand">
                                         <h3 class="text-title-last-comant">Productos</h3>
-                                        <h3 class="text-last-comant"><?= sizeOf($cookie) ?></h3>
+                                        <h3 class="text-last-comant"><?= sizeOf($pedidoAnterior) ?></h3>
                                     </div>  
                                     <hr class="separate-last-comand">
 
                                     <div class="fila-last-comand">
                                         <h3 class="text-title-last-comant">Usuario</h3>
-                                        <h3 class="text-last-comant"><?= $_COOKIE['usuarioPedido'] ?></h3>
+                                        <h3 class="text-last-comant"><?= $infoPedidoAnterior[1] ?></h3>
                                     </div>
                                     <hr class="separate-last-comand">
 
                                     <div class="fila-last-comand">
                                         <h3 class="text-title-last-comant">Fecha del pedido</h3>
-                                        <p class="text-last-comant"><?= $_COOKIE['fechaPedido'] ?></p>
+                                        <p class="text-last-comant"><?= $infoPedidoAnterior[2] ?></p>
                                     </div>
                                     <hr class="separate-last-comand">
 
                                     <div class="fila-last-comand">
                                         <h3 class="text-title-last-comant">Precio total</h3>
-                                        <h3 class="text-last-comant"><?= $_COOKIE['costeTotal'] ?></h3>
+                                        <h3 class="text-last-comant"><?= $infoPedidoAnterior[3] ?></h3>
                                     </div>
                                     <hr class="separate-last-comand">
 
                                     <div class="cont-button-comprar button-recuperar">
-                                        <a href=<?=url.'?controller=producto&action=recuperarPedido'?>  class="boton-simple btn btn-primary">Recuperar Pedido Anterior</a>
+                                        <a href=<?=url.'?controller=producto&action=recuperarPedido'?>  class="boton-simple btn btn-primary">RECUPERAR PEDIDO ANTERIOR</a>
                                     </div>
                                 </div>
                             </section>
                         <?php } ?>
-                    </div>
-                <?php } ?>
+                </div>
             </div>
         </div>
     </div>
