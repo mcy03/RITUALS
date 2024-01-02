@@ -20,7 +20,13 @@
                     <section class="menu-opciones">
                         <ul>
                             <li><a href=<?=url.'?controller=producto&action=cuenta&datosPersonales'?>><img src="img/lista-icon.png" alt="#"> Datos Personales</a></li>
-                            <li><a href=<?=url.'?controller=producto&action=cuenta&pedidos'?>><img src="img/carrito-icon-black.png" alt="#"> Pedidos</a></li>
+                            <li><a href=<?=url.'?controller=producto&action=cuenta&misPedidos'?>><img src="img/carrito-icon-black.png" alt="#"> Mis Pedidos</a></li>
+                            <?php if($user->getPermiso() != 0){ ?>
+                                <li>> Admin</li>
+                                <li><a href=<?=url.'?controller=producto&action=cuenta&pedidos'?>><img src="img/lista-icon.png" alt="#"> Gestionar Pedidos</a></li>
+                                <li><a href=<?=url.'?controller=producto&action=cuenta&usuarios'?>><img src="img/carrito-icon-black.png" alt="#"> Gestionar Usuarios</a></li>
+                                <li><a href=<?=url.'?controller=producto&action=cuenta&pedidos'?>><img src="img/carrito-icon-black.png" alt="#"> Gestionar Productos</a></li>
+                            <?php } ?>
                             <li><a href=<?=url.'?controller=producto&action=cerrar'?>><img src="img/salida.png" alt="#"> Cerrar Sessión</a></li>
                         </ul>
                     </section>
@@ -129,7 +135,7 @@
                                 <button class="btn btn-dark">CONTINUAR</button>
                             </form>
                         </section>
-                    <?php }elseif(isset($_GET["pedidos"])) {  ?>
+                    <?php }elseif(isset($_GET["misPedidos"])) {  ?>
                             <section class="pedidosUser">
                                 <div class="subtitle">
                                     <h2><img src="img/carrito-icon-black.png" alt="#"> HISTORIAL DE PEDIDOS</h2>
@@ -194,6 +200,42 @@
                                     </table>
                                 <?php } ?>
                             </section>
+                    <?php } ?>
+                    <?php if($user->getPermiso() != 0){ ?>
+                        <?php if(isset($_GET["pedidos"])){ ?>
+                            <section class="gestionPedidos">
+                                <div class="subtitle">
+                                    <h2><img src="img/carrito-icon-black.png" alt="#"> GESTIONAR PEDIDOS</h2>
+                                </div>
+                                <table class="tableAllProducts">
+                                    <tr>
+                                        <td class="tituloTabla">ID</td>
+                                        <td class="tituloTabla">USUARIO</td>
+                                        <td class="tituloTabla">FECHA DEL PEDIDO</td>
+                                        <td class="tituloTabla">PRECIO TOTAL</td>
+                                    </tr>
+                                    <?php foreach (array_reverse($todos_pedidos) as $all_comands) { ?>
+                                        <tr>
+                                            <td><?= $all_comands->getId() ?></td>
+                                            <td><?= $all_comands->getUserId() ?></td>
+                                            <td><?= $all_comands->getFechaPedido() ?></td>
+                                            <td><?= ProductosPedidosDAO::calcPricePedidoById($all_comands->getId()) ?> €</td>
+                                            <form action="#" method="post">
+                                                <input type="hidden" name="pedido_id" value= "<?=$all_comands->getId()?>">
+                                                <td class="button-form-pedidos">
+                                                    <button type="submit" name="editar">MODIFICAR</button>
+                                                    <button type="submit" name="eliminar">ELIMINAR</button>
+                                                </td>
+                                            </form>
+                                        </tr>
+                                        <tr>    
+                                            <td colspan=5 class="td_separate"><hr class="separate"></td>
+                                        </tr>
+                                    <?php } ?>
+                                </table>
+                        
+                        <?php } ?>
+                        </section>
                     <?php } ?>
                 </div>
             </div>

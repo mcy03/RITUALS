@@ -6,10 +6,10 @@ include_once 'PedidosBBDD.php';
 // Clase Admin que hereda de Usuario
 class Admin extends User {
     // Métodos específicos para el admin
-    public function __construct($USUARIO_ID,  $EMAIL,  $SALUDO,  $NOMBRE,  $APELLIDOS,  $FECHA_NACIMIENTO,  $PASSWORD,  $TELEFONO,  $DIRECCION,  $PERMISO) {
-        parent::__construct($USUARIO_ID,  $EMAIL,  $SALUDO,  $NOMBRE,  $APELLIDOS,  $FECHA_NACIMIENTO,  $PASSWORD,  $TELEFONO,  $DIRECCION,  $PERMISO);
-    }
+    public function __construct() {
 
+    }
+/*
     public function suficientesPermisos($sujeto) {
         if (strpos($this->PERMISO, get_class($sujeto))) {
             return true;
@@ -17,6 +17,7 @@ class Admin extends User {
         return false;
         
     }
+*/
     public static function insertUser($EMAIL, $SALUDO, $NOMBRE, $APELLIDOS, $FECHA_NACIMIENTO, $PASSWORD, $TELEFONO, $DIRECCION, $PERMISO = 0){
         parent::insertUser($EMAIL, $SALUDO, $NOMBRE, $APELLIDOS, $FECHA_NACIMIENTO, $TELEFONO, $DIRECCION);
         $result = registrarActividad("Insert", "User", $email);
@@ -106,6 +107,22 @@ class Admin extends User {
     }
 
     public function registrarActividad($actividad, $objeto, $valor_diferencial_objeto) {
-        
+        $conn = db::connect();
+            
+        // Consulta para insertar un nuevo producto
+        $consulta = "INSERT INTO REGISTRO_CAMBIO (USUARIO_ID, ACCION, TIPO_SUJETO, SUJETO, FECHA_CAMBIO) 
+                    VALUES (:usuario_id, :accion, :tipo, :sujeto, SYSDATE())";
+            
+        $stmt = $conn->prepare($consulta);
+        $stmt->bindParam(':usuario_id', $this->getId());
+        $stmt->bindParam(':accion', $actividad);
+        $stmt->bindParam(':tipo', $objeto);
+        $stmt->bindParam(':sujeto', $valor_diferencial_objeto);
+            
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

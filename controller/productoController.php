@@ -205,9 +205,12 @@ class productoController{
 
     public static function cuenta(){
         session_start();
-
+        
         if(isset($_SESSION['user'])){
             $user = $_SESSION['user'];
+            if($user->getPermiso() != 0){
+                $todos_pedidos = PedidosBBDD::getPedidosBBDD();
+            }
             $hayPedidos = PedidosBBDD::tienePedidosUser($user->getId());
 
             if ($hayPedidos) {

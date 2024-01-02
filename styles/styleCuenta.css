@@ -262,3 +262,17 @@ table button:hover {
 .img-product{
     width: 170px;
 }
+
+
+
+
+
+.tableAllProducts .button-form-pedidos{
+    display: flex;
+    flex-direction: column;
+}
+
+.tableAllProducts .button-form-pedidos button{
+    width: 70%;
+    margin-bottom: 10px;
+}
