@@ -172,8 +172,6 @@
          * @return bool|null Retorna true si la actualización fue exitosa, false si falló o null en caso de error.
          */
         public static function updateProduct($producto_id, $nombre_producto, $img, $descripcion, $precio_unidad, $categoria_id){
-            echo "<br> updateProduct $producto_id"; // Mensaje de depuración para mostrar el ID del producto
-
             $conn = db::connect(); // Establece la conexión a la base de datos
 
             // Prepara la consulta SQL para actualizar la información del producto
@@ -183,6 +181,27 @@
             // Ejecuta la consulta para actualizar el producto
             $stmt->execute();
             $conn->close(); // Cierra la conexión a la base de datos
+        }
+
+        public static function insertProduct($nombre_producto, $img, $descripcion, $precio_unidad, $categoria_id){
+            $conn = db::connect();
+            
+            // Consulta para insertar un nuevo producto
+            $consulta = "INSERT INTO PRODUCTOS (nombre_producto, img, descripcion, precio_unidad, categoria_id) 
+                        VALUES (:nombre_producto, :img, :descripcion, :precio_unidad, :categoria_id)";
+            
+            $stmt = $conn->prepare($consulta);
+            $stmt->bindParam(':nombre_producto', $nombre_producto);
+            $stmt->bindParam(':img', $img);
+            $stmt->bindParam(':descripcion', $descripcion);
+            $stmt->bindParam(':precio_unidad', $precio_unidad);
+            $stmt->bindParam(':categoria_id', $categoria_id);
+            
+            if ($stmt->execute()) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 ?>

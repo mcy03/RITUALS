@@ -1,5 +1,6 @@
 <?php
     include_once 'db.php';
+    include_once 'Admin.php';
     class User {
         /**
          * Atributos de la clase User que representan la información de un usuario.
@@ -83,9 +84,10 @@
 
         public static function getUsers(){
             $conn = db::connect();
-            $consulta = "SELECT * FROM usuarios";
-            if ($resultado = $conn->query($consulta)) {
 
+            $consulta = "SELECT * FROM usuarios WHERE PERMISO = 0";
+            $arrayUsers = array();
+            if ($resultado = $conn->query($consulta)) {
                 /* obtener el array de objetos */
                 while ($obj = $resultado->fetch_object('User')) {
                     $arrayUsers []= $obj;
@@ -93,8 +95,23 @@
             
                 /* liberar el conjunto de resultados */
                 $resultado->close();
-                return $arrayUsers;
+                
             }
+
+            $consulta = "SELECT * FROM usuarios WHERE PERMISO != 0";
+            $arrayAdmin = array();
+            if ($resultado = $conn->query($consulta)) {
+                /* obtener el array de objetos */
+                while ($obj = $resultado->fetch_object('Admin')) {
+                    $arrayAdmin []= $obj;
+                }
+            
+                /* liberar el conjunto de resultados */
+                $resultado->close();
+                
+            }
+            $arrayFinal = array_merge($arrayUsers, $arrayAdmin);
+            return $arrayFinal;
         }
         public static function getUserById($id){
             $conn = db::connect();

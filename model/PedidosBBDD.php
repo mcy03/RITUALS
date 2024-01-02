@@ -348,4 +348,45 @@ class PedidosBBDD{
             return false;
         }
     }
+
+    public static function updatePedido($pedido_id, $estado, $fecha_pedido){
+        $conn = db::connect();
+        
+        // Consulta para actualizar la cantidad de un pedido
+        $consulta = "UPDATE pedidos SET ESTADO = :nuevoEstado, FECHA_PEDIDO = :nuevaFecha,  WHERE pedido_id = :pedidoId";
+        
+        $stmt = $conn->prepare($consulta);
+        $stmt->bindParam(':nuevoEstado', $nuevaEstado);
+        $stmt->bindParam(':nuevaFecha', $nuevaFecha);
+        $stmt->bindParam(':pedidoId', $pedido_id);
+
+        if ($stmt->execute()) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public static function deletePedido($pedido_id){
+        $conn = db::connect();
+        // Consulta para eliminar un pedido
+        $consultaPedidoProductos = "DELETE FROM pedidos_productos WHERE pedido_id = :pedidoId";
+        $stmt = $conn->prepare($consultaPedidoProductos);
+        $stmt->bindParam(':pedidoId', $pedido_id);
+        if ($stmt->execute()) {
+            $result = true;
+        }
+
+        // Consulta para eliminar un pedido
+        $consultaPedido = "DELETE FROM pedidos WHERE pedido_id = :pedidoId";
+        
+        $stmt = $conn->prepare($consultaPedido);
+        $stmt->bindParam(':pedidoId', $pedido_id);
+        
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
