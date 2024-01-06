@@ -127,8 +127,8 @@ class PedidosBBDD{
             $arrayPedidosBBDD = []; // Inicializa un array para almacenar los objetos PedidosBBDD
 
             /* Obtener el array de objetos */
-            while ($obj = $resultado->fetch_object('PedidosBBDD')) {
-                $arrayPedidosBBDD[] = $obj; // Agrega cada objeto a la lista de pedidos
+            if($obj = $resultado->fetch_object('PedidosBBDD')) {
+                $arrayPedidosBBDD = $obj; // Agrega cada objeto a la lista de pedidos
             }
         
             $resultado->close(); // Cierra el conjunto de resultados
@@ -349,16 +349,14 @@ class PedidosBBDD{
         }
     }
 
-    public static function updatePedido($pedido_id, $estado, $fecha_pedido){
+    public static function updatePedido($pedido_id, $user_id, $estado, $fecha_pedido){
         $conn = db::connect();
         
         // Consulta para actualizar la cantidad de un pedido
-        $consulta = "UPDATE pedidos SET ESTADO = :nuevoEstado, FECHA_PEDIDO = :nuevaFecha,  WHERE pedido_id = :pedidoId";
+        $consulta = "UPDATE pedidos SET USUARIO_ID = ?, ESTADO = ?, FECHA_PEDIDO = ?  WHERE pedido_id = ?";
         
         $stmt = $conn->prepare($consulta);
-        $stmt->bindParam(':nuevoEstado', $nuevaEstado);
-        $stmt->bindParam(':nuevaFecha', $nuevaFecha);
-        $stmt->bindParam(':pedidoId', $pedido_id);
+        $stmt->bind_param('issi', $user_id, $estado, $fecha_pedido, $pedido_id);
 
         if ($stmt->execute()) {
             return true;
@@ -370,18 +368,18 @@ class PedidosBBDD{
     public static function deletePedido($pedido_id){
         $conn = db::connect();
         // Consulta para eliminar un pedido
-        $consultaPedidoProductos = "DELETE FROM pedidos_productos WHERE pedido_id = :pedidoId";
+        $consultaPedidoProductos = "DELETE FROM pedidos_productos WHERE pedido_id = ?";
         $stmt = $conn->prepare($consultaPedidoProductos);
-        $stmt->bindParam(':pedidoId', $pedido_id);
+        $stmt->bind_param("i", $pedido_id);
         if ($stmt->execute()) {
             $result = true;
         }
 
         // Consulta para eliminar un pedido
-        $consultaPedido = "DELETE FROM pedidos WHERE pedido_id = :pedidoId";
+        $consultaPedido = "DELETE FROM pedidos WHERE pedido_id = ?";
         
         $stmt = $conn->prepare($consultaPedido);
-        $stmt->bindParam(':pedidoId', $pedido_id);
+        $stmt->bind_param("i", $pedido_id);
         
         if ($stmt->execute()) {
             return true;

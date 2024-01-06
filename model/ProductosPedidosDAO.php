@@ -109,5 +109,27 @@ class ProductosPedidosDAO{
         return $this->PRECIO_UNIDAD * $this->CANTIDAD;
     }
 
+    public static function estaProductoPedido($id_producto){
+        $conn = db::connect(); // Establece la conexión a la base de datos
+        $stmt = $conn->prepare("SELECT count(ARTICULO_ID) as registro FROM PEDIDOS_PRODUCTOS WHERE PRODUCTO_ID = ?");
+        
+        // Verifica si la preparación de la consulta fue exitosa
+        if ($stmt) {
+            $stmt->bind_param("i", $id_producto); // Vincula el parámetro $id_producto a la consulta SQL de manera segura
+            $stmt->execute(); // Ejecuta la consulta
+            
+            $result = $stmt->get_result(); // Obtiene el conjunto de resultados
+            $cantidad = $result->fetch_assoc(); // Obtiene la cantidad de pedidos
+            
+            $stmt->close(); // Cierra la sentencia preparada
+            $conn->close(); // Cierra la conexión a la base de datos
+            
+            return $cantidad['registro'] > 0; // Retorna true si el producto esta en pedidos, de lo contrario, retorna false
+        } else {
+            // En caso de fallo en la preparación de la consulta, se cierra la conexión y se retorna false
+            $conn->close();
+            return false;
+        }
+    }
 
 }

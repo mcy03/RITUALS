@@ -27,12 +27,6 @@
         public function setId($user_id){
             $this->USUARIO_ID = $user_id;
         }
-        public function getUsername(){
-            return $this->USERNAME;
-        }
-        public function setUsername($username){
-            $this->USERNAME = $username;
-        }
         public function getPass(){
             return $this->PASSWORD;
         }
@@ -123,6 +117,20 @@
             $conn->close();
 
             $user = $result->fetch_object('User');
+            if ($user->getPermiso() != 0) {
+                $admin = new Admin();
+                $admin->setId($user->getId());             
+                $admin->setPass($user->getPass());
+                $admin->setName($user->getName());
+                $admin->setApellidos($user->getApellidos());
+                $admin->setPhone($user->getPhone());
+                $admin->setFechaNacimiento($user->getFechaNacimiento());
+                $admin->setDir($user->getDir());
+                $admin->setEmail($user->getEmail());
+                $admin->setPermiso($user->getPermiso());
+
+                return $admin;
+            }
             return $user;
         }
         public static function getUserByEmail($email){
@@ -134,8 +142,23 @@
             $stmt->execute();
             $result=$stmt->get_result();
             $conn->close();
-            
             $user = $result->fetch_object('User');
+
+            if ($user->getPermiso() != 0) {
+                $admin = new Admin();
+                $admin->setId($user->getId());             
+                $admin->setUsername($user->getUsername());
+                $admin->setPass($user->getPass());
+                $admin->setName($user->getName());
+                $admin->setApellidos($user->getApellidos());
+                $admin->setPhone($user->getPhone());
+                $admin->setFechaNacimiento($user->getFechaNacimiento());
+                $admin->setDir($user->getDir());
+                $admin->setEmail($user->getEmail());
+                $admin->setPermiso($user->getPermiso());
+
+                return $admin;
+            }
             return $user;
         }
 
@@ -161,7 +184,6 @@
             $stmt->execute();
             $conn->close();
         }
-        
     }
     
 ?>

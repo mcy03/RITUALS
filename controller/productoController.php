@@ -105,31 +105,7 @@ class productoController{
         require_once("views/footer.php");
     }
 
-    public static function eliminar(){
-        $id_product = 10;  //$_POST['id']
-        Producto::deleteProduct($id_product);
-        header("Location:".url.'?controller=producto');
-    }
-
-    public static function editar(){
-        $id_product = 10;  //$_POST['id']
-        
-        $product = Producto::getProductById($id_product);
-        include_once 'views/editarProducto.php';
-    }
-
-    public static function actualizar(){
-        echo "actualizar producto ";
-        $producto_id = $_POST['id'];
-        $nombre_producto = $_POST['name'];
-        $img = $_POST['img'];
-        $descripcion = $_POST['desc'];
-        $precio_unidad = $_POST['price'];
-        $categoria_id = $_POST['cat'];
-        
-        Producto::updateProduct($producto_id, $nombre_producto, $img, $descripcion, $precio_unidad, $categoria_id);
-        header("Location:".url.'?controller=producto');
-    }
+    
 
     public function sel(){
         session_start();
@@ -208,8 +184,14 @@ class productoController{
         
         if(isset($_SESSION['user'])){
             $user = $_SESSION['user'];
-            if($user->getPermiso() != 0){
-                $todos_pedidos = PedidosBBDD::getPedidosBBDD();
+            if(get_class($user)){
+                if (isset($_GET['pedidos'])) {
+                    $todos_pedidos = PedidosBBDD::getPedidosBBDD();
+                }elseif (isset($_GET['usuarios'])) {
+                    $todos_usuarios = User::getUsers();
+                }elseif (isset($_GET['productos'])) {
+                    $todos_productos = Producto::getProducts();
+                }
             }
             $hayPedidos = PedidosBBDD::tienePedidosUser($user->getId());
 
@@ -219,6 +201,20 @@ class productoController{
             if(isset($_POST["pedido_id"])) {
                 $productosPedido = ProductosPedidosDAO::getPedidosBBDD_ByIdPedido($_POST["pedido_id"]);
             }
+            if (isset($_GET['error'])) {
+                $color = "red";
+                $mensaje = "ERROR AL ELIMINAR: TIENE PEDIDOS ASIGNADOS";
+            }elseif(isset($_GET['mensaje'])) {
+                $color = "green";
+                $mensaje = "ELIMINADO CORRECTAMENTE";
+            }elseif (isset($_GET['modificado'])) {
+                $color = "green";
+                $mensaje = "MODIFICADO CORRECTAMENTE";
+            }elseif (isset($_GET['insertado'])) {
+                $color = "green";
+                $mensaje = "INSERTADO CORRECTAMENTE";
+            }
+            
             include_once 'views/header.php';
             include_once 'views/cuenta.php';
             //footer
@@ -266,11 +262,11 @@ class productoController{
                 foreach ($pedido as $producto) {
                     $costeTotal += $producto->calcPrice();
                 }
-                $infoPedido = array($pedidoId, $fechaPedido, $usuarioPedido->getEmail(), $costeTotal);
+                $infoPedido = array($pedidoId, $usuarioPedido->getEmail(), $fechaPedido, $costeTotal);
                 setcookie('ultimoPedido', serialize($pedido), time()+86400);
                 setcookie('infoPedido', serialize($infoPedido), time()+86400);
 
-                header("location:".url.'?controller=producto&action=cuenta&pedidos');
+                header("location:".url.'?controller=producto&action=cuenta&misPedidos');
             }else{
                 header("location:".url.'?controller=producto&action=carrito');
             }
@@ -300,5 +296,210 @@ class productoController{
             
             header("location:".url.'?controller=producto&action=carrito');
         }
+    }
+
+    public static function accionPedido(){
+        session_start();
+        if (isset($_POST['pedido_id'])) {
+            $id = $_POST['pedido_id'];
+            if (isset($_POST['eliminar'])) {
+               $result = $_SESSION['user']->deletePedido($id);
+               
+            }elseif(isset($_POST['editar'])) {
+                
+                header("Location:".url.'?controller=producto&action=editPage&pedido_id='.$id);
+            }
+        }elseif(isset($_POST['anadir'])) {
+            header("Location:".url.'?controller=producto&action=createPage&pedido');
+        }else {
+            header("Location:".url.'?controller=producto&action=cuenta&pedidos');
+        }
+    }
+
+    public static function accionUsuario(){
+        session_start();
+        if (isset($_POST['usuario_id'])) {
+            $id = $_POST['usuario_id'];
+            if (isset($_POST['eliminar'])) {
+                $pedidos = PedidosBBDD::tienePedidosUser($id);
+
+                if ($pedidos) {
+                    header("Location:".url.'?controller=producto&action=cuenta&usuarios&error');
+                }else{
+                    $result = $_SESSION['user']->deleteUser($id);
+                    header("Location:".url.'?controller=producto&action=cuenta&usuarios&mensaje');
+                }
+               
+            }elseif(isset($_POST['editar'])) {
+                header("Location:".url.'?controller=producto&action=editPage&usuario_id='.$id);
+            }
+        }elseif(isset($_POST['anadir'])) {
+            header("Location:".url.'?controller=producto&action=createPage&usuario');
+        }else {
+            header("Location:".url.'?controller=producto&action=cuenta&usuarios');
+        }
+    }
+
+    public static function accionProducto(){
+        session_start();
+        if (isset($_POST['producto_id'])) {
+            $id = $_POST['producto_id'];
+            if (isset($_POST['eliminar'])) {
+                $pedidos = ProductosPedidosDAO::estaProductoPedido($id);
+                if ($pedidos) {
+                    header("Location:".url.'?controller=producto&action=cuenta&usuarios&error');
+                }else{
+                    $result = $_SESSION['user']->deleteProducto($id);
+                    header("Location:".url.'?controller=producto&action=cuenta&usuarios&mensaje');
+                }
+            }elseif(isset($_POST['editar'])) {
+                
+                header("Location:".url.'?controller=producto&action=editPage&producto_id='.$id);
+            }
+        }elseif(isset($_POST['anadir'])) {
+            header("Location:".url.'?controller=producto&action=createPage&producto');
+        }else {
+            header("Location:".url.'?controller=producto&action=cuenta&productos');
+        }
+    }
+
+    public static function editPage(){
+        session_start(); 
+        if (isset($_GET['pedido_id'])) {
+            $id_pedido = $_GET['pedido_id'];
+            
+            $pedido = PedidosBBDD::getPedidoById($id_pedido);
+        }elseif (isset($_GET['usuario_id'])) {
+            $id_usuario = $_GET['usuario_id'];
+            
+            $usuario = User::getUserById($id_usuario);
+        }elseif (isset($_GET['producto_id'])) {
+            $id_producto = $_GET['producto_id'];
+            
+            $producto = Producto::getProductById($id_producto);
+
+            $categoria_producto = Categoria::getCatById($producto->getCat());
+
+            $categorias = Categoria::getCatExcludeId($producto->getCat());
+        }
+        include_once 'views/header.php';
+        include_once 'views/editPage.php';
+        include_once 'views/footer.php';
+    }
+
+    public static function editarPedido(){
+        session_start();
+        if (isset($_POST['pedido_id'])) {
+            $id_pedido = $_POST['pedido_id'];
+            $id_user = $_POST['usuario_id'];
+            $estado = $_POST['estado'];
+            $fecha = $_POST['fecha'];
+            
+            $_SESSION['user']->updatePedido($id_pedido, $id_user, $estado, $fecha);
+        }
+
+        header("Location:".url.'?controller=producto&action=cuenta&pedidos&modificado');
+    }
+
+    public static function editarUsuario(){
+        session_start();
+        if (isset($_POST['usuario_id'])) {
+            $email = $_POST['email'];
+            $saludo = $_POST['saludo'];
+            $nombre = $_POST['nombre'];
+            $apellidos = $_POST['apellidos'];
+            $fecha_nacimiento = $_POST['nacimiento'];
+            $telefono = $_POST['telefono'];
+            $direccion = $_POST['direccion'];
+            
+            $_SESSION['user']->updateUser($email, $saludo, $nombre, $apellidos, $fecha_nacimiento, $telefono, $direccion);
+        }
+
+        header("Location:".url.'?controller=producto&action=cuenta&usuarios&modificado');
+    }
+
+    public static function editarProducto(){
+        session_start();
+        if (isset($_POST['producto_id'])) {
+            $producto_id = $_POST['producto_id'];
+            $nombre = $_POST['nombre'];
+            $img = $_POST['img'];
+            $descripcion = $_POST['descripcion'];
+            $precio_unidad = $_POST['precio'];
+            $categoria_id = $_POST['categoria_id'];
+
+            $_SESSION['user']->updateProduct($producto_id, $nombre_producto, $img, $descripcion, $precio_unidad, $categoria_id);
+        }
+
+        header("Location:".url.'?controller=producto&action=cuenta&productos&modificado');
+    }
+
+    public static function createPage(){
+        session_start(); 
+        if (isset($_GET['pedido'])) {
+            $usuarios = User::getUsers();
+            $productos = Producto::getProducts();
+            if (isset($_POST['num_products'])) {
+                $num_products = (int) $_POST['num_products'];
+            }
+        }elseif (isset($_GET['producto'])) {
+            $categorias = Categoria::getCat();
+        }
+        include_once 'views/header.php';
+        include_once 'views/createPage.php';
+        include_once 'views/footer.php';
+    }
+
+    public static function addPedido(){
+        session_start();
+        if (isset($_POST['user_id'])) {
+            $user_id = $_POST['user_id'];
+            $estado = $_POST['estado'];
+            $cant_products = $_POST['cant_products'];
+
+            for ($i=0; $i < $cant_products ; $i++) { 
+                $array_products[] = $_POST['producto'.$i];
+                $array_cant[] = $_POST['cantidad'.$i];
+            }
+
+            $user = User::getUserById($user_id);
+
+            $result = Admin::insertPedido($user, $array_products, $array_cant);
+        }
+
+        header("Location:".url.'?controller=producto&action=cuenta&pedidos&insertado');
+    }
+
+    public static function addUsuario(){
+        session_start();
+        if (isset($_POST['usuario_id'])) {
+            $email = $_POST['email'];
+            $saludo = $_POST['saludo'];
+            $nombre = $_POST['nombre'];
+            $apellidos = $_POST['apellidos'];
+            $fecha_nacimiento = $_POST['nacimiento'];
+            $telefono = $_POST['telefono'];
+            $direccion = $_POST['direccion'];
+            
+            $_SESSION['user']->updateUser($email, $saludo, $nombre, $apellidos, $fecha_nacimiento, $telefono, $direccion);
+        }
+
+        header("Location:".url.'?controller=producto&action=cuenta&usuarios&modificado');
+    }
+
+    public static function addProducto(){
+        session_start();
+        if (isset($_POST['producto_id'])) {
+            $producto_id = $_POST['producto_id'];
+            $nombre = $_POST['nombre'];
+            $img = $_POST['img'];
+            $descripcion = $_POST['descripcion'];
+            $precio_unidad = $_POST['precio'];
+            $categoria_id = $_POST['categoria_id'];
+
+            $_SESSION['user']->updateProduct($producto_id, $nombre_producto, $img, $descripcion, $precio_unidad, $categoria_id);
+        }
+
+        header("Location:".url.'?controller=producto&action=cuenta&productos&modificado');
     }
 }

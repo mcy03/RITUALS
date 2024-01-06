@@ -20,30 +20,30 @@ class Admin extends User {
 */
     public static function insertUser($EMAIL, $SALUDO, $NOMBRE, $APELLIDOS, $FECHA_NACIMIENTO, $PASSWORD, $TELEFONO, $DIRECCION, $PERMISO = 0){
         parent::insertUser($EMAIL, $SALUDO, $NOMBRE, $APELLIDOS, $FECHA_NACIMIENTO, $TELEFONO, $DIRECCION);
-        $result = registrarActividad("Insert", "User", $email);
+        $result = Admin::registrarActividad("Insert", "User", $email);
     }
 
     public static function updateUser($EMAIL, $SALUDO, $NOMBRE, $APELLIDOS, $FECHA_NACIMIENTO, $TELEFONO, $DIRECCION){
         parent::updateUser($EMAIL, $SALUDO, $NOMBRE, $APELLIDOS, $FECHA_NACIMIENTO, $TELEFONO, $DIRECCION);
-        $result = registrarActividad("Update", "User", $email);
+        $result = Admin::registrarActividad("Update", "User", $email);
     }
-    public static function deleteUser($email){
+    public static function deleteUser($id){
         $conn = db::connect();
 
         // Consulta para eliminar el usuario basado en el email
-        $sql = "DELETE FROM usuarios WHERE EMAIL = :email";
+        $sql = "DELETE FROM usuarios WHERE USUARIO_ID = ?";
 
         // Preparar la consulta
         $stmt = $conn->prepare($sql);
 
         // Vincular el parámetro
-        $stmt->bindParam(':email', $email);
+        $stmt->bind_param('s', $id);
         
         try {
             // Ejecutar la consulta
             $stmt->execute();
 
-            $result = registrarActividad("Del", "User", $email);
+            $result = Admin::registrarActividad("Del", "User", $id);
             return true; // Éxito al eliminar el usuario
         } catch (PDOException $e) {
             echo "Error al eliminar usuario: " . $e->getMessage();
@@ -79,45 +79,47 @@ class Admin extends User {
 
         $result = PedidosBBDD::procesarPedido($user, $pedidos);
         $id_pedido = PedidosBBDD::getIdUltimoPedido();
-        $result = registrarActividad("Insert", "Pedido", $id_pedido);
+        $result = Admin::registrarActividad("Insert", "Pedido", $id_pedido);
     }
 
-    public static function updatePedido($pedido_id, $estado, $fecha_pedido){
-        $result = PedidosBBDD::updatePedido($pedido_id, $estado, $fecha_pedido);
-        $result = registrarActividad("Update", "Pedido", $pedido_id);
+    public static function updatePedido($pedido_id, $usuario_id, $estado, $fecha_pedido){
+        $result = PedidosBBDD::updatePedido($pedido_id, $usuario_id, $estado, $fecha_pedido);
+        $result = Admin::registrarActividad("Update", "Pedido", $pedido_id);
     }
 
     public static function deletePedido($pedido_id){
-        $result = PedidosBBDD::updatePedido($pedido_id);
-        $result = registrarActividad("Delete", "Pedido", $pedido_id);
+        $result = PedidosBBDD::deletePedido($pedido_id);
+        $result = Admin::registrarActividad("Delete", "Pedido", $pedido_id);
     }
 
     public static function insertProduct($nombre_producto, $img, $descripcion, $precio_unidad, $categoria_id){
         $result = Producto::insertProduct($nombre_producto, $img, $descripcion, $precio_unidad, $categoria_id);
-        $result = registrarActividad("Insert", "Product", $nombre_producto);
+        $result = Admin::registrarActividad("Insert", "Product", $nombre_producto);
     }
 
     public static function updateProduct($producto_id, $nombre_producto, $img, $descripcion, $precio_unidad, $categoria_id){
         $result = Producto::updateProduct($producto_id, $nombre_producto, $img, $descripcion, $precio_unidad, $categoria_id);
-        $result = registrarActividad("Update", "Product", $producto_id);
+        $result = Admin::registrarActividad("Update", "Product", $producto_id);
     }
     public static function deleteProduct($producto_id){
         $result = Producto::deleteProduct($producto_id);
-        $result = registrarActividad("Delete", "Product", $producto_id);
+        $result = Admin::registrarActividad("Delete", "Product", $producto_id);
     }
 
-    public function registrarActividad($actividad, $objeto, $valor_diferencial_objeto) {
+    public static function registrarActividad($actividad, $objeto, $valor_diferencial_objeto) {
+        if (isset($_SESSION['user'])) {
+            $id_user = $_SESSION['user']->getId();
+        }else{
+            $id_user = 1;
+        }
         $conn = db::connect();
-            
+        $valor_diferencial_objeto .= "";
         // Consulta para insertar un nuevo producto
-        $consulta = "INSERT INTO REGISTRO_CAMBIO (USUARIO_ID, ACCION, TIPO_SUJETO, SUJETO, FECHA_CAMBIO) 
-                    VALUES (:usuario_id, :accion, :tipo, :sujeto, SYSDATE())";
+        $consulta = "INSERT INTO REGISTRO_CAMBIOS (USUARIO_ID, ACCION, TIPO_SUJETO, SUJETO, FECHA_CAMBIO) 
+                    VALUES (?, ?, ?, ?, SYSDATE())";
             
         $stmt = $conn->prepare($consulta);
-        $stmt->bindParam(':usuario_id', $this->getId());
-        $stmt->bindParam(':accion', $actividad);
-        $stmt->bindParam(':tipo', $objeto);
-        $stmt->bindParam(':sujeto', $valor_diferencial_objeto);
+        $stmt->bind_Param('isss', $id_user, $actividad, $objeto, $valor_diferencial_objeto);
             
         if ($stmt->execute()) {
             return true;

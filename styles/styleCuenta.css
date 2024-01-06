@@ -53,6 +53,7 @@ body{
     align-content: start;
     margin: 15px 0;
     font-family: 'ClassicalGaramondBT-Roman';
+    color: #626262;
     font-size: 18px;
     letter-spacing: 1px;
 }
@@ -229,7 +230,7 @@ table td{
     padding-bottom: 30px;
 }
 
-table button{
+button{
     width: 100%;
     background-color: #1a1919;
     border: 1px solid #1a1919;
@@ -247,7 +248,7 @@ table button{
     transition: .2s ease-in-out;
 }
 
-table button:hover {
+button:hover {
     background-color: #ffffff00;
     border: 1px solid #1a1919;
     color: #1a1919;
@@ -264,15 +265,30 @@ table button:hover {
 }
 
 
+.cont-añadir{
+    margin-left: 40px;
+}
 
 
-
-.tableAllProducts .button-form-pedidos{
+.button-form{
     display: flex;
     flex-direction: column;
 }
 
-.tableAllProducts .button-form-pedidos button{
-    width: 70%;
-    margin-bottom: 10px;
+.tableAll td{
+    align-self: center;
+}
+
+.tableAll img{
+    max-width: 130px;
+}
+
+.button-form button{
+    width: 80%;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+.error{
+    margin-left: 30px;
 }

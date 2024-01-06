@@ -142,4 +142,17 @@ class Categoria {
         return ($categoria !== null) ? $categoria->getCategoriaId() : false;
     }
 
+    public static function getCatExcludeId($id){
+        $conn = db::connect(); // Establecer una conexión a la base de datos
+        $consulta = "SELECT * FROM categorias WHERE CATEGORIA_ID != $id"; // Consulta SQL para seleccionar todos los registros de la tabla 'categorias'
+
+        if ($resultado = $conn->query($consulta)) {  // Verificar y ejecutar la consulta SQL
+            while ($obj = $resultado->fetch_object('Categoria')) { /* obtener el array de objetos */
+                $arrayCat []= $obj; // Agregar cada objeto 'Categoria' al array
+            }
+            
+            $resultado->close(); /* liberar el conjunto de resultados */
+            return $arrayCat;
+        }
+    }
 }

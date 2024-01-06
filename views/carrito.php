@@ -134,7 +134,7 @@
                                     <div class="cont-header-last-comand">
                                         <h2 class="text-header header-last-comand">Último pedido</h2>
                                         <div class="cont-button-comprar cont-button-ver">
-                                            <form action=<?=url.'?controller=producto&action=cuenta&pedidos'?> method="post">
+                                            <form action=<?=url.'?controller=producto&action=cuenta&misPedidos'?> method="post">
                                                 <input type="hidden" name="pedido_id" value="<?=$infoPedidoAnterior[0]?>">
                                                 <button type="submit" class="boton-simple btn btn-primary">VER</button>
                                             </form>

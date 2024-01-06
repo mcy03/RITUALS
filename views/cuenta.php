@@ -23,9 +23,9 @@
                             <li><a href=<?=url.'?controller=producto&action=cuenta&misPedidos'?>><img src="img/carrito-icon-black.png" alt="#"> Mis Pedidos</a></li>
                             <?php if($user->getPermiso() != 0){ ?>
                                 <li>> Admin</li>
-                                <li><a href=<?=url.'?controller=producto&action=cuenta&pedidos'?>><img src="img/lista-icon.png" alt="#"> Gestionar Pedidos</a></li>
-                                <li><a href=<?=url.'?controller=producto&action=cuenta&usuarios'?>><img src="img/carrito-icon-black.png" alt="#"> Gestionar Usuarios</a></li>
-                                <li><a href=<?=url.'?controller=producto&action=cuenta&pedidos'?>><img src="img/carrito-icon-black.png" alt="#"> Gestionar Productos</a></li>
+                                <li><a href=<?=url.'?controller=producto&action=cuenta&pedidos'?>><img src="img/gestionPedidos.png" alt="#"> Gestionar Pedidos</a></li>
+                                <li><a href=<?=url.'?controller=producto&action=cuenta&usuarios'?>><img src="img/users.png" alt="#"> Gestionar Usuarios</a></li>
+                                <li><a href=<?=url.'?controller=producto&action=cuenta&productos'?>><img src="img/productos.png" alt="#"> Gestionar Productos</a></li>
                             <?php } ?>
                             <li><a href=<?=url.'?controller=producto&action=cerrar'?>><img src="img/salida.png" alt="#"> Cerrar Sessión</a></li>
                         </ul>
@@ -146,6 +146,7 @@
                                             <tr>
                                                 <td class="tituloTabla">ID</td>
                                                 <td class="tituloTabla">USUARIO</td>
+                                                <td class="tituloTabla">ESTADO</td>
                                                 <td class="tituloTabla">FECHA DEL PEDIDO</td>
                                                 <td class="tituloTabla">PRECIO TOTAL</td>
                                             </tr>
@@ -153,6 +154,7 @@
                                                 <tr>
                                                     <td><?= $pedidos->getId() ?></td>
                                                     <td><?= $pedidos->getUserId() ?></td>
+                                                    <td><?= $pedidos->getEstado() ?></td>
                                                     <td><?= $pedidos->getFechaPedido() ?></td>
                                                     <td><?= ProductosPedidosDAO::calcPricePedidoById($pedidos->getId()) ?> €</td>
                                                     <form action="#" method="post">
@@ -205,12 +207,26 @@
                         <?php if(isset($_GET["pedidos"])){ ?>
                             <section class="gestionPedidos">
                                 <div class="subtitle">
-                                    <h2><img src="img/carrito-icon-black.png" alt="#"> GESTIONAR PEDIDOS</h2>
+                                    <div class="titulo">
+                                        <h2><img src="img/gestionPedidos.png" alt="#"> GESTIONAR PEDIDOS</h2>
+                                    </div>
+                                    
+                                    <div class="cont-añadir">
+                                        <form action=<?=url.'?controller=producto&action=accionPedido'?> method="post">
+                                            <button type="submit" name="anadir">AÑADIR</button>
+                                        </form>
+                                    </div>
+                                    <?php if (isset($mensaje)) { ?>
+                                        <div class="error">
+                                            <p style='color: <?=$color?>;'><?=$mensaje?></p>
+                                        </div>
+                                    <?php } ?>
                                 </div>
-                                <table class="tableAllProducts">
+                                <table class="tableAll">
                                     <tr>
                                         <td class="tituloTabla">ID</td>
                                         <td class="tituloTabla">USUARIO</td>
+                                        <td class="tituloTabla">ESTADO</td>
                                         <td class="tituloTabla">FECHA DEL PEDIDO</td>
                                         <td class="tituloTabla">PRECIO TOTAL</td>
                                     </tr>
@@ -218,17 +234,110 @@
                                         <tr>
                                             <td><?= $all_comands->getId() ?></td>
                                             <td><?= $all_comands->getUserId() ?></td>
+                                            <td><?= $all_comands->getEstado() ?></td>
                                             <td><?= $all_comands->getFechaPedido() ?></td>
                                             <td><?= ProductosPedidosDAO::calcPricePedidoById($all_comands->getId()) ?> €</td>
-                                            <form action="#" method="post">
+                                            <form action=<?=url.'?controller=producto&action=accionPedido'?> method="post">
                                                 <input type="hidden" name="pedido_id" value= "<?=$all_comands->getId()?>">
-                                                <td class="button-form-pedidos">
+                                                <td class="button-form">
                                                     <button type="submit" name="editar">MODIFICAR</button>
                                                     <button type="submit" name="eliminar">ELIMINAR</button>
                                                 </td>
                                             </form>
                                         </tr>
                                         <tr>    
+                                            <td colspan=5 class="td_separate"><hr class="separate"></td>
+                                        </tr>
+                                    <?php } ?>
+                                </table>
+                        
+                        <?php }elseif(isset($_GET["usuarios"])){ ?>
+                            <section class="gestionUsuarios">
+                                <div class="subtitle">
+                                    <div class="titulo">
+                                        <h2><img src="img/users.png" alt="#"> GESTIONAR USUARIOS</h2>
+                                    </div>
+                                    
+                                    <div class="cont-añadir">
+                                        <form action=<?=url.'?controller=producto&action=accionUsuario'?> method="post">
+                                            <button type="submit" name="anadir">AÑADIR</button>
+                                        </form>
+                                    </div>
+                                    <?php if (isset($mensaje)) { ?>
+                                        <div class="error">
+                                            <p style='color: <?=$color?>;'><?=$mensaje?></p>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                                
+                                <table class="tableAll">
+                                    <tr>
+                                        <td class="tituloTabla">USUARIO_ID</td>
+                                        <td class="tituloTabla">EMAIL</td>
+                                        <td class="tituloTabla">NOMBRE</td>
+                                        <td class="tituloTabla">TELEFONO</td>
+                                    </tr>
+                                    <?php foreach (array_reverse($todos_usuarios) as $all_users) { ?>
+                                        <tr>
+                                            <td><?= $all_users->getId() ?></td>
+                                            <td><?= $all_users->getEmail() ?></td>
+                                            <td><?= $all_users->getName() ?></td>
+                                            <td><?= $all_users->getPhone() ?></td>
+                                            <form action=<?=url.'?controller=producto&action=accionUsuario'?> method="post">
+                                                <input type="hidden" name="usuario_id" value= "<?=$all_users->getId()?>">
+                                                <td class="button-form">
+                                                    <button type="submit" name="editar">MODIFICAR</button>
+                                                    <button type="submit" name="eliminar">ELIMINAR</button>
+                                                </td>
+                                            </form>
+                                        </tr>
+                                        <tr>    
+                                            <td colspan=5 class="td_separate"><hr class="separate"></td>
+                                        </tr>
+                                    <?php } ?>
+                                </table>
+                        
+                        <?php }elseif(isset($_GET["productos"])){ ?>
+                            <section class="gestionProductos">
+                                <div class="subtitle">
+                                    <div class="titulo">
+                                        <h2><img src="img/productos.png" alt="#"> GESTIONAR PRODUCTOS</h2>
+                                    </div>
+                                    
+                                    <div class="cont-añadir">
+                                        <form action=<?=url.'?controller=producto&action=accionProducto'?> method="post">
+                                            <button type="submit" name="anadir">AÑADIR</button>
+                                        </form>
+                                    </div>
+
+                                    <?php if (isset($mensaje)) { ?>
+                                        <div class="error">
+                                            <p style='color: <?=$color?>;'><?=$mensaje?></p>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                                <table class="tableAll">
+                                    <tr>
+                                        <td class="tituloTabla">ID</td>
+                                        <td class="tituloTabla">IMAGEN</td>
+                                        <td class="tituloTabla">NOMBRE</td>
+                                        <td class="tituloTabla">PRECIO UNIDAD</td>
+                                    </tr>
+                                    <?php foreach (array_reverse($todos_productos) as $all_products) { ?>
+                                        <tr>
+                                            <td><?= $all_products->getId() ?></td>
+                                            <td><img src="<?= $all_products->getImg() ?>" alt=""></td>
+                                            <td><?= $all_products->getName() ?></td>
+                                            <td><?= $all_products->getPrice() ?> €</td>
+                                            <form action=<?=url.'?controller=producto&action=accionProducto'?> method="post">
+                                                <input type="hidden" name="producto_id" value= "<?=$all_products->getId()?>">
+                                                <td class="button-form">
+                                                    <button type="submit" name="editar">MODIFICAR</button>
+                                                    <button type="submit" name="eliminar">ELIMINAR</button>
+                                                </td>
+                                            </form>
+                                        </tr>
+                                        <tr>
                                             <td colspan=5 class="td_separate"><hr class="separate"></td>
                                         </tr>
                                     <?php } ?>

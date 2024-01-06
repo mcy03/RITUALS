@@ -1,0 +1,90 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #efedea;
+}
+.contenido{
+    padding: 45px 70px;
+}
+
+
+.cont{
+    font-family: "ScalaSansOT-CondRegular", sans-serif;
+    font-size: 14px;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 40px;
+    margin-left: 50%;
+    margin-bottom: 40px;
+}
+.cont-form-edit input, .cont-form-edit select{
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #d8d8d8;
+    color: #1a1919;
+    appearance: none;
+    border-radius: 2px;
+    font-family: 'ClassicalGaramondBT-Roman';
+    font-size: 16px;
+    letter-spacing: .5px;
+    margin-top: 8px;
+    order: 2;
+    padding: 12px 21px;
+}
+
+.cont-form-edit label{
+    font-family: 'ClassicalGaramondBT-Roman';
+    font-size: 18px;
+    margin-top: 22px;
+}
+
+input[disabled] {
+    color: #1a1919; /* Cambiar el color del texto */
+    background-color: #efedea; /* Cambiar el color de fondo */
+}
+
+.cont-form-edit button{
+    margin-top: 40px;
+    width: 100%;
+    border-radius: 0;
+    background-color: #1a1919;
+    border: 1px solid #1a1919;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-style: normal;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .2s ease-in-out;
+}
+
+.cont-form-edit button:hover {
+    background-color: #fff;
+    border: 1px solid #1a1919;
+    color: #1a1919;
+    width: 100%;
+    display: inline-block;
+    font-size: 12px;
+    font-style: normal;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .2s ease-in-out;
+}
+
+#select_product{
+    width: 40%;
+}
+
+
+#input_cantidad{
+    margin-left: 15px;
+    width: 40%;
+}
