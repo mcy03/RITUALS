@@ -30,12 +30,12 @@ body{
     font-family: "ScalaSansOT-CondRegular", sans-serif;
     font-size: 14px;
     background-color: #ffffff;
-    min-width: 45%;
+    width: 100%;
     padding: 40px;
     margin-bottom: 40px;
 }
 
-.input-text, .cont-form-login select{
+.cont-form-login .input-text, .cont-form-login select{
     width: 100%;
     background-color: #fff;
     border: 1px solid #d8d8d8;
@@ -51,6 +51,7 @@ body{
 
 .cont-form-login label{
     margin-top: 22px;
+
 }
 
 .cont-form-login button{

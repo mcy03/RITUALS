@@ -20,7 +20,7 @@
 
         <div class="containder-fluid">
             <div class="row">
-                <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">
+                <div class="col-6 col-lg-6 col-md-12 col-sm-12">
                     <section class="cont cont-form-login">
                         <?php if (isset($sign)) { ?>
                             <form action=<?=url.'?controller=producto&action=sign'?> method="post">
@@ -94,7 +94,7 @@
                         
                     </section>
                 </div>
-                <div class="col-xl-8 col-lg-6 col-md-12 col-sm-12">
+                <div class="col-6 col-lg-6 col-md-12 col-sm-12">
                     <section class="cont cont-ventajas">
                         <span class="ventajas-subtitle">Únete a&nbsp;My Rituals</span>
                         <h3 class="ventajas-title">Lo que consigues al hacerte miembro de My Rituals</h3>
@@ -113,7 +113,7 @@
                             </li>
                         </ul>
                         <div class="img-cinta">
-                            <img src="img/decoracion-cinta.svg" alt="cinta esquina ventajas">
+                            <img src="img/decoracion-cinta.svg" alt="cinta esquina">
                         </div>
                     </section>
                 </div>
