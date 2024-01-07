@@ -147,7 +147,6 @@
             if ($user->getPermiso() != 0) {
                 $admin = new Admin();
                 $admin->setId($user->getId());             
-                $admin->setUsername($user->getUsername());
                 $admin->setPass($user->getPass());
                 $admin->setName($user->getName());
                 $admin->setApellidos($user->getApellidos());

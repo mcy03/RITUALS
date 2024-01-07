@@ -304,7 +304,7 @@ class productoController{
             $id = $_POST['pedido_id'];
             if (isset($_POST['eliminar'])) {
                $result = $_SESSION['user']->deletePedido($id);
-               
+               header("Location:".url.'?controller=producto&action=cuenta&pedidos&mensaje');
             }elseif(isset($_POST['editar'])) {
                 
                 header("Location:".url.'?controller=producto&action=editPage&pedido_id='.$id);
@@ -349,8 +349,21 @@ class productoController{
                 if ($pedidos) {
                     header("Location:".url.'?controller=producto&action=cuenta&usuarios&error');
                 }else{
-                    $result = $_SESSION['user']->deleteProducto($id);
-                    header("Location:".url.'?controller=producto&action=cuenta&usuarios&mensaje');
+                    $producto = Producto::getProductById($id);
+                    $img = $producto->getImg();
+
+                    if (file_exists($img)) {
+                        if (unlink($img)) {
+                            echo "El archivo ha sido eliminado correctamente.";
+                        } else {
+                            echo "No se pudo eliminar el archivo.";
+                        }
+                    } else {
+                        echo "El archivo no existe.";
+                    }
+
+                    $result = $_SESSION['user']->deleteProduct($id);
+                    header("Location:".url.'?controller=producto&action=cuenta&productos&mensaje');
                 }
             }elseif(isset($_POST['editar'])) {
                 
@@ -423,14 +436,35 @@ class productoController{
         if (isset($_POST['producto_id'])) {
             $producto_id = $_POST['producto_id'];
             $nombre = $_POST['nombre'];
-            $img = $_POST['img'];
+            $img_anterior = $_POST['imagen_anterior'];
             $descripcion = $_POST['descripcion'];
-            $precio_unidad = $_POST['precio'];
+            $precio = $_POST['precio'];
             $categoria_id = $_POST['categoria_id'];
-
-            $_SESSION['user']->updateProduct($producto_id, $nombre_producto, $img, $descripcion, $precio_unidad, $categoria_id);
+    
+            
+            if($_FILES["imagen"]["name"] == NULL){
+                $_SESSION['user']->updateProduct($producto_id, $nombre, $img_anterior, $descripcion, $precio, $categoria_id);
+            }elseif ($_FILES["imagen"]["name"] != NULL) {
+                if (file_exists($img_anterior)) {
+                    if (unlink($img_anterior)) {
+                        echo "El archivo ha sido eliminado correctamente.";
+                    } else {
+                        echo "No se pudo eliminar el archivo.";
+                    }
+                } else {
+                    echo "El archivo no existe.";
+                }
+    
+                $directory = "img/products/";
+                $file = $directory . basename($_FILES["imagen"]["name"]);
+                if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $file)) {
+                    $_SESSION['user']->updateProduct($producto_id, $nombre, $file, $descripcion, $precio, $categoria_id);
+                } else {
+                    echo "Hubo un error al subir el archivo.";
+                }
+            }
         }
-
+        
         header("Location:".url.'?controller=producto&action=cuenta&productos&modificado');
     }
 
@@ -472,34 +506,46 @@ class productoController{
 
     public static function addUsuario(){
         session_start();
-        if (isset($_POST['usuario_id'])) {
+        if (isset($_POST['email'])) {
             $email = $_POST['email'];
             $saludo = $_POST['saludo'];
             $nombre = $_POST['nombre'];
             $apellidos = $_POST['apellidos'];
             $fecha_nacimiento = $_POST['nacimiento'];
+            $pwd = $_POST['pwd'];
             $telefono = $_POST['telefono'];
             $direccion = $_POST['direccion'];
-            
-            $_SESSION['user']->updateUser($email, $saludo, $nombre, $apellidos, $fecha_nacimiento, $telefono, $direccion);
+            $permiso = $_POST['permiso'];
+            if ($permiso = 'usuario') {
+                $permiso = 0;
+            }else{
+                $permiso = 1;
+            }
+
+            $_SESSION['user']->insertUser($email, $saludo, $nombre, $apellidos, $fecha_nacimiento, $pwd, $telefono, $direccion, $permiso);
         }
 
-        header("Location:".url.'?controller=producto&action=cuenta&usuarios&modificado');
+        header("Location:".url.'?controller=producto&action=cuenta&usuarios&insertado');
     }
 
     public static function addProducto(){
         session_start();
-        if (isset($_POST['producto_id'])) {
-            $producto_id = $_POST['producto_id'];
+        if (isset($_POST['nombre'], $_FILES["imagen"])) {
             $nombre = $_POST['nombre'];
-            $img = $_POST['img'];
             $descripcion = $_POST['descripcion'];
-            $precio_unidad = $_POST['precio'];
+            $precio = $_POST['precio'];
             $categoria_id = $_POST['categoria_id'];
 
-            $_SESSION['user']->updateProduct($producto_id, $nombre_producto, $img, $descripcion, $precio_unidad, $categoria_id);
+            $directory = "img/products/";
+            $file = $directory . basename($_FILES["imagen"]["name"]);
+
+            if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $file)) {
+                $_SESSION['user']->insertProduct($nombre, $file, $descripcion, $precio, $categoria_id);
+            } else {
+                echo "Hubo un error al subir el archivo.";
+            }
         }
 
-        header("Location:".url.'?controller=producto&action=cuenta&productos&modificado');
+        header("Location:".url.'?controller=producto&action=cuenta&productos&insertado');
     }
 }

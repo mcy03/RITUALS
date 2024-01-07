@@ -17,6 +17,12 @@ body{
     margin-left: 50%;
     margin-bottom: 40px;
 }
+
+h2{
+    font-family: 'ClassicalGaramondBT-Roman';
+    font-size: 30px;
+}
+
 .cont-form-edit input, .cont-form-edit select{
     width: 100%;
     background-color: #fff;

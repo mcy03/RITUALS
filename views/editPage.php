@@ -13,6 +13,7 @@
             <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                 <section class="cont cont-form-edit">
                     <?php if(isset($pedido)) { ?>
+                        <h2>Editar Pedido</h2>
                         <form action=<?=url.'?controller=producto&action=editarPedido'?> method="post">
                             <label for="pedido_id_dis">Id pedido</label>
                             <input type="number" disabled id="pedido_id_dis" name="pedido_id_dis" value=<?= $pedido->getId() ?>>
@@ -36,6 +37,7 @@
                         </form>
 
                     <?php }elseif(isset($usuario)) { ?>
+                        <h2>Editar Usuario</h2>
                         <form action=<?=url.'?controller=producto&action=editarUsuario'?> method="post">
                             <label for="usuario_id_dis">Id usuario</label>
                             <input type="number" disabled id="usuario_id_dis" name="usuario_id_dis" value=<?= $usuario->getId() ?>>
@@ -53,8 +55,7 @@
                             </select>
                                 
                             <label for="nombre">Nombre</label>
-                            <input  class="input-text" name="nombre
-                            " type="text" required value="<?= $usuario->getName() ?>">
+                            <input  class="input-text" name="nombre" type="text" required value="<?= $usuario->getName() ?>">
 
                             <label for="apellidos">Apellidos</label>
                             <input class="input-text" name="apellidos" type="text" required value="<?= $usuario->getApellidos() ?>">
@@ -72,7 +73,8 @@
                         </form>
 
                     <?php }elseif(isset($producto)) { ?>
-                        <form action=<?=url.'?controller=producto&action=editarProducto'?> method="post">
+                        <h2>Editar Producto</h2>
+                        <form action=<?=url.'?controller=producto&action=editarProducto'?> method="post" enctype="multipart/form-data">
                             <label for="producto_id_dis">Id producto</label>
                             <input type="number" disabled id="producto_id_dis" name="producto_id_dis" value=<?= $producto->getId() ?>>
                             <input type="hidden"  name="producto_id" value="<?=$producto->getId()?>">
@@ -83,14 +85,16 @@
                             <label for="imagen">Imagen </label>
                             <input type="file" id="imagen" name="imagen">
 
+                            <input type="hidden" name="imagen_anterior" value="<?=$producto->getImg()?>">
+
                             <label for="descripcion">Descripcion</label>
                             <input type="text" id="descripcion" name="descripcion" required value="<?=$producto->getDesc()?>">
 
                             <label for="precio">Precio</label>
                             <input type="double" id="precio" name="precio" required value="<?=$producto->getPrice()?>">
 
-                            <label for="categoria">Categoria</label>
-                            <select name="categoria" id="categoria" >
+                            <label for="categoria_id">Categoria</label>
+                            <select name="categoria_id" id="categoria_id" >
                                 <option value=<?=$categoria_producto->getCategoriaId()?> selected><?=$categoria_producto->getName()?></option>
                                 <?php foreach ($categorias as $categoria) { ?>
                                     <option value=<?=$categoria->getCategoriaId()?>><?=$categoria->getName()?></option>

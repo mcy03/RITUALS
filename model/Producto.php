@@ -175,7 +175,7 @@
             $conn = db::connect(); // Establece la conexión a la base de datos
 
             // Prepara la consulta SQL para actualizar la información del producto
-            $stmt = $conn->prepare("UPDATE PRODUCTOS SET NOMBRE_PRODUCTO = ?, IMAGEN = ?, DESCRIPCION = ?, PRECIO_UNIDAD = ?, CATEGORIA_ID = ? WHERE PRODUCTO_ID = ?");
+            $stmt = $conn->prepare("UPDATE PRODUCTOS SET NOMBRE_PRODUCTO = ?, IMG = ?, DESCRIPCION = ?, PRECIO_UNIDAD = ?, CATEGORIA_ID = ? WHERE PRODUCTO_ID = ?");
             $stmt->bind_param("sssdii", $nombre_producto, $img, $descripcion, $precio_unidad, $categoria_id, $producto_id); // Vincula los parámetros a la consulta SQL
 
             // Ejecuta la consulta para actualizar el producto
@@ -188,14 +188,10 @@
             
             // Consulta para insertar un nuevo producto
             $consulta = "INSERT INTO PRODUCTOS (nombre_producto, img, descripcion, precio_unidad, categoria_id) 
-                        VALUES (:nombre_producto, :img, :descripcion, :precio_unidad, :categoria_id)";
+                        VALUES (?, ?, ?, ?, ?)";
             
             $stmt = $conn->prepare($consulta);
-            $stmt->bindParam(':nombre_producto', $nombre_producto);
-            $stmt->bindParam(':img', $img);
-            $stmt->bindParam(':descripcion', $descripcion);
-            $stmt->bindParam(':precio_unidad', $precio_unidad);
-            $stmt->bindParam(':categoria_id', $categoria_id);
+            $stmt->bind_param('sssdi', $nombre_producto, $img, $descripcion, $precio_unidad, $categoria_id);
             
             if ($stmt->execute()) {
                 return true;

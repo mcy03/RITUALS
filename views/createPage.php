@@ -14,6 +14,7 @@
                 <section class="cont cont-form-edit">
                     <?php if(isset($_GET['pedido'])) { ?>
                         <?php if(isset($num_products)) { ?>
+                            <h2>Crear Pedido</h2>
                             <form action=<?=url.'?controller=producto&action=addPedido'?> method="post">
                                 <label for="user_id">Usuario</label>
                                 <select name="user_id" id="user_id" >
@@ -59,14 +60,10 @@
                         
 
                     <?php }elseif(isset($_GET['usuario'])) { ?>
+                        <h2>Crear Usuario</h2>
                         <form action=<?=url.'?controller=producto&action=addUsuario'?> method="post">
-                            <label for="usuario_id_dis">Id usuario</label>
-                            <input type="number" disabled id="usuario_id_dis" name="usuario_id_dis" value=<?= $usuario->getId() ?>>
-                            <input type="hidden"  name="usuario_id" value="<?=$usuario->getId()?>">
-
                             <label for="email">Dirección de correo electrónico</label>
-                            <input class="input-text" disabled name="email_dis" type="email" value=<?= $usuario->getEmail() ?>>
-                            <input class="input-text" name="email" type="hidden" value=<?= $usuario->getEmail() ?>>
+                            <input class="input-text" name="email" type="email" >
 
                             <label for="saludo">Saludo</label>
                             <select id="saludo" name="saludo" required>
@@ -76,45 +73,49 @@
                             </select>
                                 
                             <label for="nombre">Nombre</label>
-                            <input  class="input-text" name="nombre
-                            " type="text" required value="<?= $usuario->getName() ?>">
+                            <input  class="input-text" name="nombre" type="text" required>
 
                             <label for="apellidos">Apellidos</label>
-                            <input class="input-text" name="apellidos" type="text" required value="<?= $usuario->getApellidos() ?>">
+                            <input class="input-text" name="apellidos" type="text" required>
 
                             <label for="nacimiento">Fecha de nacimiento</label>
-                            <input class="input-text" name="nacimiento" type="date" required value="<?= $usuario->getFechaNacimiento() ?>">
+                            <input class="input-text" name="nacimiento" type="date" required>
+
+                            <label for="pwd">Constraseña</label>
+                            <input class="input-text" name="pwd" type="password" required>
 
                             <label for="telefono">Telefono</label>
-                            <input class="input-text" name="telefono" type="tel" required value="<?= $usuario->getPhone() ?>">
+                            <input class="input-text" name="telefono" type="tel" required>
 
                             <label for="direccion">Dirección</label>
-                            <input class="input-text" name="direccion" type="text" value="<?= $usuario->getDir() ?>">
+                            <input class="input-text" name="direccion" type="text" >
+
+                            <label for="permiso">Permiso</label>
+                            <select name="permiso" id="permiso">
+                                <option value="usuario">Usuario</option>
+                                <option value="administrador">Administrador</option>
+                            </select>
                             
                             <button name="add">AÑADIR</button>
                         </form>
 
                     <?php }elseif(isset($_GET['producto'])) { ?>
-                        <form action=<?=url.'?controller=producto&action=addProducto'?> method="post">
-                            <label for="producto_id_dis">Id producto</label>
-                            <input type="number" disabled id="producto_id_dis" name="producto_id_dis" value=<?= $producto->getId() ?>>
-                            <input type="hidden"  name="producto_id" value="<?=$producto->getId()?>">
-
+                        <h2>Crear Producto</h2>
+                        <form action=<?=url.'?controller=producto&action=addProducto'?> method="post" enctype="multipart/form-data">
                             <label for="nombre">Nombre producto</label>
-                            <input type="text" id="nombre" name="nombre" required value="<?=$producto->getName()?>">
+                            <input type="text" id="nombre" name="nombre" required>
 
                             <label for="imagen">Imagen </label>
                             <input type="file" id="imagen" name="imagen">
 
                             <label for="descripcion">Descripcion</label>
-                            <input type="text" id="descripcion" name="descripcion" required value="<?=$producto->getDesc()?>">
+                            <input type="text" id="descripcion" name="descripcion" required>
 
                             <label for="precio">Precio</label>
-                            <input type="double" id="precio" name="precio" required value="<?=$producto->getPrice()?>">
+                            <input type="double" id="precio" name="precio" required>
 
-                            <label for="categoria">Categoria</label>
-                            <select name="categoria" id="categoria" >
-                                <option value=<?=$categoria_producto->getCategoriaId()?> selected><?=$categoria_producto->getName()?></option>
+                            <label for="categoria_id">Categoria</label>
+                            <select name="categoria_id" id="categoria_id" >
                                 <?php foreach ($categorias as $categoria) { ?>
                                     <option value=<?=$categoria->getCategoriaId()?>><?=$categoria->getName()?></option>
                                 <?php } ?>

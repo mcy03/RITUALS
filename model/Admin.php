@@ -19,8 +19,8 @@ class Admin extends User {
     }
 */
     public static function insertUser($EMAIL, $SALUDO, $NOMBRE, $APELLIDOS, $FECHA_NACIMIENTO, $PASSWORD, $TELEFONO, $DIRECCION, $PERMISO = 0){
-        parent::insertUser($EMAIL, $SALUDO, $NOMBRE, $APELLIDOS, $FECHA_NACIMIENTO, $TELEFONO, $DIRECCION);
-        $result = Admin::registrarActividad("Insert", "User", $email);
+        parent::insertUser($EMAIL, $SALUDO, $NOMBRE, $APELLIDOS, $FECHA_NACIMIENTO, $PASSWORD, $TELEFONO, $DIRECCION);
+        $result = Admin::registrarActividad("Insert", "User", $EMAIL);
     }
 
     public static function updateUser($EMAIL, $SALUDO, $NOMBRE, $APELLIDOS, $FECHA_NACIMIENTO, $TELEFONO, $DIRECCION){
@@ -58,15 +58,14 @@ class Admin extends User {
     public static function insertPedido($user, $array_id_product, $array_cantidades){
         $conn = db::connect();
 
-        foreach ($arrayIdsProductos as $idProducto) {
-            $consulta = "SELECT * FROM productos WHERE id = :id";
+        foreach ($array_id_product as $idProducto) {
+            $consulta = "SELECT * FROM productos WHERE  PRODUCTO_ID = ?";
             $stmt = $conn->prepare($consulta);
-            $stmt->bindParam(':id', $idProducto);
+            $stmt->bind_param('i', $idProducto);
             $stmt->execute();
-        
-            if ($resultado = $stmt->fetch_object('Producto')) {
-                $array_products[] = $resultado;
-            }
+            $result=$stmt->get_result();
+
+            $array_products[] = $result->fetch_object('Producto');
         }
 
         $cantPedidos = 0;
