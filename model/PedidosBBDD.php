@@ -351,40 +351,49 @@ class PedidosBBDD{
 
     public static function updatePedido($pedido_id, $user_id, $estado, $fecha_pedido){
         $conn = db::connect();
+    
+        // Consulta para actualizar un pedido con nueva información
+        $consulta = "UPDATE pedidos SET USUARIO_ID = ?, ESTADO = ?, FECHA_PEDIDO = ? WHERE pedido_id = ?";
         
-        // Consulta para actualizar la cantidad de un pedido
-        $consulta = "UPDATE pedidos SET USUARIO_ID = ?, ESTADO = ?, FECHA_PEDIDO = ?  WHERE pedido_id = ?";
-        
+        // Preparar la consulta para la actualización
         $stmt = $conn->prepare($consulta);
         $stmt->bind_param('issi', $user_id, $estado, $fecha_pedido, $pedido_id);
-
+    
+        // Ejecutar la consulta de actualización
         if ($stmt->execute()) {
-            return true;
-        }else{
-            return false;
+            return true;// Si la ejecución es exitosa, se devuelve verdadero
+        } else {
+            return false;// Si hay algún problema al ejecutar la consulta, se devuelve falso
         }
     }
+    
 
     public static function deletePedido($pedido_id){
         $conn = db::connect();
-        // Consulta para eliminar un pedido
+    
+        // Consulta para eliminar los registros asociados al pedido en la tabla pedidos_productos
         $consultaPedidoProductos = "DELETE FROM pedidos_productos WHERE pedido_id = ?";
         $stmt = $conn->prepare($consultaPedidoProductos);
         $stmt->bind_param("i", $pedido_id);
+    
+        // Ejecutar la consulta para eliminar registros asociados al pedido en la tabla pedidos_productos
         if ($stmt->execute()) {
+            // Si se ejecuta correctamente, se establece el resultado como verdadero
             $result = true;
         }
-
-        // Consulta para eliminar un pedido
+    
+        // Consulta para eliminar el pedido en la tabla pedidos
         $consultaPedido = "DELETE FROM pedidos WHERE pedido_id = ?";
-        
         $stmt = $conn->prepare($consultaPedido);
         $stmt->bind_param("i", $pedido_id);
-        
+    
+        // Ejecutar la consulta para eliminar el pedido en la tabla pedidos
         if ($stmt->execute()) {
+            // Si se ejecuta correctamente, se devuelve verdadero
             return true;
         } else {
+            // Si hay algún problema al ejecutar la consulta, se devuelve falso
             return false;
         }
-    }
+    }    
 }

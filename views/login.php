@@ -20,7 +20,7 @@
 
         <div class="containder-fluid">
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">
                     <section class="cont cont-form-login">
                         <?php if (isset($sign)) { ?>
                             <form action=<?=url.'?controller=producto&action=sign'?> method="post">
@@ -94,26 +94,26 @@
                         
                     </section>
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="col-xl-8 col-lg-6 col-md-12 col-sm-12">
                     <section class="cont cont-ventajas">
                         <span class="ventajas-subtitle">Únete a&nbsp;My Rituals</span>
                         <h3 class="ventajas-title">Lo que consigues al hacerte miembro de My Rituals</h3>
                         <ul class="ventajas-list">
                             <li>
-                                <img src="img/verificacion.png" alt="" class="check">
+                                <img src="img/verificacion.png" alt="check ventajas" class="check">
                                 <span>Maravillosas sorpresas y regalos</span>
                             </li>
                             <li>
-                                <img src="img/verificacion.png" alt="" class="check">
+                                <img src="img/verificacion.png" alt="check ventajas" class="check">
                                 <span>Invitaciones para eventos exclusivos</span>
                             </li>
                             <li>
-                                <img src="img/verificacion.png" alt="" class="check">
+                                <img src="img/verificacion.png" alt="check ventajas" class="check">
                                 <span>Inspiración y ofertas personalizadas</span>
                             </li>
                         </ul>
                         <div class="img-cinta">
-                            <img src="img/decoracion-cinta.svg" alt="">
+                            <img src="img/decoracion-cinta.svg" alt="cinta esquina ventajas">
                         </div>
                     </section>
                 </div>

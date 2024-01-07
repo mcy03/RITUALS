@@ -32,9 +32,9 @@
 
                 <div class="promo card">
                     <h5 class="card-title">PARA MIEMBROS DE MY RITUALS</h5>
-                    <h3 class="card-title">Tu aperitivo GRATIS por comprar 2 o más productos</h3>
-                    <img src="img/imgPromo.jpg " class="card-img-top" alt="img/imgPromo.jpg">
-                    <a href="#" class="btn btn-primary">INICIA SESIÓN O  CREA UNA CUENTA</a>
+                    <h3 class="card-title">Tu aperitivo GRATIS por hacer un pedido de 25€ o mas</h3>
+                    <img src="img/imgPromo.jpg " class="card-img-top" alt="imagen promoción aperitivo">
+                    <a href="<?=url?>?controller=producto&action=login" class="btn btn-primary">INICIA SESIÓN O  CREA UNA CUENTA</a>
                     <p class="sub-promo card-text">Envíos gratis con pedidos superiores a 20€.</p>
                 </div>
             <?php foreach($productos as $a_productos){
@@ -51,7 +51,7 @@
 
                 <div class="producto card">
                     <div class="cont-img-product">
-                        <img src="<?= $a_productos->getImg() ?>" class="card-img-top" alt="<?= $a_productos->getImg() ?>">
+                        <img src="<?= $a_productos->getImg() ?>" class="card-img-top" alt="imagen producto">
                     </div>
                     <div class="card-body">
                         <h3 class="card-title"><?= $a_productos->getName() ?></h3>

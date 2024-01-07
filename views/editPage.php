@@ -103,7 +103,6 @@
 
                             <button name="update">ACTUALIZAR</button>
                         </form>
-
                     <?php } ?>
                 </section>
             </div>

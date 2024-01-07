@@ -106,8 +106,9 @@ class ProductosPedidosDAO{
     }
 
     public function calcPrice(){
-        return $this->PRECIO_UNIDAD * $this->CANTIDAD;
+        return $this->PRECIO_UNIDAD * $this->CANTIDAD; // Multiplica el precio por unidad del producto por la cantidad de productos
     }
+    
 
     public static function estaProductoPedido($id_producto){
         $conn = db::connect(); // Establece la conexión a la base de datos

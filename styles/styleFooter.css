@@ -4,9 +4,27 @@
     padding: 48px 96px 53px;
 }
 
+.redes-sociales {
+    text-align: center; /* Centra los íconos horizontalmente */
+}
+
+.redes-sociales a {
+    display: inline-block; /* Para que los íconos se comporten como bloques en línea */
+    margin: 0 10px; /* Espacio entre los íconos */
+}
+
+.redes-sociales a i {
+    color: white; /* Cambia el color de los íconos a blanco */
+    font-size: 24px; /* Tamaño de los íconos */
+}
+
+
+
 .footer-two{
     padding: 35px 116px 55px;
-    display: flex;
     position: relative;
     background-color: #1A1919;
+    color: white;
+    text-align: center;
+    font-family: "ScalaSansOT-CondRegular", sans-serif;
 }

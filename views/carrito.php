@@ -10,7 +10,7 @@
 <body class="mx-auto">
     <div class="div-body">
         <div class="back-button">
-            <img id="menor-que" src="img/menorQue.svg" alt=""> <a href=<?=url.'?controller=producto&action=carta'?> class="text-back-button">SEGUIR COMPRANDO</a>
+            <img id="menor-que" src="img/menorQue.svg" alt="icono back button"> <a href=<?=url.'?controller=producto&action=carta'?> class="text-back-button">SEGUIR COMPRANDO</a>
         </div>
         <div class="container">
             <div class="row">
@@ -52,13 +52,13 @@
                                     <hr class="separate">
                                     <div class="div-product">
                                         <div class="img-product">
-                                            <img src=<?=$pedido->getProducto()->getImg()?> class="card-img-top" alt=<?=$pedido->getProducto()->getImg()?>>
+                                            <img src=<?=$pedido->getProducto()->getImg()?> class="card-img-top" alt="imagen producto seleccionado en el carrito">
                                         </div>
                                         <form action=<?=url.'?controller=producto&action=carrito'?> method="post">
                                             <div class="info-product">
                                                 <h5 class="cat-product"><?=mb_strtoupper(Categoria::getCatNameById($pedido->getProducto()->getCat()),"UTF-8")?></h5>
                                                 <h4 class="name-product"><?=ucwords($pedido->getProducto()->getName())?></h4>
-                                                <button type="submit" name="destroy" value=<?=$pos?> class="eliminar btn btn-link"><img src="img/icon-eliminar.svg" alt="">Eliminar</button>
+                                                <button type="submit" name="destroy" value=<?=$pos?> class="eliminar btn btn-link"><img src="img/icon-eliminar.svg" alt="icono X eliminar producto carrito">Eliminar</button>
                                             </div>
                                         </form>
                                         <form action=<?=url.'?controller=producto&action=carrito'?> method="post">

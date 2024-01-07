@@ -19,15 +19,15 @@
                 <hr class="separate">
                     <section class="menu-opciones">
                         <ul>
-                            <li><a href=<?=url.'?controller=producto&action=cuenta&datosPersonales'?>><img src="img/lista-icon.png" alt="#"> Datos Personales</a></li>
-                            <li><a href=<?=url.'?controller=producto&action=cuenta&misPedidos'?>><img src="img/carrito-icon-black.png" alt="#"> Mis Pedidos</a></li>
+                            <li><a href=<?=url.'?controller=producto&action=cuenta&datosPersonales'?>><img src="img/lista-icon.png" alt="icono datos personales usuario"> Datos Personales</a></li>
+                            <li><a href=<?=url.'?controller=producto&action=cuenta&misPedidos'?>><img src="img/carrito-icon-black.png" alt="icono pedidos usuario"> Mis Pedidos</a></li>
                             <?php if($user->getPermiso() != 0){ ?>
                                 <li>> Admin</li>
-                                <li><a href=<?=url.'?controller=producto&action=cuenta&pedidos'?>><img src="img/gestionPedidos.png" alt="#"> Gestionar Pedidos</a></li>
-                                <li><a href=<?=url.'?controller=producto&action=cuenta&usuarios'?>><img src="img/users.png" alt="#"> Gestionar Usuarios</a></li>
-                                <li><a href=<?=url.'?controller=producto&action=cuenta&productos'?>><img src="img/productos.png" alt="#"> Gestionar Productos</a></li>
+                                <li><a href=<?=url.'?controller=producto&action=cuenta&pedidos'?>><img src="img/gestionPedidos.png" alt="icono gestión de pedidos"> Gestionar Pedidos</a></li>
+                                <li><a href=<?=url.'?controller=producto&action=cuenta&usuarios'?>><img src="img/users.png" alt="icono gestion de usuarios"> Gestionar Usuarios</a></li>
+                                <li><a href=<?=url.'?controller=producto&action=cuenta&productos'?>><img src="img/productos.png" alt="icono gestion productos"> Gestionar Productos</a></li>
                             <?php } ?>
-                            <li><a href=<?=url.'?controller=producto&action=cerrar'?>><img src="img/salida.png" alt="#"> Cerrar Sessión</a></li>
+                            <li><a href=<?=url.'?controller=producto&action=cerrar'?>><img src="img/salida.png" alt="icono cerrar sesiñon"> Cerrar Sesión</a></li>
                         </ul>
                     </section>
                     <hr class="separate">
@@ -37,7 +37,7 @@
                     <?php if (isset($_GET["account"])) { ?>
                         <section class="data-user">
                             <div class="subtitle">
-                                <img class="user-img" src="img/user-icon-black.png" alt=""><h2>MY RITUALS</h2>
+                                <img class="user-img" src="img/user-icon-black.png" alt="inono de cuenta de usuario"><h2>MY RITUALS</h2>
                             </div>
                             <div class="member-card">
                                 <div class="info-card">
@@ -53,7 +53,7 @@
                                     <div class="col-12 col-sm-12 col-md-8 col-lg-6">
                                         <div class="detalles-personales">
                                             <div class="subtitle">
-                                                <img class="user-img" src="img/lista-icon.png" alt=""><h2>DETALLES PERSONALES</h2>
+                                                <img class="user-img" src="img/lista-icon.png" alt="icono detalles usuario"><h2>DETALLES PERSONALES</h2>
                                             </div>
                                             <div class="info-extra-content">
                                                 <p><?= $user->getName()." ".$user->getApellidos() ?></p>
@@ -65,7 +65,7 @@
                                     <div class="col-12 col-sm-12 col-md-8 col-lg-6">
                                         <div class="direccion-envio">
                                             <div class="subtitle">
-                                                <img class="user-img" src="img/ubicacion.png" alt=""><h2>DIRECCIÓN DE FACTURACIÓN</h2>
+                                                <img class="user-img" src="img/ubicacion.png" alt="icono direccion usuario"><h2>DIRECCIÓN DE FACTURACIÓN</h2>
                                             </div>
                                             <div class="info-extra-content">
                                                 <?php if ($user->getDir() != NULL) { ?>
@@ -83,7 +83,7 @@
                     <?php }elseif(isset($_GET["datosPersonales"])) {  ?>
                         <section class="datosPersonalesSection">
                             <div class="subtitle datosPersonales">
-                                <h2><img src="img/lista-icon.png" alt="#">Datos Personales</h2>
+                                <h2><img src="img/lista-icon.png" alt="icono datos personales usuario">Datos Personales</h2>
                             </div>
                             <form class="form-info-user" action=<?=url.'?controller=producto&action=updateUser'?> method="post">
                                 <label for="email">Dirección de correo electrónico</label>
@@ -122,6 +122,7 @@
                                 <?php if($_GET["datosPersonales"] == "error"){  ?>
                                     <p class="pwd_error">Contraseña incorrecta</p>
                                 <?php } ?>
+                                
                                 <label for="telefono">Telefono</label>
                                 <br>
                                 <input class="input-text" name="telefono" type="tel" required value="<?= $user->getPhone() ?>">
@@ -138,7 +139,7 @@
                     <?php }elseif(isset($_GET["misPedidos"])) {  ?>
                             <section class="pedidosUser">
                                 <div class="subtitle">
-                                    <h2><img src="img/carrito-icon-black.png" alt="#"> HISTORIAL DE PEDIDOS</h2>
+                                    <h2><img src="img/carrito-icon-black.png" alt="icono pedidos usuario"> HISTORIAL DE PEDIDOS</h2>
                                 </div>
                                 <?php if(!isset($_POST["pedido_id"])) {  ?>
                                     <?php if ($hayPedidos) { ?>
@@ -181,7 +182,7 @@
                                         <?php foreach ($productosPedido as $productos) { ?>
                                             <?php $producto = Producto::getProductById($productos->getProductoId())?>
                                             <tr>
-                                                <td class="td-img"><img class="img-product" src="<?= $producto->getImg() ?>" alt=""></td>
+                                                <td class="td-img"><img class="img-product" src="<?= $producto->getImg() ?>" alt="imagen de producto del pedido"></td>
                                                 <td><?= $producto->getName() ?></td>
                                                 <td><?= $productos->getCantidad() ?></td>
                                                 <td><?= $productos->calcPrice() ?> €</td>
@@ -208,7 +209,7 @@
                             <section class="gestionPedidos">
                                 <div class="subtitle">
                                     <div class="titulo">
-                                        <h2><img src="img/gestionPedidos.png" alt="#"> GESTIONAR PEDIDOS</h2>
+                                        <h2><img src="img/gestionPedidos.png" alt="icono gestiñon de pedidos"> GESTIONAR PEDIDOS</h2>
                                     </div>
                                     
                                     <div class="cont-añadir">
@@ -255,7 +256,7 @@
                             <section class="gestionUsuarios">
                                 <div class="subtitle">
                                     <div class="titulo">
-                                        <h2><img src="img/users.png" alt="#"> GESTIONAR USUARIOS</h2>
+                                        <h2><img src="img/users.png" alt="icono gestiñon de usuarios"> GESTIONAR USUARIOS</h2>
                                     </div>
                                     
                                     <div class="cont-añadir">
@@ -301,7 +302,7 @@
                             <section class="gestionProductos">
                                 <div class="subtitle">
                                     <div class="titulo">
-                                        <h2><img src="img/productos.png" alt="#"> GESTIONAR PRODUCTOS</h2>
+                                        <h2><img src="img/productos.png" alt="icono gestiñon de productos"> GESTIONAR PRODUCTOS</h2>
                                     </div>
                                     
                                     <div class="cont-añadir">
@@ -326,7 +327,7 @@
                                     <?php foreach (array_reverse($todos_productos) as $all_products) { ?>
                                         <tr>
                                             <td><?= $all_products->getId() ?></td>
-                                            <td><img src="<?= $all_products->getImg() ?>" alt=""></td>
+                                            <td><img src="<?= $all_products->getImg() ?>" alt="imagen del produto"></td>
                                             <td><?= $all_products->getName() ?></td>
                                             <td><?= $all_products->getPrice() ?> €</td>
                                             <form action=<?=url.'?controller=producto&action=accionProducto'?> method="post">

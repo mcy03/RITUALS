@@ -13,7 +13,7 @@
             <nav id="nav" class="nav-header nav navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-nav container-fluid align-items-baseline">
                     <a class="navbar-brand" href="index.php">
-                        <img class="logo-name" src="img/logoNameRituals.svg" alt="">
+                        <img class="logo-name" src="img/logoNameRituals.svg" alt="Logo svg texto RITUALS...">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -30,16 +30,16 @@
                         
 
                         <form class="form-search d-flex align-items-baseline" role="search">
-                            <button class="btn-lupa btn" type="submit"><img class="img-lupa" src="img/lupa.png" alt=""></button>
-                            <img class="separe-search" src="img/menos.png" alt="">
+                            <button class="btn-lupa btn" type="submit"><img class="img-lupa" src="img/lupa.png" alt="icono lupa busqueda"></button>
+                            <img class="separe-search" src="img/menos.png" alt="separador del buscador">
                             <input class="input-search" type="search" placeholder="Estoy buscando..." aria-label="Search">
                         </form>
 
                         <a href=<?=url.'?controller=producto&action=login'?> class="btn-user btn d-flex align-items-baseline">
-                            <img class="user-img" src="img/user-icon.png" alt="">
+                            <img class="user-img" src="img/user-icon.png" alt="icono cuenta usuario">
                         </a>
                         <a href=<?=url.'?controller=producto&action=carrito'?> class="btn-carrito-icon btn">
-                            <img class="carrito-img" src="img/carrito-img.png" alt="">
+                            <img class="carrito-img" src="img/carrito-img.png" alt="icono carrito">
                             <div class="container-cont-command">
                                 <p class="cont-command"><?=count($_SESSION['selecciones'])?></p>
                             </div>

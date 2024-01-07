@@ -77,50 +77,65 @@
         }
 
         public static function getUsers(){
-            $conn = db::connect();
-
-            $consulta = "SELECT * FROM usuarios WHERE PERMISO = 0";
+            $conn = db::connect(); // Establecer conexión a la base de datos
+        
+            $consulta = "SELECT * FROM usuarios WHERE PERMISO = 0"; // Consulta para obtener usuarios con permiso igual a 0 (usuarios normales)
             $arrayUsers = array();
+        
+            // Ejecutar la consulta y obtener resultados para usuarios normales
             if ($resultado = $conn->query($consulta)) {
-                /* obtener el array de objetos */
+                // Obtener el array de objetos para usuarios normales
                 while ($obj = $resultado->fetch_object('User')) {
                     $arrayUsers []= $obj;
                 }
-            
-                /* liberar el conjunto de resultados */
-                $resultado->close();
                 
+                // Liberar el conjunto de resultados
+                $resultado->close();
             }
-
+        
+            // Consulta para obtener usuarios con permiso diferente de 0 (usuarios administradores)
             $consulta = "SELECT * FROM usuarios WHERE PERMISO != 0";
             $arrayAdmin = array();
+        
+            // Ejecutar la consulta y obtener resultados para usuarios administradores
             if ($resultado = $conn->query($consulta)) {
-                /* obtener el array de objetos */
+                // Obtener el array de objetos para usuarios administradores
                 while ($obj = $resultado->fetch_object('Admin')) {
                     $arrayAdmin []= $obj;
                 }
-            
-                /* liberar el conjunto de resultados */
-                $resultado->close();
                 
+                // Liberar el conjunto de resultados
+                $resultado->close();
             }
+        
+            // Combinar los arrays de usuarios normales y administradores
             $arrayFinal = array_merge($arrayUsers, $arrayAdmin);
+        
+            // Devolver el array combinado de usuarios
             return $arrayFinal;
         }
+        
         public static function getUserById($id){
-            $conn = db::connect();
+            $conn = db::connect(); // Establecer conexión a la base de datos
+        
+            // Preparar y ejecutar consulta para obtener un usuario por su ID
             $stmt = $conn->prepare("SELECT * FROM usuarios WHERE USUARIO_ID = ?");
             $stmt->bind_param("i", $id);
-            
             $stmt->execute();
-            $result=$stmt->get_result();
-            $conn->close();
-
-            $user = $result->fetch_object('User');
+        
+            $result = $stmt->get_result(); // Obtener el resultado de la consulta
+        
+            $conn->close(); // Cerrar la conexión a la base de datos
+        
+            $user = $result->fetch_object('User'); // Obtener el objeto de usuario
+        
+            // Verificar si el usuario es un administrador (permiso diferente de 0)
             if ($user->getPermiso() != 0) {
+                // Crear un objeto de tipo Admin y copiar los datos del usuario a Admin
                 $admin = new Admin();
                 $admin->setId($user->getId());             
                 $admin->setPass($user->getPass());
+                $admin->setPermiso($user->getPermiso());
                 $admin->setName($user->getName());
                 $admin->setApellidos($user->getApellidos());
                 $admin->setPhone($user->getPhone());
@@ -128,61 +143,81 @@
                 $admin->setDir($user->getDir());
                 $admin->setEmail($user->getEmail());
                 $admin->setPermiso($user->getPermiso());
-
-                return $admin;
+        
+                
+                return $admin; // Devolver el objeto de administrador
             }
-            return $user;
+           
+            return $user; // Si el usuario no es administrador, devolver el objeto de usuario normal
         }
+        
         public static function getUserByEmail($email){
+            // Establecer conexión a la base de datos y ejecutar la primera consulta
             $conn = db::connect();
-            
             $stmt = $conn->prepare("SELECT * FROM usuarios WHERE EMAIL = ?");
             $stmt->bind_param("s", $email);
-            
             $stmt->execute();
-            $result=$stmt->get_result();
+            $result = $stmt->get_result();
+        
+            // Cerrar la primera conexión
             $conn->close();
+        
+            // Obtener el objeto de usuario a partir del primer resultado
             $user = $result->fetch_object('User');
-
-            if ($user->getPermiso() != 0) {
-                $admin = new Admin();
-                $admin->setId($user->getId());             
-                $admin->setPass($user->getPass());
-                $admin->setName($user->getName());
-                $admin->setApellidos($user->getApellidos());
-                $admin->setPhone($user->getPhone());
-                $admin->setFechaNacimiento($user->getFechaNacimiento());
-                $admin->setDir($user->getDir());
-                $admin->setEmail($user->getEmail());
-                $admin->setPermiso($user->getPermiso());
-
-                return $admin;
+        
+            // Establecer una nueva conexión para la segunda consulta
+            $conn = db::connect();
+            $stmt = $conn->prepare("SELECT * FROM usuarios WHERE EMAIL = ?");
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+        
+            // Cerrar la segunda conexión
+            $conn->close();
+        
+            // Verificar el permiso del usuario y obtener el objeto correcto (User o Admin)
+            if ($user->getPermiso() == 0) {
+                // Si el usuario es normal, obtener el objeto de usuario
+                $user = $result->fetch_object('User');
+            } else {
+                // Si el usuario es administrador, obtener el objeto de administrador
+                $user = $result->fetch_object('Admin');
             }
+        
+            // Devolver el objeto de usuario
             return $user;
-        }
+        }        
 
         public static function insertUser($EMAIL, $SALUDO, $NOMBRE, $APELLIDOS, $FECHA_NACIMIENTO, $PASSWORD, $TELEFONO, $DIRECCION, $PERMISO = 0){
-            $conn = db::connect();
+            $hash = password_hash($PASSWORD, PASSWORD_DEFAULT); // Encriptar la contraseña
             
-            $stmt = $conn->prepare("INSERT INTO usuarios (EMAIL, SALUDO, NOMBRE, APELLIDOS, FECHA_NACIMIENTO, PASSWORD, TELEFONO, DIRECCION, PERMISO) VALUES ('$EMAIL', '$SALUDO', '$NOMBRE', '$APELLIDOS', '$FECHA_NACIMIENTO', '$PASSWORD', '$TELEFONO', '$DIRECCION', $PERMISO)");
-            
-            //ejecutamos consulta
-            $stmt->execute();
-            $result=$stmt->get_result();
-
-            $conn->close();
-            return $result;
+            $conn = db::connect(); // Establecer conexión a la base de datos
+        
+            // Preparar la consulta de inserción de usuario con parámetros seguros
+            $stmt = $conn->prepare("INSERT INTO usuarios (EMAIL, SALUDO, NOMBRE, APELLIDOS, FECHA_NACIMIENTO, PASSWORD, TELEFONO, DIRECCION, PERMISO) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        
+            // Vincular parámetros a la consulta preparada
+            $stmt->bind_param("ssssssssi", $EMAIL, $SALUDO, $NOMBRE, $APELLIDOS, $FECHA_NACIMIENTO, $hash, $TELEFONO, $DIRECCION, $PERMISO);
+        
+            $stmt->execute(); // Ejecutar la consulta
+            $result = $stmt->get_result();// Obtener el resultado de la ejecución (puede no ser necesario)
+            $conn->close(); // Cerrar la conexión a la base de datos
+    
+            return $result; // Devolver el resultado de la ejecución de la consulta 
         }
+        
 
         public static function updateUser($EMAIL, $SALUDO, $NOMBRE, $APELLIDOS, $FECHA_NACIMIENTO, $TELEFONO, $DIRECCION){
-            $conn = db::connect();
-
-            $stmt = $conn->prepare("UPDATE USUARIOS SET SALUDO = '$SALUDO', NOMBRE = '$NOMBRE', APELLIDOS = '$APELLIDOS', FECHA_NACIMIENTO = '$FECHA_NACIMIENTO', TELEFONO = '$TELEFONO', DIRECCION = '$DIRECCION' WHERE EMAIL = '$EMAIL'");
-
-            //ejecutamos consulta
-            $stmt->execute();
-            $conn->close();
-        }
-    }
-    
+            $conn = db::connect(); // Establecer conexión a la base de datos
+        
+            // Preparar la consulta de actualización de usuario
+            $stmt = $conn->prepare("UPDATE USUARIOS SET SALUDO = ?, NOMBRE = ?, APELLIDOS = ?, FECHA_NACIMIENTO = ?, TELEFONO = ?, DIRECCION = ? WHERE EMAIL = ?");
+        
+            // Vincular parámetros a la consulta preparada
+            $stmt->bind_param("sssssss", $SALUDO, $NOMBRE, $APELLIDOS, $FECHA_NACIMIENTO, $TELEFONO, $DIRECCION, $EMAIL);
+        
+            $stmt->execute();// Ejecutar la consulta
+            $conn->close(); // Cerrar la conexión a la base de datos
+        }  
+    }      
 ?>
