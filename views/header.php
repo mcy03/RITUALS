@@ -23,9 +23,6 @@
                             <li class="nav-item">
                                 <a id="nav-link" class="nav-link" href="<?=url?>?controller=producto&action=carta">Carta</a>
                             </li>
-                            <li class="nav-item">
-                                <a id="nav-link" class="nav-link" aria-current="page" href="<?=url?>?controller=producto&action=carrito">Carrito <?=count($_SESSION['selecciones'])?></a>
-                            </li>
                         </ul>
                         
 
