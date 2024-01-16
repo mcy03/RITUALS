@@ -1,0 +1,169 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #efedea;
+}
+.contenido{
+    padding: 45px 70px;
+}
+
+
+.cont{
+    font-family: "ScalaSansOT-CondRegular", sans-serif;
+    font-size: 14px;
+    background-color: #ffffff;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+.title{
+    margin-bottom: 40px;
+}
+h2{
+    font-family: 'ClassicalGaramondBT-Roman';
+    font-size: 30px;
+}
+.user-resena {
+    padding: 20px 0;
+}
+.img-user{
+    width: 50px;
+    margin-right: 10px;
+}
+input#nombre_dis {
+    width: 20%;
+    background-color: #fff;
+    border: 0px;
+    font-size: 18px;
+}
+.form-resena{
+    margin-left: 65px;
+}
+textarea#comentario{
+    width: 100%;
+    max-height: 100px;
+    padding: 20px;
+}
+
+/* --------------- estrellas ---------------------*/
+.valoracion{
+    display: flex;
+    justify-content: left;
+}
+
+.clasificacion{
+    margin-left: 20px;
+}
+
+.container-inputs{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cont-id-pedido{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.label-id-pedido{
+    margin-right: 20px;
+}
+
+select#pedido {
+    height: fit-content;
+    width: max-content;
+}
+
+
+input[type="radio"] {
+    display: none;
+}
+  
+.label-estrella {
+    color: grey;
+}
+  
+.clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+  
+.label-estrella:hover,
+.label-estrella:hover ~ .label-estrella {
+    color: orange;
+}
+  
+input[type="radio"]:checked ~ .label-estrella {
+    color: orange;
+}
+
+/*---------------------------------------------*/
+
+  
+
+form button, .modal .btn-confirmar{
+    margin-top: 40px;
+    width: 30%;
+    border-radius: 0;
+    background-color: #1a1919;
+    border: 1px solid #1a1919;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-style: normal;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .2s ease-in-out;
+}
+
+form button:hover, .modal .btn-confirmar:hover{
+    background-color: #fff;
+    border: 1px solid #1a1919;
+    color: #1a1919;
+    width: 30%;
+    display: inline-block;
+    font-size: 12px;
+    font-style: normal;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .2s ease-in-out;
+}
+
+textarea{
+    width: 100%;
+    padding: 20px;
+}
+
+table{
+    width: 100%;
+}
+
+.td_resenas_icon{
+    padding-right: 30px;
+    width: 5%;
+}
+
+.td_resenas_comentario{
+    text-align: start;
+    height: 100px;
+    margin-bottom: 40px;
+}
+
+.tr_space{
+    height: 50px;
+}
+
+
+
+.td_resenas_estrellas{
+    padding-bottom: 20px;
+}
+

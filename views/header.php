@@ -23,6 +23,9 @@
                             <li class="nav-item">
                                 <a id="nav-link" class="nav-link" href="<?=url?>?controller=producto&action=carta">Carta</a>
                             </li>
+                            <li class="nav-item">
+                                <a id="nav-link" class="nav-link" href="<?=url?>?controller=producto&action=valoraciones">Valoraciones</a>
+                            </li>
                         </ul>
                         
 

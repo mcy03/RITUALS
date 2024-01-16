@@ -657,4 +657,26 @@ class productoController{
     
         header("Location:".url.'?controller=producto&action=cuenta&productos&insertado'); // Redirecciona a la página de cuenta de productos con un mensaje de inserción exitosa
     }    
+
+    public static function valoraciones(){
+        session_start(); // Inicia la sesión
+        
+        if(isset($_SESSION['user'])){ // Verifica si hay un usuario en sesión
+            $user = $_SESSION['user'];
+            if(PedidosBBDD::tienePedidosUser($user->getId())){
+                $pedidosUser = PedidosBBDD::getPedidosByUser($user->getId());
+            }
+
+            
+            // Incluye los archivos de la cabecera, la página de creación y el pie de página
+            include_once 'views/header.php';
+            include_once 'views/valoraciones.php';
+            include_once 'views/footer.php';
+        }else {
+            header("Location:".url.'?controller=producto&action=login');
+        }
+
+        
+    }    
 }
+
