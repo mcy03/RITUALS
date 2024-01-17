@@ -20,7 +20,7 @@
                     <h2>Deja tu reseña sobre nosotros</h2>
                 </div>
                 <div class="resena">
-                <form id="formularioValoracion">
+                    <form id="formularioValoracion">
                         <div class="user-resena">
                             <img class="img-user" src="./img/user-icon-black.png" alt="">
                             <input type="text" disabled id="nombre_dis" value="<?= $user->getName() ?> <?= $user->getApellidos() ?>">
@@ -56,9 +56,9 @@
                             </div>
                             <textarea name="resena" id="comentario" cols="100" rows="10" required placeholder="Cuéntale a otros usuarios tu experiencia en nuestra página..." data-bs-toggle="tooltip" title="valoración del pedido"></textarea>
 
-                            <button type="submit" data-bs-target="#staticBackdrop" data-bs-toggle="modal">Enviar Valoración</button>
+                            <button type="submit">Enviar Valoración</button>
                         </div>
-                        </form>
+                    </form>
                 </div>
             </section>
             <section class="col-12 col-sm-12 col-md-10 col-lg-10 cont">
@@ -72,23 +72,16 @@
             </section>
         </div>
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            ...
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Understood</button>
-        </div>
-        </div>
+
+    <div class="contbuttonprueba">
+        <form id="formularioValoracion">
+            
+            <button type="submit" id="button-api" >api</button>
+        </form>
     </div>
+
+    <div class="contApi">
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

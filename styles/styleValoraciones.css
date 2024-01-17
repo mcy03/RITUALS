@@ -101,7 +101,7 @@ input[type="radio"]:checked ~ .label-estrella {
 
   
 
-form button, .modal .btn-confirmar{
+form button, .modal .btn-confirmar, .button-api{
     margin-top: 40px;
     width: 30%;
     border-radius: 0;
@@ -120,7 +120,7 @@ form button, .modal .btn-confirmar{
     transition: .2s ease-in-out;
 }
 
-form button:hover, .modal .btn-confirmar:hover{
+form button:hover, .modal .btn-confirmar:hover, .button-api:hover{
     background-color: #fff;
     border: 1px solid #1a1919;
     color: #1a1919;

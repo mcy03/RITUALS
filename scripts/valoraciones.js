@@ -1,3 +1,25 @@
+document.addEventListener("DOMContentLoaded", function() {
+    insertarApi();
+});
+
+function insertarApi() {
+    const contenedor = document.getElementById('contApi');
+    let accion = "buscar_todo";
+    fetch("https://testcaler.com/testCaler/RITUALS/?controller=ApiResena&action=api", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            accion: accion,
+        }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Respuesta de la API: ", data);
+    })
+    .catch(error => console.error("Error en la solicitud: ", error));
+}
 
 
 const datosResenas = [
@@ -10,8 +32,10 @@ const reverseDatosResenas = datosResenas.reverse();
 crearTablaResenas(reverseDatosResenas);
 
 let formulario = document.getElementById("formularioValoracion");
-formulario.addEventListener("submit", comprobarDatos);
+formulario.addEventListener("submit", inertResena);
 formulario.addEventListener("submit", resetEstrellas);
+
+
 
 // Función para crear las estrellas
 function crearEstrellas(puntuacion, id) {
@@ -103,7 +127,7 @@ function crearTablaResenas(data) {
     });
 }
 
-function comprobarDatos(event) {
+function inertResena(event) {
     event.preventDefault();
     const pedido = document.getElementById('pedido').value;
     if (pedido == "undefined") {
@@ -157,106 +181,4 @@ function resetEstrellas(event) {
         }
         
     }
-}
-
-function modal(mensaje){
-    resetModal();
-    switch (mensaje) {
-        case "errorId":
-            modalErrorId();
-            break;
-        case "confirmarResena":
-            modalConfResena();
-            botonesConfCanc();
-            break;
-        default:
-            break;
-    }
-
-}
-
-function resetModal(){
-    var containerHead = document.getElementsByClassName("modal-header")[0];
-    var containerBody = document.getElementsByClassName("modal-body")[0];
-    var containerFooter = document.getElementsByClassName("modal-footer")[0];
-
-    containerHead.textContent = "";
-    containerBody.textContent = "";
-    containerFooter.textContent = "";
-}
-
-function modalErrorId(){
-    // Crea elementos y agrega clases y atributos
-    var h5 = document.createElement("h5");
-    h5.className = "modal-title";
-    h5.textContent = "Error!";
-
-    var closeButton = document.createElement("button");
-    closeButton.type = "button";
-    closeButton.className = "btn-close";
-    closeButton.setAttribute("data-bs-dismiss", "modal");
-    closeButton.setAttribute("aria-label", "Close");
-
-    // Contenedor para los elementos creados
-    var containerHead = document.getElementsByClassName("modal-header")[0];
-
-    // Agrega los elementos al contenedor
-    containerHead.appendChild(h5);
-    containerHead.appendChild(closeButton);
-
-    var p = document.createElement("p");
-    p.textContent = "Seleccione un pedido por favor";
-
-    var containerBody = document.getElementsByClassName("modal-body")[0];
-    containerBody.appendChild(p);
-}
-
-function modalConfResena(){
-    var h5 = document.createElement("h5");
-    h5.className = "modal-title";
-    h5.textContent = "Confirmar reseña";
-
-    var closeButton = document.createElement("button");
-    closeButton.type = "button";
-    closeButton.className = "btn-close";
-    closeButton.setAttribute("data-bs-dismiss", "modal");
-    closeButton.setAttribute("aria-label", "Close");
-
-    var containerHead = document.getElementsByClassName("modal-header")[0];
-
-    containerHead.appendChild(h5);
-    containerHead.appendChild(closeButton);
-
-    var p = document.createElement("p");
-    const comentario = document.getElementById('comentario').value;
-    p.textContent = comentario;
-
-    var containerBody = document.getElementsByClassName("modal-body")[0];
-    containerBody.appendChild(p);
-}
-
-
-function botonesConfCanc() {
-    var botonCerrar = document.createElement("button");
-    botonCerrar.type = "button";
-    botonCerrar.className = "btn btn-cancelar";
-    botonCerrar.setAttribute("data-bs-dismiss", "modal");
-    botonCerrar.textContent = "Cancelar";
-    botonCerrar.addEventListener("click", cancelarSubmit);
-
-    var botonConfirmar = document.createElement("button");
-    botonConfirmar.type = "button";
-    botonConfirmar.className = "btn btn-confirmar";
-    botonConfirmar.textContent = "Confirmar";
-    //botonConfirmar.addEventListener("click", realizarAccion);
-
-    var contenedorFooter = document.getElementsByClassName("modal-footer")[0];
-
-    contenedorFooter.appendChild(botonCerrar);
-    contenedorFooter.appendChild(botonConfirmar);
-}
-
-
-function cancelarSubmit(e) {
-    
 }

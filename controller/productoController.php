@@ -5,12 +5,13 @@ include_once("model/Pedido.php");
 include_once("model/User.php");
 include_once("model/PedidosBBDD.php");
 include_once("model/ProductosPedidosDAO.php");
+include_once("model/ResenaDAO.php");
 include_once("utils/CalculadoraPrecios.php");
 include_once 'config/parameters.php';
 class productoController{
     public function index(){
         session_start(); // Inicia la sesión
-    
+        
         // Verifica si no existe la variable de sesión 'selecciones' y la inicializa como un array vacío si es así
         if (!isset($_SESSION['selecciones'])) {
             $_SESSION['selecciones'] = array();

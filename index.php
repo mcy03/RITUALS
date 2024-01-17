@@ -1,6 +1,7 @@
 <?php
 
 include_once 'controller/productoController.php';
+include_once 'controller/ApiResenaController.php';
 include_once 'config/parameters.php';
 
 if (!isset($_GET['controller'])) {
