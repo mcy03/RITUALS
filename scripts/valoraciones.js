@@ -1,24 +1,25 @@
-document.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("load", function() {
     insertarApi();
 });
+
 
 function insertarApi() {
     const contenedor = document.getElementById('contApi');
     let accion = "buscar_todo";
+
     fetch("https://testcaler.com/testCaler/RITUALS/?controller=ApiResena&action=api", {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
         body: JSON.stringify({
-            accion: accion,
+            accion: "buscar_todo"
         }),
+        headers: {
+            'content-type': 'application/json; charset=UTF-8',
+        },
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log("Respuesta de la API: ", data);
-    })
-    .catch(error => console.error("Error en la solicitud: ", error));
+    .then( data => data.json())
+    .then( resultado => console.log(resultado) )
+    .catch(error => console.error("Error en la solicitud:", error));
+
 }
 
 

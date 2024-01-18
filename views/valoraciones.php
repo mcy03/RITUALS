@@ -74,13 +74,14 @@
     </div>
 
     <div class="contbuttonprueba">
-        <form id="formularioValoracion">
+        <form id="formularioValoracion" action="https://testcaler.com/testCaler/RITUALS/?controller=ApiResena&action=api" method="POST">
+            <input type="hidden" name="accion" value="buscar_todo">
             
             <button type="submit" id="button-api" >api</button>
         </form>
     </div>
 
-    <div class="contApi">
+    <div id="miContenedor">
 
     </div>
 

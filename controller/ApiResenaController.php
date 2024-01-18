@@ -6,8 +6,9 @@ class ApiResenaController{
         echo "estas en la api";
     }
     public function api(){
-       
-        if($_POST["accion"] == 'buscar_todo'){   
+        $accion = isset($_POST["accion"]) ? $_POST["accion"] : '';
+
+        if($accion == 'buscar_todo'){   
             $resenas = ResenaDAO::getResenas();
             $array_resenas = [];
             foreach ($resenas as $resena) {
@@ -22,7 +23,8 @@ class ApiResenaController{
             }
             echo json_encode($array_resenas, JSON_UNESCAPED_UNICODE);
             return $array_resenas;
-        }else if($_POST["accion"] == 'buscar_resena'){
+            
+        }else if($accion == 'buscar_resena'){
             $resena_id = json_decode($_POST["RESENA_ID"]); //se decodifican los datos JSON que se reciben desde JS
             
             $resena = ResenaDAO::getResenaById($resena_id);
@@ -38,7 +40,7 @@ class ApiResenaController{
             echo json_encode($array_resenas, JSON_UNESCAPED_UNICODE); 
             return $array_resenas; //return para salir de la funcion
 
-        }else if($_POST["accion"] == 'add_review'){ 
+        }else if($accion == 'add_review'){ 
             $PEDIDO_ID = json_decode($_POST["PEDIDO_ID"]);
             $ASUNTO = json_decode($_POST["ASUNTO"]);
             $COMENTARIO = json_decode($_POST["COMENTARIO"]);
