@@ -7,9 +7,14 @@ class ApiResenaController{
     }
     public function api(){
         $accion = isset($_POST["accion"]) ? $_POST["accion"] : '';
+ 
+       //print_r($_POST);
+        if(trim($accion) == "buscar_todo"){  
 
-        if($accion == 'buscar_todo'){   
+           //header('Content-Type: application/json; charset=UTF-8');
+            
             $resenas = ResenaDAO::getResenas();
+           
             $array_resenas = [];
             foreach ($resenas as $resena) {
                 $array_resenas[] = array(
@@ -18,12 +23,12 @@ class ApiResenaController{
                     "ASUNTO" => $resena->getAsunto(),
                     "COMENTARIO" => $resena->getComentario(),
                     "FECHA_RESENA" => $resena->getFechaResena(),
-                    "VALORACION" => $resena->getValoracion(),
+                    "VALORACION" => $resena->getValoracion()
                 );
             }
+            echo trim($accion) == "buscar_todo";
             echo json_encode($array_resenas, JSON_UNESCAPED_UNICODE);
-            return $array_resenas;
-            
+            return;
         }else if($accion == 'buscar_resena'){
             $resena_id = json_decode($_POST["RESENA_ID"]); //se decodifican los datos JSON que se reciben desde JS
             
@@ -35,7 +40,7 @@ class ApiResenaController{
                     "ASUNTO" => $resena->getAsunto(),
                     "COMENTARIO" => $resena->getComentario(),
                     "FECHA_RESENA" => $resena->getFechaResena(),
-                    "VALORACION" => $resena->getValoracion(),
+                    "VALORACION" => $resena->getValoracion()
                 );
             echo json_encode($array_resenas, JSON_UNESCAPED_UNICODE); 
             return $array_resenas; //return para salir de la funcion
@@ -49,7 +54,6 @@ class ApiResenaController{
 
             //ResenaDAO::insertResena(52, "asunto", "comentario", "2023/03/02", 3);
             $return = ResenaDAO::insertResena($PEDIDO_ID, $ASUNTO, $COMENTARIO, $FECHA_RESENA, $VALORACION);
-
             echo "insert correcto";
             return;
         }

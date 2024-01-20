@@ -1,25 +1,29 @@
+let resenas;
+
 window.addEventListener("load", function() {
     insertarApi();
 });
 
 
-function insertarApi() {
+async function insertarApi() {
     const contenedor = document.getElementById('contApi');
-    let accion = "buscar_todo";
-
+    
     fetch("https://testcaler.com/testCaler/RITUALS/?controller=ApiResena&action=api", {
         method: 'POST',
-        body: JSON.stringify({
-            accion: "buscar_todo"
-        }),
         headers: {
-            'content-type': 'application/json; charset=UTF-8',
+            'Content-Type' : 'application/json; charset=utf-8',
         },
+        body: JSON.stringify({
+            accion: "buscar_todo",
+        }),
     })
-    .then( data => data.json())
+    .then(  data => {
+        console.log(data);
+        return data.json();
+    })
     .then( resultado => console.log(resultado) )
-    .catch(error => console.error("Error en la solicitud:", error));
-
+    .catch(e=>console.log(e))
+    
 }
 
 
@@ -138,6 +142,7 @@ function inertResena(event) {
         let puntuacion = 0;
         let b_checked = false;
         let radios = document.getElementsByName('estrellas');
+
         for (var i = 0; i < radios.length; i++) {
             if (radios[i].checked) {
                 puntuacion = i;
@@ -145,6 +150,7 @@ function inertResena(event) {
                 break;
             }
         }
+
         if (puntuacion == 0 && b_checked) {
             puntuacion = 5;
         }else if(puntuacion > 0 && puntuacion < 5){
