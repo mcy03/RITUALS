@@ -35,6 +35,11 @@ input#nombre_dis {
     border: 0px;
     font-size: 18px;
 }
+#input-asunto{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 5px 20px;
+}
 .form-resena{
     margin-left: 65px;
 }

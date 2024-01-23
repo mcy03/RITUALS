@@ -46,9 +46,76 @@
             $this->VALORACION = $VALORACION;
         }
 
+        public function getUser(){
+            $pedido = $this->getPedidoId();
+            $conn = db::connect(); // Establece la conexión a la base de datos
+            $stmt = $conn->prepare("SELECT USUARIO_ID FROM pedidos WHERE PEDIDO_ID = ?"); // Consulta para seleccionar todas las reseñas
+        
+            if ($stmt) {
+                $stmt->bind_param("i", $pedido); // Vincula el parámetro $id_user a la consulta SQL de manera segura
+                $stmt->execute(); // Ejecuta la consulta
+                
+                $result = $stmt->get_result(); // Obtiene el conjunto de resultados
+                $user = $result->fetch_assoc(); // Obtiene la email de pedidos
+                
+                $stmt->close(); // Cierra la sentencia preparada
+                $conn->close(); // Cierra la conexión a la base de datos
+                
+                return $user['USUARIO_ID']; // Retorna la cantidad de pedidos asociados al usuario
+            } else {
+                // En caso de fallo en la preparación de la consulta, se cierra la conexión y se retorna false
+                $conn->close();
+                return 0;
+            }
+        }
+
+        public function getEmail($usuario_id){
+            $conn = db::connect(); // Establece la conexión a la base de datos
+            $stmt = $conn->prepare("SELECT EMAIL FROM usuarios WHERE USUARIO_ID = ?"); // Consulta para seleccionar todas las reseñas
+        
+            if ($stmt) {
+                $stmt->bind_param("i", $usuario_id); // Vincula el parámetro $id_user a la consulta SQL de manera segura
+                $stmt->execute(); // Ejecuta la consulta
+                
+                $result = $stmt->get_result(); // Obtiene el conjunto de resultados
+                $email = $result->fetch_assoc(); // Obtiene la email de pedidos
+                
+                $stmt->close(); // Cierra la sentencia preparada
+                $conn->close(); // Cierra la conexión a la base de datos
+                
+                return $email['EMAIL']; // Retorna la cantidad de pedidos asociados al usuario
+            } else {
+                // En caso de fallo en la preparación de la consulta, se cierra la conexión y se retorna false
+                $conn->close();
+                return 0;
+            }
+        }
+
         public static function getResenas(){
             $conn = db::connect(); // Establece la conexión a la base de datos
             $consulta = "SELECT * FROM resena"; // Consulta para seleccionar todas las reseñas
+            
+            if ($resultado = $conn->query($consulta)) {
+                $arrayResenas = []; // Inicializa un array para almacenar las reseñas
+                
+                // Obtiene el array de objetos Resena
+                while ($obj = $resultado->fetch_object('ResenaDAO')) {
+                    $arrayResenas[] = $obj;
+                }
+                
+                $resultado->close(); // Libera el conjunto de resultados
+                $conn->close(); // Cierra la conexión a la base de datos
+                
+                return $arrayResenas; // Retorna el array de resenas si hay resenas en la base de datos
+            } else {
+                // Retorna null si no se encuentran resenas o hay un error en la consulta
+                return null;
+            }
+        }
+
+        public static function getResenasOrder($orden = "ASC" ){
+            $conn = db::connect(); // Establece la conexión a la base de datos
+            $consulta = "SELECT * FROM resena ORDER BY $orden"; // Consulta para seleccionar todas las reseñas
             
             if ($resultado = $conn->query($consulta)) {
                 $arrayResenas = []; // Inicializa un array para almacenar las reseñas

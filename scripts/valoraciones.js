@@ -1,51 +1,64 @@
-let resenas;
-
 window.addEventListener("load", function() {
-    insertarApi();
+    resenasApi();
+    //obtenerUserApi();
 });
+/*
+async function obtenerUserApi() {      
+    
+    const url = 'https://testcaler.com/testCaler/RITUALS/?controller=ApiUser&action=api';
+    let formData = new FormData();
+        formData.append('accion', 'get_user');
+    try {
+        const response = await axios.post(url, formData);
+
+        console.log(response.data);
+    } catch (error) {
+        console.error('get user Error:', error.message);
+    }
+}*/
+const selectElement = document.getElementById('orden');
+
+selectElement.addEventListener('change', obtenerSelect); 
 
 
-async function insertarApi() {
+function obtenerSelect() {
+    // Obtener el valor seleccionado
+    const valorSeleccionado = selectElement.value;
+
+    // Imprimir el valor seleccionado en la consola
+    resenasApi(valorSeleccionado);
+
+    // Aquí puedes realizar cualquier otra acción con el valor seleccionado
+};
+
+
+
+
+
+
+async function resenasApi(valorSeleccionado = "ASC") {
     const contenedor = document.getElementById('contApi');
     
-    fetch("https://testcaler.com/testCaler/RITUALS/?controller=ApiResena&action=api", {
-        method: 'POST',
-        headers: {
-            'Content-Type' : 'application/json; charset=utf-8',
-        },
-        body: JSON.stringify({
-            accion: "buscar_todo",
-        }),
-    })
-    .then(  data => {
-        console.log(data);
-        return data.json();
-    })
-    .then( resultado => console.log(resultado) )
-    .catch(e=>console.log(e))
+
+    let formData = new FormData();
+        formData.append('accion', 'get_reviews');
+        formData.append('orden', 'valorSeleccionado');
     
+    const url = 'https://testcaler.com/testCaler/RITUALS/?controller=ApiResena&accion=get_reviews';
+
+    try {
+        const response = await axios.post(url, formData);
+
+        console.log(response.data);
+    } catch (error) {
+        console.error('Error:', error.message);
+    }
+   
 }
-
-
-const datosResenas = [
-    { nombre: 'Ana', pedido: 10, puntuacion: 5, comentario: '¡Los cócteles son simplemente deliciosos! La presentación es encantadora y la calidad de los ingredientes es inigualable. Definitivamente, mi nueva opción para cualquier celebración.' },
-    { nombre: 'Juan', pedido: 5, puntuacion: 4, comentario: 'Probé varios cócteles y quedé impresionado con la diversidad de sabores. Los ingredientes frescos y la atención al detalle hacen que cada sorbo sea una experiencia única. ¡Recomiendo probarlos todos!' },
-    { nombre: 'María', pedido: 3, puntuacion: 2, comentario: 'Pedí un pack variado y quedé decepcionado. Los sabores no eran tan vibrantes como esperaba, y algunos cócteles tenían un gusto artificial. No cumplió con mis expectativas.' }
-];
-
-const reverseDatosResenas = datosResenas.reverse();
-crearTablaResenas(reverseDatosResenas);
-
-let formulario = document.getElementById("formularioValoracion");
-formulario.addEventListener("submit", inertResena);
-formulario.addEventListener("submit", resetEstrellas);
-
-
 
 // Función para crear las estrellas
 function crearEstrellas(puntuacion, id) {
     const estrellasContainer = document.getElementById(id);
-    estrellasContainer.innerHTML = ''; // Limpia el contenido previo
 
     // Crea un ícono de estrella para cada punto de puntuación
     for (let i = 0; i < puntuacion; i++) {
@@ -67,7 +80,8 @@ function crearTablaResenas(data) {
     const tabla = document.createElement('table');
     tabla.className = 'tabla_resenas';
     let cont = 1;
-    data.forEach(resena => {
+    for (let index = 0; index < data.length; index++) {
+    
         const trNombre = document.createElement('tr');
         trNombre.className = 'tr_resenas';
 
@@ -80,7 +94,7 @@ function crearTablaResenas(data) {
 
         const tdNombre = document.createElement('td');
         tdNombre.className = 'td_resenas_name';
-        tdNombre.textContent = resena.nombre;
+        tdNombre.textContent = data[index].EMAIL;
 
         trNombre.appendChild(tdIcono);
         trNombre.appendChild(tdNombre);
@@ -100,7 +114,7 @@ function crearTablaResenas(data) {
         const tdPedido = document.createElement('td');
         tdPedido.id = 'td_resenas_pedido'+cont;
         tdPedido.className = 'td_resenas_estrellas';
-        tdPedido.textContent = "Pedido: " + resena.pedido;
+        tdPedido.textContent = "Pedido: " + data[index].PEDIDO_ID;
         trPedido.appendChild(tdPedido);
 
         const trComentario = document.createElement('tr');
@@ -108,7 +122,7 @@ function crearTablaResenas(data) {
         tdComentario.className = 'td_resenas_comentario';
         const textarea = document.createElement('textarea');
         textarea.disabled = true;
-        textarea.textContent = resena.comentario;
+        textarea.textContent = data[index].COMENTARIO;
         tdComentario.appendChild(textarea);
         trComentario.appendChild(tdComentario);
 
@@ -121,22 +135,27 @@ function crearTablaResenas(data) {
         tabla.appendChild(trComentario);
         tabla.appendChild(trEspacio);
 
+        
         cont++;
-    });
+        
+    }
 
     contenedorTabla.appendChild(tabla);
-    cont = 1;
-    data.forEach(resena => {
-        crearEstrellas(resena.puntuacion, 'td_resenas_puntuacion'+cont);
-        cont++;
-    });
+    for (let index = 0; index < data.length; index++) {
+        crearEstrellas(data[index].VALORACION, 'td_resenas_puntuacion'+(index+1));
+    }
 }
 
-function inertResena(event) {
+
+let formulario = document.getElementById("formularioValoracion");
+formulario.addEventListener("submit", insertResena);
+formulario.addEventListener("submit", resetEstrellas);
+
+function insertResena(event) {
     event.preventDefault();
     const pedido = document.getElementById('pedido').value;
     if (pedido == "undefined") {
-        modal("errorId");
+        console.log("error");
     }else{
         const nombre = document.getElementById('nombre').value;
         let puntuacion = 0;
@@ -161,20 +180,40 @@ function inertResena(event) {
 
         const comentario = document.getElementById('comentario').value;
 
-        const nuevaResena = {
-            nombre: nombre,
-            pedido: pedido,
-            puntuacion: puntuacion,
-            comentario: comentario
-        };  
-        datosResenas.unshift(nuevaResena);
+        const fecha = new Date();
+        
+        let formData = new FormData();
+        formData.append('accion', 'add_reviews');
+
+        formData.append('PEDIDO_ID', pedido);
+        formData.append('ASUNTO', "\"prueba insertar api\"");
+        formData.append('COMENTARIO', "\""+comentario+"\"");
+        formData.append('FECHA_RESENA', "\""+fecha+"\"");
+        formData.append('VALORACION', puntuacion);
+
+        insertarResenaApi(formData);
 
         const contenedorTabla = document.getElementById('resenas');
         contenedorTabla.innerHTML = "";
         
         document.getElementById('comentario').value = "";
 
-        crearTablaResenas(datosResenas);
+        resenasApi();
+    }
+}
+
+async function insertarResenaApi(formData) {      
+    
+    const url = 'https://testcaler.com/testCaler/RITUALS/?controller=ApiResena&action=add_review';
+
+    const fecha = new Date();
+
+    try {
+        const response = await axios.post(url, formData);
+
+        console.log(response.data);
+    } catch (error) {
+        console.error('Error:', error.message);
     }
 }
 
@@ -189,3 +228,5 @@ function resetEstrellas(event) {
         
     }
 }
+
+

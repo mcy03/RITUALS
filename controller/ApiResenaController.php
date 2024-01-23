@@ -8,7 +8,7 @@ class ApiResenaController{
     public function api(){
         $accion = isset($_POST["accion"]) ? $_POST["accion"] : '';
  
-       //print_r($_POST);
+        //print_r($_POST);
         if(trim($accion) == "buscar_todo"){  
 
            //header('Content-Type: application/json; charset=UTF-8');
@@ -26,7 +26,6 @@ class ApiResenaController{
                     "VALORACION" => $resena->getValoracion()
                 );
             }
-            echo trim($accion) == "buscar_todo";
             echo json_encode($array_resenas, JSON_UNESCAPED_UNICODE);
             return;
         }else if($accion == 'buscar_resena'){
@@ -57,5 +56,58 @@ class ApiResenaController{
             echo "insert correcto";
             return;
         }
+    }
+
+    public function get_reviews(){
+        //header('Content-Type: application/json; charset=UTF-8');
+        $orden = $_POST['orden'];
+        $resenas = ResenaDAO::getResenasOrder($orden);
+           
+        $array_resenas = [];
+        foreach ($resenas as $resena) {
+            $array_resenas[] = array(
+                "RESENA_ID" => $resena->getId(),
+                "PEDIDO_ID" => $resena->getPedidoId(),
+                "ASUNTO" => $resena->getAsunto(),
+                "COMENTARIO" => $resena->getComentario(),
+                "FECHA_RESENA" => $resena->getFechaResena(),
+                "VALORACION" => $resena->getValoracion(),
+                "EMAIL" => $resena->getEmail($resena->getUser())
+            );
+        }
+        echo json_encode($array_resenas, JSON_UNESCAPED_UNICODE);
+        return;
+    }
+
+    public function get_review(){
+        $resena_id = json_decode($_POST["RESENA_ID"]); //se decodifican los datos JSON que se reciben desde JS
+            
+        $resena = ResenaDAO::getResenaById($resena_id);
+
+        $array_resenas = array(
+            "RESENA_ID" => $resena->getId(),
+            "PEDIDO_ID" => $resena->getPedidoId(),
+            "ASUNTO" => $resena->getAsunto(),
+            "COMENTARIO" => $resena->getComentario(),
+            "FECHA_RESENA" => $resena->getFechaResena(),
+            "VALORACION" => $resena->getValoracion(),
+            "EMAIL" => $resena->getEmail($resena->getUser())
+        );
+
+        echo json_encode($array_resenas, JSON_UNESCAPED_UNICODE); 
+        return; //return para salir de la funcion
+    }
+
+    public function add_review(){
+        print_r($_POST);
+        $PEDIDO_ID = json_decode(trim($_POST["PEDIDO_ID"]));
+        $ASUNTO = json_decode(trim($_POST["ASUNTO"]));
+        $COMENTARIO = json_decode(trim($_POST["COMENTARIO"]));
+        $FECHA_RESENA = json_decode(trim($_POST["FECHA_RESENA"]));
+        $VALORACION = json_decode(trim($_POST["VALORACION"]));
+
+        $return = ResenaDAO::insertResena($PEDIDO_ID, $ASUNTO, $COMENTARIO, $FECHA_RESENA, $VALORACION);
+        echo "insert correcto";
+        return;
     }
 }
