@@ -206,6 +206,7 @@ function insertResena(event) {
         console.log("error");
     }else{
         const nombre = document.getElementById('nombre').value;
+        const asunto = document.getElementById('input-asunto').value;
         let puntuacion = 0;
         let b_checked = false;
         let radios = document.getElementsByName('estrellas');
@@ -228,15 +229,24 @@ function insertResena(event) {
 
         const comentario = document.getElementById('comentario').value;
 
-        const fecha = new Date();
-        
+        // Obtener la fecha actual
+        const fechaActual = new Date();
+
+        // Obtener los componentes de la fecha
+        const año = fechaActual.getFullYear();
+        const mes = (fechaActual.getMonth() + 1).toString().padStart(2, '0'); // Agregar ceros iniciales si es necesario
+        const dia = fechaActual.getDate().toString().padStart(2, '0'); // Agregar ceros iniciales si es necesario
+
+        // Formatear la fecha como "año-mes-día"
+        const fechaFormateada = `${año}-${mes}-${dia}`;
+
         let formData = new FormData();
         formData.append('accion', 'add_review');
 
         formData.append('PEDIDO_ID', pedido);
-        formData.append('ASUNTO', "\"prueba insertar api\"");
+        formData.append('ASUNTO', "\""+asunto+"\"");
         formData.append('COMENTARIO', "\""+comentario+"\"");
-        formData.append('FECHA_RESENA', "\""+fecha+"\"");
+        formData.append('FECHA_RESENA', "\""+fechaFormateada+"\"");
         formData.append('VALORACION', puntuacion);
 
         insertarResenaApi(formData);
@@ -258,6 +268,7 @@ async function insertarResenaApi(formData) {
 
     try {
         const response = await axios.post(url, formData);
+        resenasApi();
         success("Reseña insertada correctamente");
         console.log(response.data);
     } catch (error) {
