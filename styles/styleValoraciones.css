@@ -142,6 +142,22 @@ form button:hover, .modal .btn-confirmar:hover, .button-api:hover{
     transition: .2s ease-in-out;
 }
 
+.cont-title-filter{
+    display: flex;
+    justify-content: space-between;
+}
+.filtro{
+    justify-self: end;
+}
+.filtro input{
+    width: 25%;
+    height: 20px;
+}
+.filtro select{
+    margin-right: 20px;
+    width: 25%;
+    height: 20px;
+}
 textarea{
     width: 100%;
     padding: 20px;

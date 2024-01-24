@@ -16,6 +16,25 @@ async function obtenerUserApi() {
         console.error('get user Error:', error.message);
     }
 }*/
+
+async function resenasApi() {
+    const contenedor = document.getElementById('contApi');
+
+    let formData = new FormData();
+        formData.append('accion', 'get_reviews');
+    
+    const url = 'https://testcaler.com/testCaler/RITUALS/?controller=ApiResena&action=api';
+
+    try {
+        const response = await axios.post(url, formData);
+
+        console.log(response.data);
+        crearTablaResenas(response.data);
+    } catch (error) {
+        console.error('Error:', error.message);
+    }
+}
+
 const selectElement = document.getElementById('orden');
 
 selectElement.addEventListener('change', obtenerSelect); 
@@ -25,34 +44,62 @@ function obtenerSelect() {
     // Obtener el valor seleccionado
     const valorSeleccionado = selectElement.value;
 
-    // Imprimir el valor seleccionado en la consola
-    resenasApi(valorSeleccionado);
-
-    // Aquí puedes realizar cualquier otra acción con el valor seleccionado
+    resenasApiOrden(valorSeleccionado);
 };
 
+// Obtenemos el elemento input por su id
+const inputElement = document.getElementById('filtro-input');
 
+// Agregamos un evento 'input' al input
+inputElement.addEventListener('blur', obtenerInputFiltro);
 
+function obtenerInputFiltro() {
 
+        // Obtener el valor introducido
+        let valorInput = inputElement.value;
+            
+        // Validar el valor para asegurarse de que esté dentro del rango
+        if (valorInput < 0) {
+            inputElement.value = 0;  // Establecer el valor mínimo si es menor que 1
+            valorInput = 0;
+        } else if (valorInput > 5) {
+            inputElement.value = 5;  // Establecer el valor máximo si es mayor que 5
+            valorInput = 5;
+        }
 
+    resenasApiOrden(valorSeleccionado = "", valorInput);
+};
 
-async function resenasApi(valorSeleccionado = "ASC") {
+async function resenasApiOrden(valorSeleccionado = "", valorInput  = "") {
     const contenedor = document.getElementById('contApi');
     
-
     let formData = new FormData();
         formData.append('accion', 'get_reviews');
-        formData.append('orden', 'valorSeleccionado');
+        if (valorSeleccionado != "") {
+            formData.append('orden', valorSeleccionado);
+        }else if(valorInput != ""){
+            formData.append('filtro', valorInput);
+        }
+        
     
-    const url = 'https://testcaler.com/testCaler/RITUALS/?controller=ApiResena&accion=get_reviews';
+    const url = 'https://testcaler.com/testCaler/RITUALS/?controller=ApiResena&action=api';
 
     try {
         const response = await axios.post(url, formData);
 
+        const contenedorTabla = document.getElementById('resenas');
+        contenedorTabla.innerHTML = "";
         console.log(response.data);
+        if (response.data.length < 1) {
+            mensajeSinResenas(valorInput);
+        }else{
+            crearTablaResenas(response.data);
+        }
+        
     } catch (error) {
         console.error('Error:', error.message);
     }
+
    
 }
 
@@ -142,7 +189,7 @@ function crearTablaResenas(data) {
 
     contenedorTabla.appendChild(tabla);
     for (let index = 0; index < data.length; index++) {
-        crearEstrellas(data[index].VALORACION, 'td_resenas_puntuacion'+(index+1));
+        crearEstrellas(parseInt(data[index].VALORACION), 'td_resenas_puntuacion'+(index+1));
     }
 }
 
@@ -150,6 +197,7 @@ function crearTablaResenas(data) {
 let formulario = document.getElementById("formularioValoracion");
 formulario.addEventListener("submit", insertResena);
 formulario.addEventListener("submit", resetEstrellas);
+
 
 function insertResena(event) {
     event.preventDefault();
@@ -183,7 +231,7 @@ function insertResena(event) {
         const fecha = new Date();
         
         let formData = new FormData();
-        formData.append('accion', 'add_reviews');
+        formData.append('accion', 'add_review');
 
         formData.append('PEDIDO_ID', pedido);
         formData.append('ASUNTO', "\"prueba insertar api\"");
@@ -204,18 +252,25 @@ function insertResena(event) {
 
 async function insertarResenaApi(formData) {      
     
-    const url = 'https://testcaler.com/testCaler/RITUALS/?controller=ApiResena&action=add_review';
+    const url = 'https://testcaler.com/testCaler/RITUALS/?controller=ApiResena&action=api';
 
     const fecha = new Date();
 
     try {
         const response = await axios.post(url, formData);
-
+        success("Reseña insertada correctamente");
         console.log(response.data);
     } catch (error) {
         console.error('Error:', error.message);
     }
 }
+
+function success (mensaje) {
+    notie.setOptions({
+        alertTime: 2
+      })
+    notie.alert({ type: 1, text: mensaje, time: 2 })
+  }
 
 function resetEstrellas(event) {
     event.preventDefault();
@@ -227,6 +282,16 @@ function resetEstrellas(event) {
         }
         
     }
+}
+
+function mensajeSinResenas(puntuacion){
+    const contenedorTabla = document.getElementById('resenas');
+    const p = document.createElement('p');
+    p.className = 'mensaje-sin-resenas';
+
+    p.innerHTML = "No hay reseñas con "+puntuacion+" puntos de valoración";
+
+    contenedorTabla.appendChild(p);
 }
 
 

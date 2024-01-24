@@ -62,9 +62,20 @@
                     </form>
                 </div>
             </section>
-            <section class="col-12 col-sm-12 col-md-10 col-lg-10 cont">
-                <div class="title">
-                    <h2>Reseñas</h2>
+            <section class="col-12 col-sm-12 col-md-10 col-lg-10 cont cont-resenas">
+                <div class="cont-title-filter">
+                    <div class="title">
+                        <h2>Reseñas</h2>
+                    </div>
+                    <div class="filtro">
+                        <label for="orden">Puntuación: </label>
+                        <select name="orden" id="orden" >
+                            <option value="">Orden</option>
+                            <option value="ASC">Ascendente</option>
+                            <option value="DESC">Descendiente</option>
+                        </select>
+                        <input type="number" id="filtro-input" placeholder="Puntuación" min="1" max="5">
+                    </div>
                 </div>
                 <div id="resenas">
                     
@@ -73,23 +84,7 @@
             </section>
         </div>
     </div>
-
-    <div class="contbuttonprueba">
-        <form id="formularioValoracion" action="https://testcaler.com/testCaler/RITUALS/?controller=ApiResena&action=get_reviews" method="POST">
-            <button type="submit" id="button-api" >api</button>
-        </form>
-    </div>
-    
-    <div class="filtro">
-        <label for="orden">Puntuación: </label>
-        <select name="orden" id="orden">
-            <option value="ASC">Ascendente</option>
-            <option value="DESC">Descendiente</option>
-        </select>
-    </div>
-    <div id="miContenedor">
-
-    </div>
+    <script src="https://unpkg.com/notie"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>        
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="./scripts/valoraciones.js"></script>

@@ -91,31 +91,18 @@
             }
         }
 
-        public static function getResenas(){
+        public static function getResenas($orden = "", $valorCondicion = ""){
             $conn = db::connect(); // Establece la conexión a la base de datos
-            $consulta = "SELECT * FROM resena"; // Consulta para seleccionar todas las reseñas
-            
-            if ($resultado = $conn->query($consulta)) {
-                $arrayResenas = []; // Inicializa un array para almacenar las reseñas
-                
-                // Obtiene el array de objetos Resena
-                while ($obj = $resultado->fetch_object('ResenaDAO')) {
-                    $arrayResenas[] = $obj;
-                }
-                
-                $resultado->close(); // Libera el conjunto de resultados
-                $conn->close(); // Cierra la conexión a la base de datos
-                
-                return $arrayResenas; // Retorna el array de resenas si hay resenas en la base de datos
-            } else {
-                // Retorna null si no se encuentran resenas o hay un error en la consulta
-                return null;
-            }
-        }
 
-        public static function getResenasOrder($orden = "ASC" ){
-            $conn = db::connect(); // Establece la conexión a la base de datos
-            $consulta = "SELECT * FROM resena ORDER BY $orden"; // Consulta para seleccionar todas las reseñas
+            if ($orden != "") {
+                $consulta = "SELECT * FROM resena ORDER BY VALORACION $orden";
+            }elseif ($valorCondicion != "") {
+                $consulta = "SELECT * FROM resena WHERE VALORACION = ".intval($valorCondicion);
+            }else{
+                // Consulta para seleccionar todas las reseñas
+                $consulta = "SELECT * FROM resena";
+            }
+            
             
             if ($resultado = $conn->query($consulta)) {
                 $arrayResenas = []; // Inicializa un array para almacenar las reseñas
