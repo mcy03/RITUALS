@@ -15,14 +15,15 @@ async function obtenerUserApi() {
     } catch (error) {
         console.error('get user Error:', error.message);
     }
-}*/
+}
+*/
 
 async function resenasApi() {
     const contenedor = document.getElementById('contApi');
-
+    
     let formData = new FormData();
         formData.append('accion', 'get_reviews');
-    
+
     const url = 'https://testcaler.com/testCaler/RITUALS/?controller=ApiResena&action=api';
 
     try {
