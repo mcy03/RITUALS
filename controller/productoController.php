@@ -657,7 +657,7 @@ class productoController{
         }
     
         header("Location:".url.'?controller=producto&action=cuenta&productos&insertado'); // Redirecciona a la página de cuenta de productos con un mensaje de inserción exitosa
-    }    
+    }
 
     public static function valoraciones(){
         session_start(); // Inicia la sesión

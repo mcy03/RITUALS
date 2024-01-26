@@ -24,9 +24,7 @@
                     <h4 class="ruta">Home / Carta <?=$name_cat?></h4>
                     <h2 class="titleCat">COMPRAR POR PRODUCTO</h2>
                     <div class="botones-categorias">
-                        <?php foreach($categorias as $a_categorias){ ?>
-                            <a href="<?=url?>?controller=producto&action=carta&cat=<?=$a_categorias->getName()?>" class="btn-cat btn btn-primary"><?=$a_categorias->getName()?></a>
-                        <?php } ?>
+                        <!-- botones insertados mediante JS -->
                     </div>
                 </div>
 
@@ -78,7 +76,10 @@
         </div>
     </section>
     
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
+    <script src="https://unpkg.com/notie"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
     <script src="./scripts/carta.js"></script>
 </body>
 </html> 
