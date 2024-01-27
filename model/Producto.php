@@ -92,6 +92,29 @@
             return $arrayProducts;
         }
 
+        public static function getProductByCat($id_cat){
+            $conn = db::connect(); // Establece la conexión a la base de datos
+            
+            // Prepara la consulta SQL con un marcador de posición para el ID de categoría
+            $stmt = $conn->prepare("SELECT * FROM productos WHERE CATEGORIA_ID = ?");
+            $stmt->bind_param("i", $id_cat); // Vincula el parámetro $id_cat a la consulta SQL
+            
+            $stmt->execute(); // Ejecuta la consulta
+            $result = $stmt->get_result(); // Obtiene el conjunto de resultados
+            
+            $arrayProducts = []; // Inicializa un array para almacenar los productos
+            
+            // Obtiene el array de hasta 3 objetos Producto de la categoría especificada
+            while ($obj = $result->fetch_object('Producto')) {
+                $arrayProducts[] = $obj;
+            }
+            
+            $stmt->close(); // Cierra la sentencia preparada
+            $conn->close(); // Cierra la conexión a la base de datos
+            
+            return $arrayProducts;
+        }
+
         /**
          * Obtiene el ID del producto.
          * @return int El ID del producto.

@@ -1,5 +1,6 @@
 <?php
 include_once "model/Categoria.php";
+include_once "model/Producto.php";
 
 class ApiCategoriaController{    
 
@@ -38,17 +39,43 @@ class ApiCategoriaController{
             echo json_encode($array_resenas, JSON_UNESCAPED_UNICODE); 
             return $array_resenas; //return para salir de la funcion
 
+        }else if($accion == 'get_all_products'){ 
+            $productos = Producto::getProducts();
+
+            $array_productos = [];
+            foreach ($productos as $producto) {
+                $array_productos[] = array(
+                    "PRODUCTO_ID" => $producto->getId(),
+                    "NOMBRE_PRODUCTO" => $producto->getName(),
+                    "IMG" => $producto->getImg(),
+                    "DESCRIPCION" => $producto->getDesc(),
+                    "PRECIO_UNIDAD" => $producto->getPrice(),
+                    "CATEGORIA_ID" => $producto->getCat()
+                );
+            }
+                
+            echo json_encode($array_productos, JSON_UNESCAPED_UNICODE); 
+            return $array_productos; //return para salir de la funcion
         }else if($accion == 'get_products_category'){ 
-            $PEDIDO_ID = json_decode(trim($_POST["PEDIDO_ID"]));
-            $ASUNTO = json_decode(trim($_POST["ASUNTO"]));
-            $COMENTARIO = json_decode(trim($_POST["COMENTARIO"]));
-            $FECHA_RESENA = json_decode(trim($_POST["FECHA_RESENA"]));
-            $VALORACION = json_decode(trim($_POST["VALORACION"]));
+            $categoria = json_decode($_POST["categoria"]); //se decodifican los datos JSON que se reciben desde JS
+            
+            $id_cat = Categoria::getCatIdByName($categoria);
+            $productos = Producto::getProductByCat($id_cat);
 
-            $return = ResenaDAO::insertResena($PEDIDO_ID, $ASUNTO, $COMENTARIO, $FECHA_RESENA, $VALORACION);
-
-            echo "insert correcto";
-            return;
+            $array_productos = [];
+            foreach ($productos as $producto) {
+                $array_productos[] = array(
+                    "PRODUCTO_ID" => $producto->getId(),
+                    "NOMBRE_PRODUCTO" => $producto->getName(),
+                    "IMG" => $producto->getImg(),
+                    "DESCRIPCION" => $producto->getDesc(),
+                    "PRECIO_UNIDAD" => $producto->getPrice(),
+                    "CATEGORIA_ID" => $producto->getCat()
+                );
+            }
+                
+            echo json_encode($array_productos, JSON_UNESCAPED_UNICODE); 
+            return $array_productos; //return para salir de la funcion
         }
     }
 }

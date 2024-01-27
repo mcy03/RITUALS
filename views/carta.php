@@ -48,19 +48,8 @@
             ?>
 
                 <div class="producto card">
-                    <div class="cont-img-product">
-                        <img src="<?= $a_productos->getImg() ?>" class="card-img-top" alt="imagen producto">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title"><?= $a_productos->getName() ?></h3>
-                        <p class="card-text"><?= $a_productos->getDesc() ?></p>
-                        <p class="price"><?= $a_productos->getPrice()?> €</p>
-                        <form class="form-add" action=<?=url.'?controller=producto&action=sel'?> method='post'>
-                            <input type='hidden' name='id' value= <?=$a_productos->getId()?>>
-                            <input type='hidden' name='page' value='carta'>
-                            <button class="btn btn-primary" type="submit">AÑADIR A LA CESTA</button>
-                        </form>
-                    </div>
+                    <!-- contenido tarjeta producto introducido mediante JS -->
+                    <!-- contenido tarjeta producto introducido mediante JS -->
                 </div>
 
                 <?php if($col == 1 and $contador > sizeof($productos)/3 -2 or $col == 2 and $contador-$auxiliar > (sizeof($productos)-$auxiliar)/2 +$suma){

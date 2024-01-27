@@ -184,3 +184,17 @@ h2{
     width: 165px;
     height: 36px;
 }
+
+.botones-categorias{
+    display: flex;
+    flex-direction: column;
+}
+.divCheck{
+    color: white;
+    margin-bottom: 20px;
+}
+
+.divCheck label{
+    margin-left: 10px;
+    font-size: 13;
+}
