@@ -18,7 +18,7 @@
     </section>
 
     <section class="container productos">
-        <div class="row masonry-grid">
+        <div id="row-productos" class="row masonry-grid">
             <div class="col-12 col-sm-6 col-md-4 col-lg-4 masonry-column">
                 <div class="sel-categorias">
                     <h4 class="ruta">Home / Carta <?=$name_cat?></h4>
@@ -35,32 +35,8 @@
                     <a href="<?=url?>?controller=producto&action=login" class="btn btn-primary">INICIA SESIÓN O  CREA UNA CUENTA</a>
                     <p class="sub-promo card-text">Envíos gratis con pedidos superiores a 20€.</p>
                 </div>
-            <?php foreach($productos as $a_productos){
-                if (sizeof($productos) < 5 and $col == 1) {
-                    $col++;
-            ?>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 masonry-column">
-            <?php    
-                }
-                $contador++;
-            ?>
-
-                <div class="producto card">
-                    <!-- contenido tarjeta producto introducido mediante JS -->
-                    <!-- contenido tarjeta producto introducido mediante JS -->
-                </div>
-
-                <?php if($col == 1 and $contador > sizeof($productos)/3 -2 or $col == 2 and $contador-$auxiliar > (sizeof($productos)-$auxiliar)/2 +$suma){
-                    $auxiliar = $contador;
-                    $col++;
-                ?>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 masonry-column">
-                <?php }?>
-            <?php } ?>
+                <div id="tarjetas-productos"></div>
+            
             </div>
         </div>
     </section>

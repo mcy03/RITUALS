@@ -5,6 +5,22 @@ window.addEventListener("load", function() {
     getProductosApi();
 });
 
+
+function eliminarProductos() {
+
+    // Obtén una NodeList de todos los elementos con la clase 'tu-clase'
+    var elementosConClase = document.querySelectorAll('.producto');
+
+    // Convierte la NodeList en un array para poder iterar
+    var arrayElementos = Array.from(elementosConClase);
+
+    // Itera sobre los elementos y elimina cada uno
+    arrayElementos.forEach(function(elemento) {
+        elemento.remove();
+    });
+    
+}
+
 function mostrarProductos(productos) {
     const contenedoresProductos = document.getElementsByClassName("producto");
 
@@ -113,7 +129,8 @@ async function getProductosApi() {
 
     try {
         const response = await axios.post(url, formData);
-
+        
+        generarContenedoresProductos(await response.data);
         mostrarProductos(await response.data);
     } catch (error) {
         console.error('Error:', error.message);
@@ -129,8 +146,10 @@ async function getProductosCategoriaApi(nameCategory) {
 
     try {
         const response = await axios.post(url, formData);
-
         console.log(await response.data);
+        eliminarProductos();
+        generarContenedoresProductos(await response.data, "categoria");
+        mostrarProductos(await response.data);
     } catch (error) {
         console.error('Error:', error.message);
     }
@@ -159,11 +178,16 @@ function mostrarBotonesCategorias(categorias) {
 
         // Agrega un evento de cambio a cada checkbox
         checkbox.addEventListener('change', function () {
+            console.log("listener");
             if (checkbox.checked) {
+                console.log("checked");
                 getProductosCategoriaApi(checkbox.value);
+            }else{
+                console.log("no checked");
             }
         });
     }
+}
 /*
     for (let i = 0; i < categorias.length; i++) {
         const boton = document.createElement('a');
@@ -177,4 +201,99 @@ function mostrarBotonesCategorias(categorias) {
         
     }
 */
+
+
+function generarContenedoresProductos(productos, category = "") {
+    const contenedorProductos = document.getElementById('row-productos');
+        let col = 1;
+        let contador = 0;
+        let auxiliar = 0;
+        let suma = 0;
+
+        if (category != "") {
+            if (productos.length % 2 != 0) {
+                contador = 1;
+            } else {
+                contador = 2;
+            }
+            suma = 1;
+        }
+
+        productos.forEach((a_producto, index) => {
+            let columna = document.getElementsByClassName('masonry-column');
+            if (productos.length < 5 && col === 1) {
+                col++;
+                // Cerrar la columna actual
+                contenedorProductos.innerHTML += '</div>';  
+                // Abrir una nueva columna
+                contenedorProductos.innerHTML += '<div class="col-12 col-sm-6 col-md-4 col-lg-4 masonry-column">';
+            }
+
+            contador++;
+
+            // Añadir contenido de producto
+
+            let tarjeta = document.createElement('div');
+            tarjeta.className = "producto card";
+            
+            columna[col-1].appendChild(tarjeta);
+
+            if ((col === 1 && contador > productos.length / 3 - 2) || (col === 2 && contador - auxiliar > (productos.length - auxiliar) / 2 + suma)) {
+                auxiliar = contador;
+                col++;
+                // Cerrar la columna actual
+                contenedorProductos.innerHTML += '</div>';  
+                // Abrir una nueva columna
+                contenedorProductos.innerHTML += '<div class="col-12 col-sm-6 col-md-4 col-lg-4 masonry-column">';
+
+            }
+        });
+
+        // Cerrar la última columna
+        contenedorProductos.innerHTML += '</div>';
+        
+    }
+/*
+if (isset($_GET['cat'])) {
+    $name_cat = " / ".$_GET['cat']; // Obtiene el nombre de la categoría para mostrar en la vista
+    $cat_filtro = Categoria::getCatIdByName($_GET['cat']); // Obtiene el id de la categoria por su nombre
+    $productos = Producto::getProductByIdCat($cat_filtro); // Obtiene productos por la categoría
+
+    // Determina un contador y una suma basada en el número de productos para el diseño de la vista
+    if (sizeof($productos) % 2 != 0) {
+        $contador = 1;
+    } else {
+        $contador = 2;
+    }
+    $suma = 1;
+} else {
+    // Si no se especifica una categoría, obtiene todos los productos disponibles
+    $productos = Producto::getProducts();
+    $contador = 0;
+    $suma = 0;
 }
+*/
+
+
+/*
+// Texto que deseas codificar en el QR
+const textoQR = "www.google.es";
+
+// Configuración del QR
+const configuracionQR = {
+    typeNumber: 4,
+    errorCorrectLevel: 'L'
+};
+
+// Generar el código QR
+const qr = qrcode(configuracionQR.typeNumber || 4, configuracionQR.errorCorrectLevel || 'L');
+qr.addData(textoQR);
+qr.make();
+
+// Obtener la imagen del código QR como un objeto Data URL
+const imagenQR = qr.createImgTag();
+
+// Mostrar la imagen del código QR en el elemento con ID "qrcode"
+document.getElementById("qrcode").innerHTML = imagenQR;
+
+*/
