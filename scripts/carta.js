@@ -1,10 +1,10 @@
 window.addEventListener("load", function() {
-    categoriasApi();
+    categoriasApi().then( (resultado) =>  mostrarBotonesCategorias(resultado).then( (res) =>  listenerCheckedCategorias() ) );
     
     //getProductosCategoriaApi();
     getProductosApi();
+    
 });
-
 
 function eliminarProductos() {
 
@@ -106,8 +106,9 @@ function mostrarProductos(productos) {
     }
 }
 
-async function categoriasApi() {
-    let formData = new FormData();
+function categoriasApi() {
+    return new Promise( async(res, rej) => {
+        let formData = new FormData();
         formData.append('accion', 'get_categories');
 
     const url = 'https://testcaler.com/testCaler/RITUALS/?controller=ApiCategoria&action=api';
@@ -115,10 +116,18 @@ async function categoriasApi() {
     try {
         const response = await axios.post(url, formData);
 
-        mostrarBotonesCategorias(await response.data);
+        res(response.data);
+        
     } catch (error) {
+        rej();
         console.error('Error:', error.message);
     }
+    
+
+    })
+
+   
+    
 }
 
 async function getProductosApi() {
@@ -156,38 +165,33 @@ async function getProductosCategoriaApi(nameCategory) {
 }
 
 function mostrarBotonesCategorias(categorias) {
-    const contenedorBotones = document.getElementsByClassName("botones-categorias")[0];
+    return new Promise( async(res, rej) => {
+        const contenedorBotones = document.getElementsByClassName("botones-categorias")[0];
 
-    for (let i = 0; i < categorias.length; i++) {
-        const divCheck = document.createElement('div');
-        divCheck.className = "divCheck";
+        for (let i = 0; i < categorias.length; i++) {
+            const divCheck = document.createElement('div');
+            divCheck.className = "divCheck";
 
-        const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.id = `checkbox${i + 1}`;
-            checkbox.name = 'opciones';
-            checkbox.value = categorias[i]["NOMBRE_CATEGORIA"];
+            const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `checkbox${i + 1}`;
+                checkbox.className = `checkboxes`;
+                checkbox.name = 'opciones';
+                checkbox.value = categorias[i]["NOMBRE_CATEGORIA"];
 
-        const label = document.createElement('label');
-            label.htmlFor = `checkbox${i + 1}`;
-            label.appendChild(document.createTextNode(categorias[i]["NOMBRE_CATEGORIA"]));
+            const label = document.createElement('label');
+                label.htmlFor = `checkbox${i + 1}`;
+                label.appendChild(document.createTextNode(categorias[i]["NOMBRE_CATEGORIA"]));
 
-        divCheck.appendChild(checkbox);
-        divCheck.appendChild(label);
-        contenedorBotones.appendChild(divCheck);
+            divCheck.appendChild(checkbox);
+            divCheck.appendChild(label);
+            contenedorBotones.appendChild(divCheck);
+        }
+        res();
+    })
 
-        // Agrega un evento de cambio a cada checkbox
-        checkbox.addEventListener('change', function () {
-            console.log("listener");
-            if (checkbox.checked) {
-                console.log("checked");
-                getProductosCategoriaApi(checkbox.value);
-            }else{
-                console.log("no checked");
-            }
-        });
-    }
 }
+
 /*
     for (let i = 0; i < categorias.length; i++) {
         const boton = document.createElement('a');
@@ -200,7 +204,54 @@ function mostrarBotonesCategorias(categorias) {
         contenedorBotones.appendChild(boton);
         
     }
+
+
+function listenerCheckedCategorias() {
+    let checkboxes = document.getElementsByClassName("checkBoxes");
+    console.log(checkboxes);
+
+    for(let i = 0; i < checkboxes.length; i++) {
+       console.log(checkboxes)
+        // Agrega un evento de cambio a cada checkbox
+        checkboxes[""].addEventListener('change', function () {
+       
+            console.log("listener");
+            if (checkboxes[i].checked) {
+                console.log("checked");
+                
+                getProductosCategoriaApi(checkboxes[i].value);
+            }else{
+                console.log("no checked");
+            }
+            console.log("mimi");
+       });
+    }
+
+}
 */
+
+function listenerCheckedCategorias() {
+    for(let i=1; i<=7;i++){
+        console.log(i)
+        let checkbox = document.getElementById(`checkbox${i}`);
+        console.log(checkbox);
+        
+            checkbox.addEventListener('change', function () {
+                console.log("imimi");
+                if (checkbox.checked == true) {
+                    console.log("checked");
+                    
+                    getProductosCategoriaApi(checkbox.value);
+                }else{
+                    console.log("no checked");
+                }
+        });
+       
+    }
+
+}
+
+
 
 
 function generarContenedoresProductos(productos, category = "") {

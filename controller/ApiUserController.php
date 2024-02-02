@@ -1,6 +1,6 @@
 <?php
 include_once "model/User.php";
-
+include_once "model/Admin.php";
 class ApiUserController{    
     public function index(){
         echo "estas en la api user";
@@ -10,19 +10,22 @@ class ApiUserController{
  
         if(trim($accion) == "get_user"){  
             
-            $user = $_SESSION['user'];
-            
+            $id = $_POST['USUARIO_ID'];
+
+            $user = User::getUserById($id);
+
             $array_user[] = array(
-                "USUARIO_ID" => $userv->getId(),
-                "EMAIL" => $userv->getEmail(),
-                "SALUDO" => $userv->getSaludo(),
-                "NOMBRE" => $userv->getName(),
-                "APELLIDOS" => $userv->getApellidos(),
-                "FECHA_NACIMIENTO" => $userv->getFechaNacimiento(),
-                "PASSWORD" => $userv->getPass(),
-                "TELEFONO" => $userv->getPhone(),
-                "DIRECCION" => $userv->getDir(),
-                "PERMISO" => $userv->getPermiso()
+                "USUARIO_ID" => $user->getId(),
+                "EMAIL" => $user->getEmail(),
+                "PUNTOS" => $user->getPuntos(),
+                "SALUDO" => $user->getSaludo(),
+                "NOMBRE" => $user->getName(),
+                "APELLIDOS" => $user->getApellidos(),
+                "FECHA_NACIMIENTO" => $user->getFechaNacimiento(),
+                "PASSWORD" => $user->getPass(),
+                "TELEFONO" => $user->getPhone(),
+                "DIRECCION" => $user->getDir(),
+                "PERMISO" => $user->getPermiso()
             );
 
             echo json_encode($array_user, JSON_UNESCAPED_UNICODE);

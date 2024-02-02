@@ -1,5 +1,8 @@
 window.addEventListener("load", function() {
     resenasApi();
+
+    let usuario_guardado = JSON.parse(localStorage.getItem('user'));
+    console.log(usuario_guardado);
     //obtenerUserApi();
 });
 /*

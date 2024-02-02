@@ -7,6 +7,7 @@
          */
         protected $USUARIO_ID;         // Identificador único del usuario
         protected $EMAIL;              // Correo electrónico del usuario
+        protected $PUNTOS;
         protected $SALUDO;             // Saludo (Hombre, Mujer, Otro)
         protected $NOMBRE;             // Nombre del usuario
         protected $APELLIDOS;          // Apellidos del usuario
@@ -32,6 +33,9 @@
         }
         public function setPass($pass){
             $this->PASS = $pass;
+        }
+        public function getSaludo(){
+            return $this->SALUDO;
         }
         public function getName(){
             return $this->NOMBRE;
@@ -68,6 +72,12 @@
         }
         public function setEmail($email){
             $this->EMAIL = $email;
+        }
+        public function getPuntos(){
+            return $this->PUNTOS;
+        }
+        public function setPuntos($puntos){
+            $this->PUNTOS = $puntos;
         }
         public function getPermiso(){
             return $this->PERMISO;
@@ -117,38 +127,42 @@
         
         public static function getUserById($id){
             $conn = db::connect(); // Establecer conexión a la base de datos
-        
-            // Preparar y ejecutar consulta para obtener un usuario por su ID
+
+            // Establecer conexión a la base de datos y ejecutar la primera consulta
+            $conn = db::connect();
             $stmt = $conn->prepare("SELECT * FROM usuarios WHERE USUARIO_ID = ?");
             $stmt->bind_param("i", $id);
             $stmt->execute();
+            $result = $stmt->get_result();
         
-            $result = $stmt->get_result(); // Obtener el resultado de la consulta
-        
-            $conn->close(); // Cerrar la conexión a la base de datos
-        
-            $user = $result->fetch_object('User'); // Obtener el objeto de usuario
-        
-            // Verificar si el usuario es un administrador (permiso diferente de 0)
-            if ($user->getPermiso() != 0) {
-                // Crear un objeto de tipo Admin y copiar los datos del usuario a Admin
-                $admin = new Admin();
-                $admin->setId($user->getId());             
-                $admin->setPass($user->getPass());
-                $admin->setPermiso($user->getPermiso());
-                $admin->setName($user->getName());
-                $admin->setApellidos($user->getApellidos());
-                $admin->setPhone($user->getPhone());
-                $admin->setFechaNacimiento($user->getFechaNacimiento());
-                $admin->setDir($user->getDir());
-                $admin->setEmail($user->getEmail());
-                $admin->setPermiso($user->getPermiso());
-        
-                
-                return $admin; // Devolver el objeto de administrador
+            // Cerrar la primera conexión
+            $conn->close();
+            $conn = db::connect(); // Establecer conexión a la base de datos
+
+            // Obtener el objeto de usuario a partir del primer resultado
+            $user = $result->fetch_object('User');
+
+            // Establecer conexión a la base de datos y ejecutar la primera consulta
+            $conn = db::connect();
+            $stmt = $conn->prepare("SELECT * FROM usuarios WHERE USUARIO_ID = ?");
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            $conn->close();
+            
+            // Verificar el permiso del usuario y obtener el objeto correcto (User o Admin)
+            if ($user->getPermiso() == 0) {
+                // Si el usuario es normal, obtener el objeto de usuario
+                $user = $result->fetch_object('User');
+            } else {
+                // Si el usuario es administrador, obtener el objeto de administrador
+                $user = $result->fetch_object('Admin');
             }
-           
-            return $user; // Si el usuario no es administrador, devolver el objeto de usuario normal
+
+            // Devolver el objeto de usuario
+            return $user;
+            
         }
         
         public static function getUserByEmail($email){
