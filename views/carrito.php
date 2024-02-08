@@ -108,16 +108,37 @@
                                 <h3 class="envio-price"><?=CalculadoraPrecios::mostrarGastoEnvio($_SESSION['selecciones'])?></h3>
                             </div>
                             <hr class="separate-resume-comand">
+                            <div id="puntosFidelidad" class="envio">
+                                <h3 class="envio-text"><b>Aplicar puntos</b></h3>
+                                <input type="number" name="puntos-aplicados" placeholder="%">
+                            </div>
+                            <hr class="separate-resume-comand">
+                            <div id="propina" class="envio">
+                                <h3 class="envio-text"><b>Propina</b></h3>
+                                <a href="#" id="dar-propina">Dar propina</a>
+
+                                <form id="form-propina" action="">
+                                    <input type="number" name="porcentaje-propina" value="3">
+                                    <input type="submit" value="Aplicar">
+                                </form>
+
+                                <div class="totalPropina">
+                                    <a href="#" id="quitar-propina">Quitar</a>
+                                    <h3 id="costePropina" class="envio-price"></h3>
+                                </div>
+                            </div>
+                            <hr class="separate-resume-comand">
                             <div class="total">
                                 <div class="cont-total-text">
                                     <h3 class="total-text"><b>Total</b></h3>
                                     <p class="total-impuestos-text">Impuestos incluidos</p>
                                 </div>
-                                <h3 class="total-price"><b><?=CalculadoraPrecios::calculadorTotalPedido($_SESSION['selecciones'])?>  €</b></h3>
+                                <input type="hidden" name="costePedido" value="<?=CalculadoraPrecios::calculadorTotalPedido($_SESSION['selecciones'])?>">
+                                <h3 class="total-price"><?=CalculadoraPrecios::calculadorTotalPedido($_SESSION['selecciones'])?> €</h3>
                             </div>
                             <hr class="separate-resume-comand">
                             <div class="cont-button-comprar">
-                                <a href=<?=url.'?controller=producto&action=pagar'?> class="boton-simple btn btn-primary">PAGAR</a>
+                                <a href=<?=url.'?controller=producto&action=pagar'?> id="pagar" class="boton-simple btn btn-primary">PAGAR</a>
                             </div>
                             <div class="cont-pago-seguro">
                                 <img class="candado-pago-seguro" src="img/candado.png" alt="">
@@ -177,5 +198,8 @@
             </div>
         </div>
     </div>
+
+    <script src="./scripts/propinas.js"></script>
+    <script src="./scripts/puntosFidelidad.js"></script>
 </body>
 </html>

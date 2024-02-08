@@ -403,3 +403,17 @@ body{
     margin-top: 40px;
 }
 
+#dar-propina{
+    color: #886655;
+}
+
+#dar-propina:hover{
+    color: #886655;
+    text-decoration: none;
+}
+
+
+#totalPropina{
+    display: flex;
+    flex-direction: column;
+}

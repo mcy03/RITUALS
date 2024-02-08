@@ -25,6 +25,7 @@ class ApiPedidoController{
             
             echo json_encode($array_pedidos, JSON_UNESCAPED_UNICODE);
             return $array_pedidos;
+
         }else if($accion == 'get_pedidos_user'){
             $usuario_id = json_decode($_POST["USUARIO_ID"]); //se decodifican los datos JSON que se reciben desde JS
             
@@ -60,6 +61,7 @@ class ApiPedidoController{
                 
             echo json_encode($array_productos, JSON_UNESCAPED_UNICODE); 
             return $array_productos; //return para salir de la funcion
+
         }else if($accion == 'get_products_category'){ 
             $categoria = json_decode($_POST["categoria"]); //se decodifican los datos JSON que se reciben desde JS
             
@@ -80,6 +82,16 @@ class ApiPedidoController{
                 
             echo json_encode($array_productos, JSON_UNESCAPED_UNICODE); 
             return $array_productos; //return para salir de la funcion
+
+        }elseif ($accion == 'add_propina') {
+            $propina = json_decode($_POST["propina"]);
+
+            $pedido = PedidosBBDD::getIdUltimoPedido();
+
+            $result = PedidosBBDD::updatePropina($pedido, $propina);
+
+            echo json_encode($result, JSON_UNESCAPED_UNICODE);
+            return;
         }
     }
 }

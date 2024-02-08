@@ -4,10 +4,10 @@ include_once("model/Producto.php");
 include_once("model/Pedido.php");
 /*      
 =========================================================================
-                            CLASE PedidosBBDD
+|                           CLASE PedidosBBDD                           |
 =========================================================================
-º Inicializamos la clase PedidosBBDD la cual conectara a la base de     º
-º datos para obtener registros de pedidos y trabajara con ellos         º
+| Inicializamos la clase PedidosBBDD la cual conectara a la base de     |
+| datos para obtener registros de pedidos y trabajara con ellos         |
 =========================================================================
 */
 class PedidosBBDD{
@@ -386,7 +386,7 @@ class PedidosBBDD{
         $consultaPedido = "DELETE FROM pedidos WHERE pedido_id = ?";
         $stmt = $conn->prepare($consultaPedido);
         $stmt->bind_param("i", $pedido_id);
-    
+        
         // Ejecutar la consulta para eliminar el pedido en la tabla pedidos
         if ($stmt->execute()) {
             // Si se ejecuta correctamente, se devuelve verdadero
@@ -396,4 +396,23 @@ class PedidosBBDD{
             return false;
         }
     }    
+
+    public static function updatePropina($pedido, $propina){
+        $conn = db::connect();
+    
+        // Consulta para actualizar un pedido con nueva información
+        $consulta = "UPDATE pedidos SET PROPINA = ? WHERE pedido_id = ?";
+        $propina = 4.50;
+        $pedido = 65;
+        // Preparar la consulta para la actualización
+        $stmt = $conn->prepare($consulta);
+        $stmt->bind_param('id', $pedido, $propina);
+
+        // Ejecutar la consulta de actualización
+        if ($stmt->execute()) {
+            return true;// Si la ejecución es exitosa, se devuelve verdadero
+        } else {
+            return false;// Si hay algún problema al ejecutar la consulta, se devuelve falso
+        }
+    }
 }

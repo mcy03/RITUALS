@@ -1,5 +1,11 @@
 window.addEventListener("load", function() {
     obtenerUser();
+
+    if (localStorage.getItem('propina')) {
+        console.log(localStorage.getItem('propina'));
+        addPropina(parseFloat(localStorage.getItem('propina')));
+    }
+    
     /*
     pedidosApi();
     pedidosUserApi();
@@ -78,3 +84,18 @@ async function productosPedidoApi() {
     }
 }
 
+async function addPropina(propina){
+    let formData = new FormData();
+        formData.append('accion', 'add_propina');
+        formData.append('propina', propina);
+
+    const url = 'https://testcaler.com/testCaler/RITUALS/?controller=ApiPedido&action=api';
+
+    try {
+        const response = await axios.post(url, formData);
+
+        console.log(await response.data);
+    } catch (error) {
+        console.error('Error:', error.message);
+    }
+}
