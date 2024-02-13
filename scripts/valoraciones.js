@@ -50,7 +50,7 @@ function obtenerSelect() {
 
     resenasApiOrden(valorSeleccionado);
 };
-
+notie
 // Obtenemos el elemento input por su id
 const inputElement = document.getElementById('filtro-input');
 
@@ -285,7 +285,7 @@ function success (mensaje) {
         alertTime: 2
       })
     notie.alert({ type: 1, text: mensaje, time: 2 })
-  }
+}
 
 function resetEstrellas(event) {
     event.preventDefault();

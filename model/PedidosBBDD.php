@@ -18,6 +18,8 @@ class PedidosBBDD{
     protected $ESTADO; // Estado actual del pedido: pendiente, en proceso, completado, etc.
 
     protected $FECHA_PEDIDO; // Fecha en la que se realizó el pedido
+    
+    protected $PROPINA;
 
     public function __construct(){
 

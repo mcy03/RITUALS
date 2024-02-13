@@ -7,6 +7,10 @@ include_once 'controller/ApiUserController.php';
 include_once 'controller/ApiPedidoController.php';
 include_once 'config/parameters.php';
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if (!isset($_GET['controller'])) {
     //Si no le pasamos nada se pasara pagina principal de productos
     header("location:" . url . '?controller=producto');

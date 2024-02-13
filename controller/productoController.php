@@ -9,6 +9,19 @@ include_once("model/ResenaDAO.php");
 include_once("utils/CalculadoraPrecios.php");
 include_once 'config/parameters.php';
 class productoController{
+    public function qr(){
+        session_start(); // Inicia la sesión
+        
+        // Verifica si no existe la variable de sesión 'selecciones' y la inicializa como un array vacío si es así
+        if (!isset($_SESSION['selecciones'])) {
+            $_SESSION['selecciones'] = array();
+        }
+        // Incluye archivos de vista para la cabecera, la página principal (home) y el footer
+        require_once("views/header.php");
+        require_once("views/qr.php");
+        require_once("views/footer.php");
+    }
+    
     public function index(){
         session_start(); // Inicia la sesión
         

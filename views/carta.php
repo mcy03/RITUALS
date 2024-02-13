@@ -24,7 +24,10 @@
                     <h4 class="ruta">Home / Carta <?=$name_cat?></h4>
                     <h2 class="titleCat">COMPRAR POR PRODUCTO</h2>
                     <div class="botones-categorias">
-                        <!-- botones insertados mediante JS -->
+                        <?php for ($i=0; $i < sizeof($categorias); $i++) { ?>
+                            <div class="divCheck"><input class="categoria" type="checkbox" id="checkbox<?=$i?>" class="checkboxes" name="opciones" value="<?=$categorias[$i]->getName()?>"><label for="checkbox1"><?=$categorias[$i]->getName()?></label></div>
+                        <?php } ?>
+                        
                     </div>
                 </div>
 

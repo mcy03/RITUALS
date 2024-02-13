@@ -57,21 +57,23 @@ class ApiCategoriaController{
             echo json_encode($array_productos, JSON_UNESCAPED_UNICODE); 
             return $array_productos; //return para salir de la funcion
         }else if($accion == 'get_products_category'){ 
-            $categoria = json_decode($_POST["categoria"]); //se decodifican los datos JSON que se reciben desde JS
-            
-            $id_cat = Categoria::getCatIdByName($categoria);
-            $productos = Producto::getProductByCat($id_cat);
+            $categorias = json_decode($_POST["categoria"]); //se decodifican los datos JSON que se reciben desde JS
 
-            $array_productos = [];
-            foreach ($productos as $producto) {
-                $array_productos[] = array(
-                    "PRODUCTO_ID" => $producto->getId(),
-                    "NOMBRE_PRODUCTO" => $producto->getName(),
-                    "IMG" => $producto->getImg(),
-                    "DESCRIPCION" => $producto->getDesc(),
-                    "PRECIO_UNIDAD" => $producto->getPrice(),
-                    "CATEGORIA_ID" => $producto->getCat()
-                );
+            foreach ($categorias as $categoria) {
+                $id_cat = Categoria::getCatIdByName($categoria);
+                $productos = Producto::getProductByCat($id_cat);
+
+                $array_productos = [];
+                foreach ($productos as $producto) {
+                    $array_productos[] = array(
+                        "PRODUCTO_ID" => $producto->getId(),
+                        "NOMBRE_PRODUCTO" => $producto->getName(),
+                        "IMG" => $producto->getImg(),
+                        "DESCRIPCION" => $producto->getDesc(),
+                        "PRECIO_UNIDAD" => $producto->getPrice(),
+                        "CATEGORIA_ID" => $producto->getCat()
+                    );
+                }
             }
                 
             echo json_encode($array_productos, JSON_UNESCAPED_UNICODE); 

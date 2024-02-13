@@ -1,9 +1,9 @@
 window.addEventListener("load", function() {
-    categoriasApi().then( (resultado) =>  mostrarBotonesCategorias(resultado).then( (res) =>  listenerCheckedCategorias() ) );
+    //categoriasApi().then( (resultado) =>  mostrarBotonesCategorias(resultado).then( (res) =>  listenerCheckedCategorias() ) );
     
+
     //getProductosCategoriaApi();
     getProductosApi();
-    
 });
 
 function eliminarProductos() {
@@ -146,10 +146,17 @@ async function getProductosApi() {
     }
 }
 
-async function getProductosCategoriaApi(nameCategory) {
+async function getProductosCategoriaApi() {
+    // Obtener las categorías seleccionadas
+    var categoriasSeleccionadas = [];
+    var checkboxes = document.querySelectorAll('.categoria:checked');
+    checkboxes.forEach(function(checkbox) {
+        categoriasSeleccionadas.push(checkbox.value);
+    });
+
     let formData = new FormData();
     formData.append('accion', 'get_products_category');
-    formData.append('categoria', "\""+nameCategory+"\"");
+    formData.append('categoria', categoriasSeleccionadas);
 
     const url = 'https://testcaler.com/testCaler/RITUALS/?controller=ApiCategoria&action=api';
 
@@ -231,7 +238,7 @@ function listenerCheckedCategorias() {
 */
 
 function listenerCheckedCategorias() {
-    for(let i=1; i<=7;i++){
+    for(let i=0; i<=6;i++){
         console.log(i)
         let checkbox = document.getElementById(`checkbox${i}`);
         console.log(checkbox);
@@ -348,3 +355,11 @@ const imagenQR = qr.createImgTag();
 document.getElementById("qrcode").innerHTML = imagenQR;
 
 */
+
+
+
+// Escuchar cambios en los checkboxes
+var checkboxes = document.querySelectorAll('.categoria');
+checkboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', mostrarProductos);
+});
