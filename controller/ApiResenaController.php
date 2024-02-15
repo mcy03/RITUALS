@@ -65,6 +65,32 @@ class ApiResenaController{
 
             echo "insert correcto";
             return;
+        }else if($accion == 'count_reviews_command'){ 
+            $PEDIDO_ID = json_decode(trim($_POST["PEDIDO_ID"]));
+
+            $return = ResenaDAO::countResenas($PEDIDO_ID);
+            echo json_encode($return, JSON_UNESCAPED_UNICODE);
+            return;
+        }else if($accion == 'get_my_reviews'){ 
+            $USUARIO_ID = json_decode(trim($_POST["user"]));
+            
+            $resenas = ResenaDAO::resenasUser($USUARIO_ID);
+
+            $array_resenas = [];
+            foreach ($resenas as $resena) {
+                $array_resenas[] = array(
+                    "RESENA_ID" => $resena->getId(),
+                    "PEDIDO_ID" => $resena->getPedidoId(),
+                    "ASUNTO" => $resena->getAsunto(),
+                    "COMENTARIO" => $resena->getComentario(),
+                    "FECHA_RESENA" => $resena->getFechaResena(),
+                    "VALORACION" => $resena->getValoracion(),
+                    "EMAIL" => $resena->getEmail($resena->getUser())
+                );
+            }
+            
+            echo json_encode($array_resenas, JSON_UNESCAPED_UNICODE);
+            return;
         }
     }
 }

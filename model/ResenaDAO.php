@@ -184,5 +184,64 @@
                 return false;
             }
         }
+
+        public static function countResenas($PEDIDO_ID){
+            $conn = db::connect();
+            
+            $stmt = $conn->prepare("SELECT count(PEDIDO_ID) as contador FROM RESENA WHERE PEDIDO_ID = ?");
+        
+            if ($stmt) {
+                $stmt->bind_param("i", $PEDIDO_ID); // Vincula el parámetro $id_user a la consulta SQL de manera segura
+                $stmt->execute(); // Ejecuta la consulta
+                
+                $result = $stmt->get_result(); // Obtiene el conjunto de resultados
+                $cantidad = $result->fetch_assoc(); // Obtiene la cantidad de pedidos
+                
+                $stmt->close(); // Cierra la sentencia preparada
+                $conn->close(); // Cierra la conexión a la base de datos
+                
+                return $cantidad['contador']; // Retorna la cantidad de pedidos asociados al usuario
+            } else {
+                // En caso de fallo en la preparación de la consulta, se cierra la conexión y se retorna false
+                $conn->close();
+                return 0;
+            }
+        }
+
+        public static function resenasUser($id_user){
+            $conn = db::connect(); // Establece la conexión a la base de datos
+        
+            $consulta = "SELECT PEDIDO_ID FROM PEDIDOS WHERE USUARIO_ID = $id_user";
+        
+            $result_pedidos = $conn->query($consulta);
+        
+            if ($result_pedidos->num_rows > 0) {
+                // Array para almacenar los pedido_id
+                $pedido_ids = array();
+        
+                // Recorrer los resultados y almacenar los pedido_id en el array
+                while($row = $result_pedidos->fetch_assoc()) {
+                    $pedido_ids[] = $row["PEDIDO_ID"];
+                }
+                
+                // Consulta para obtener las reseñas asociadas a los pedido_id
+                $pedido_ids_str = implode(",", $pedido_ids); // Convertir el array a una cadena separada por comas
+                
+                $sql_resenas = "SELECT * FROM RESENA WHERE PEDIDO_ID IN ($pedido_ids_str)";
+                
+                if ($resultado = $conn->query($sql_resenas)) {
+                    $resenas = array();
+                    while($obj = $resultado->fetch_object('ResenaDAO')) {
+                        $resenas[] =  $obj;
+                    }
+                    return $resenas;
+                }else{
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+        
     }
 ?>

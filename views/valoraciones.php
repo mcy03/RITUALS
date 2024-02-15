@@ -72,6 +72,10 @@
                     <div class="title">
                         <h2>Reseñas</h2>
                     </div>
+                    <div class="buttons">
+                        <button id="boton-todas">TODAS LAS RESEÑAS</button>
+                        <button id="boton-gestion">MIS RESEÑAS</button>
+                    </div>
                     <div class="filtro">
                         <label for="orden">Puntuación: </label>
                         <select name="orden" id="orden" >
