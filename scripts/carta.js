@@ -1,10 +1,22 @@
-window.addEventListener("load", function() {
-    //categoriasApi().then( (resultado) =>  mostrarBotonesCategorias(resultado).then( (res) =>  listenerCheckedCategorias() ) );
-    
+document.addEventListener('DOMContentLoaded', function() {
+    // Selecciona todos los checkboxes
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    // Itera sobre cada checkbox y agrega un evento de cambio
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            // Verifica si el checkbox actual está seleccionado o no
+            if (checkbox.checked) {
+                console.log('Checkbox ' + checkbox.id + ' está seleccionado');
+            } else {
+                console.log('Checkbox ' + checkbox.id + ' no está seleccionado');
+            }
+        });
+    });
+});  
 
     //getProductosCategoriaApi();
     getProductosApi();
-});
 
 function eliminarProductos() {
 
@@ -145,14 +157,10 @@ async function getProductosApi() {
         console.error('Error:', error.message);
     }
 }
-
-async function getProductosCategoriaApi() {
+const categoriasSeleccionadas = [];
+async function getProductosCategoriaApi(categoria) {
     // Obtener las categorías seleccionadas
-    var categoriasSeleccionadas = [];
-    var checkboxes = document.querySelectorAll('.categoria:checked');
-    checkboxes.forEach(function(checkbox) {
-        categoriasSeleccionadas.push(checkbox.value);
-    });
+    categoriasSeleccionadas.push(categoria);
 
     let formData = new FormData();
     formData.append('accion', 'get_products_category');
@@ -170,20 +178,20 @@ async function getProductosCategoriaApi() {
         console.error('Error:', error.message);
     }
 }
-
+/*
 function mostrarBotonesCategorias(categorias) {
     return new Promise( async(res, rej) => {
         const contenedorBotones = document.getElementsByClassName("botones-categorias")[0];
 
         for (let i = 0; i < categorias.length; i++) {
-            const divCheck = document.createElement('div');
+            const divCheck = document.createElement('divCheck');
             divCheck.className = "divCheck";
 
             const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
                 checkbox.id = `checkbox${i + 1}`;
                 checkbox.className = `checkboxes`;
-                checkbox.name = 'opciones';
+                checkbox.name = `opciones${i + 1}`;
                 checkbox.value = categorias[i]["NOMBRE_CATEGORIA"];
 
             const label = document.createElement('label');
@@ -236,27 +244,6 @@ function listenerCheckedCategorias() {
 
 }
 */
-
-function listenerCheckedCategorias() {
-    for(let i=0; i<=6;i++){
-        console.log(i)
-        let checkbox = document.getElementById(`checkbox${i}`);
-        console.log(checkbox);
-        
-            checkbox.addEventListener('change', function () {
-                console.log("imimi");
-                if (checkbox.checked == true) {
-                    console.log("checked");
-                    
-                    getProductosCategoriaApi(checkbox.value);
-                }else{
-                    console.log("no checked");
-                }
-        });
-       
-    }
-
-}
 
 
 

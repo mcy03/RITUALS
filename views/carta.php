@@ -23,13 +23,38 @@
                 <div class="sel-categorias">
                     <h4 class="ruta">Home / Carta <?=$name_cat?></h4>
                     <h2 class="titleCat">COMPRAR POR PRODUCTO</h2>
-                    <div class="botones-categorias">
-                        <?php for ($i=0; $i < sizeof($categorias); $i++) { ?>
-                            <div class="divCheck"><input class="categoria" type="checkbox" id="checkbox<?=$i?>" class="checkboxes" name="opciones" value="<?=$categorias[$i]->getName()?>"><label for="checkbox1"><?=$categorias[$i]->getName()?></label></div>
-                        <?php } ?>
-                        
+
+                    <form id="checkboxForm" class="botones-categorias">
+                        <div class="divCheck">
+                            <input type="checkbox" id="checkbox1" class="checkboxes" name="opciones1" value="BreezeBills">
+                            <label for="checkbox1">BreezeBills</label>
+                        </div>
+                        <div class="divCheck">
+                            <input type="checkbox" id="checkbox2" class="checkboxes" name="opciones2" value="Fruit essence cocktail">
+                            <label for="checkbox2">Fruit essence cocktail</label>
+                        </div>
+                        <div class="divCheck">
+                            <input type="checkbox" id="checkbox3" class="checkboxes" name="opciones3" value="Café fusion">
+                            <label for="checkbox3">Café fusion</label>
+                        </div>
+                        <div class="divCheck">
+                            <input type="checkbox" id="checkbox4" class="checkboxes" name="opciones4" value="Seasonal Sips Collection">
+                            <label for="checkbox4">Seasonal Sips Collection</label>
+                        </div>
+                        <div class="divCheck">
+                            <input type="checkbox" id="checkbox5" class="checkboxes" name="opciones5" value="Zero-Proof Mixology Colle">
+                            <label for="checkbox5">Zero-Proof Mixology Colle</label>
+                        </div>
+                        <div class="divCheck">
+                            <input type="checkbox" id="checkbox6" class="checkboxes" name="opciones6" value="Global Mix Collection">
+                            <label for="checkbox6">Global Mix Collection</label>
+                        </div>
+                        <div class="divCheck">
+                            <input type="checkbox" id="checkbox7" class="checkboxes" name="opciones7" value="Craft Mixology Collection">
+                            <label for="checkbox7">Craft Mixology Collection</label>
+                        </div>
                     </div>
-                </div>
+                </form>
 
                 <div class="promo card">
                     <h5 class="card-title">PARA MIEMBROS DE MY RITUALS</h5>

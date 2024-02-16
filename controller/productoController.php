@@ -327,21 +327,23 @@ class productoController{
         if (isset($_SESSION["user"], $_SESSION["selecciones"])) { // Verifica si hay un usuario y elementos seleccionados en la sesión
             $pedido = $_SESSION["selecciones"]; // Obtiene los elementos seleccionados
             $costeTotal = 0;
-    
+            
+
             if (sizeof($pedido) > 0) { // Verifica si hay elementos en el pedido
+
+                // Calcula el costo total del pedido
+                foreach ($pedido as $producto) {
+                    $costeTotal += $producto->calcPrice();
+                }
+
                 // Procesa el pedido con los elementos seleccionados
-                PedidosBBDD::procesarPedido($_SESSION["user"], $pedido);
+                PedidosBBDD::procesarPedido($_SESSION["user"], $pedido, $costeTotal);
                 
                 // Obtiene el ID del último pedido que es el recien insertado
                 $pedidoId = PedidosBBDD::getIdUltimoPedido();
                 $fecha = getdate(); //obtenemos la fecha actual
                 $fechaPedido = $fecha["mday"]."/".$fecha["mon"]."/".$fecha["year"]; //concatenamos dia del mes / mes / año por las posiciones del getdate()
                 $usuarioPedido = $_SESSION["user"]; //Nos guardamos el usuario que tiene sesion iniciada
-    
-                // Calcula el costo total del pedido
-                foreach ($pedido as $producto) {
-                    $costeTotal += $producto->calcPrice();
-                }
     
                 // Almacena la información del pedido en cookies por un día
                 $infoPedido = array($pedidoId, $usuarioPedido->getEmail(), $fechaPedido, $costeTotal);

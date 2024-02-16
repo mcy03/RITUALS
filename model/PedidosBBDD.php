@@ -19,7 +19,11 @@ class PedidosBBDD{
 
     protected $FECHA_PEDIDO; // Fecha en la que se realizó el pedido
     
+    protected $COSTE_PEDIDO;
+
     protected $PROPINA;
+
+    protected $PUNTOS_APLICADOS;
 
     public function __construct(){
 
@@ -115,6 +119,31 @@ class PedidosBBDD{
         $this->FECHA_PEDIDO = $fechaPedido;
     }
 
+    public function getPropina(){
+        return $this->PROPINA;
+    }
+
+    public function setPropina($propina){
+        $this->PROPINA = $propina;
+    }
+
+    public function getCostePedido(){
+        return $this->COSTE_PEDIDO;
+    }
+
+    public function setCostePedido($costePedido){
+        $this->COSTE_PEDIDO = $costePedido;
+    }
+
+    public function getPuntos(){
+        return $this->PUNTOS_APLICADOS;
+    }
+
+    public function setPuntos($puntosAplicados){
+        $this->PUNTOS_APLICADOS = $puntosAplicados;
+    }
+
+
     /**
      * Obtiene un pedido específico de la base de datos por su ID.
      * @param int $id El ID del pedido que se quiere recuperar.
@@ -177,9 +206,9 @@ class PedidosBBDD{
      * @param int $user El ID del usuario que realiza el pedido.
      * @param array $pedidos Un array de objetos Pedido que contiene los productos a procesar en el pedido.
      */
-    public static function procesarPedido($user, $pedidos){
+    public static function procesarPedido($user, $pedidos, $coste_pedido){
         // Genera el pedido en la tabla 'pedidos'
-        $result = PedidosBBDD::generarPedido($user);
+        $result = PedidosBBDD::generarPedido($user, $coste_pedido);
         
         // Obtiene el ID del último pedido generado
         $id_pedido = PedidosBBDD::getIdUltimoPedido();
@@ -212,13 +241,13 @@ class PedidosBBDD{
      * @param int $user El ID del usuario para el cual se genera el pedido.
      * @return mixed Retorna el resultado de la ejecución de la consulta o false si hay un error.
      */
-    public static function generarPedido($user){
+    public static function generarPedido($user, $coste_pedido){
         $id_user = $user->getId(); // Obtiene el ID del usuario
         
         $conn = db::connect(); // Establece la conexión a la base de datos
-            
+        
         // Prepara la consulta SQL para insertar un nuevo pedido
-        $stmt = $conn->prepare("INSERT INTO `pedidos`(`USUARIO_ID`, `ESTADO`, `FECHA_PEDIDO`) VALUES (?, 'EN PREPARACIÓN', SYSDATE())");
+        $stmt = $conn->prepare("INSERT INTO `pedidos`(`USUARIO_ID`, `ESTADO`, `FECHA_PEDIDO`,  `COSTE_PEDIDO`,  `PROPINA`,  `PUNTOS_APLICADOS`) VALUES (?, 'EN PREPARACIÓN', SYSDATE(), $coste_pedido, 0, 0)");
         
         // Vincula el ID del usuario a la consulta SQL de manera segura
         $stmt->bind_param("i", $id_user);
@@ -402,19 +431,21 @@ class PedidosBBDD{
     public static function updatePropina($pedido, $propina){
         $conn = db::connect();
     
-        // Consulta para actualizar un pedido con nueva información
-        $consulta = "UPDATE pedidos SET PROPINA = ? WHERE pedido_id = ?";
-        $propina = 4.50;
-        $pedido = 65;
+       // Consulta para actualizar un pedido con nueva información
+        $consulta = "UPDATE pedidos SET PROPINA = ? WHERE pedido_id = ?";   
+
         // Preparar la consulta para la actualización
         $stmt = $conn->prepare($consulta);
-        $stmt->bind_param('id', $pedido, $propina);
+        $stmt->bind_param('di', $propina, $pedido); // 'd' para el tipo de dato de la propina, 'i' para el pedido_id
+
+        echo $pedido.' '.$propina;
 
         // Ejecutar la consulta de actualización
         if ($stmt->execute()) {
-            return true;// Si la ejecución es exitosa, se devuelve verdadero
+            return true; // Si la ejecución es exitosa, se devuelve verdadero
         } else {
-            return false;// Si hay algún problema al ejecutar la consulta, se devuelve falso
+            return false; // Si hay algún problema al ejecutar la consulta, se devuelve falso
         }
+
     }
 }
