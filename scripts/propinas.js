@@ -1,9 +1,8 @@
 window.addEventListener("load", function() {
     let usuario = JSON.parse(localStorage.getItem('user'));
-    console.log(usuario);
 
-    
 });
+
 const costeInicialPedido = document.getElementsByName('costePedido')[0].value;
 
 const enlacePropina = document.getElementById('dar-propina');
@@ -24,14 +23,46 @@ function aplicarPropina(e){
     let mostrarCoste = document.getElementsByClassName('total-price')[0];
     if (inputPropina.value >= 3 && inputPropina.value <= 100) {
         propina = inputPropina.value;
-    }else{
-        propina = 3;
-        inputPropina.value = 3;
-    }
-    costeInicial = parseFloat(costeInicialPedido.replace(',', '.'));
-    mostrarCoste.innerHTML = (costeInicial + (costeInicial * (propina/100))).toFixed(2) + " €";
+        success('propina aplicada: '+ propina);
 
-    mostrarSumaPropina((costeInicial * (propina/100)).toFixed(2));
+        costeAnteriorPedido = document.getElementsByName('costePedido')[0].value;
+        costeInicial = parseFloat(costeAnteriorPedido.replace(',', '.'));
+        
+        let precioFinal = (costeInicial + (costeInicial * (propina/100))).toFixed(2);
+        let costePedido = document.getElementsByName('costePedido')[0];
+        costePedido.value = precioFinal;
+        mostrarCoste.innerHTML = precioFinal + " €";
+
+        mostrarSumaPropina((costeInicial * (propina/100)).toFixed(2));
+    }else if (inputPropina.value <= 3){
+        error('propina minima 3%');
+    }else{
+        error('propina minima 3% y maxima 100%');
+    }
+    
+
+    
+}
+
+function success (mensaje) {
+    notie.setOptions({
+        alertTime: 2
+      })
+    notie.alert({ type: 1, text: mensaje, time: 2 })
+}
+
+function warning (mensaje) {
+    notie.setOptions({
+        alertTime: 2
+      })
+    notie.alert({ type: 2, text: mensaje, time: 2 })
+}
+
+function error (mensaje) {
+    notie.setOptions({
+        alertTime: 2
+      })
+    notie.alert({ type: 3, text: mensaje, time: 2 })
 }
 
 function mostrarSumaPropina(coste){
@@ -72,11 +103,10 @@ function ocultar(a) {
 }
 
 
-const botonPagar = document.getElementById('pagar');
+let botonPagar = document.getElementById('pagar');
 botonPagar.addEventListener('click', guardarPropina);
 
 function guardarPropina() {
     let propina = document.getElementById('costePropina').innerText;
-    console.log(typeof parseFloat(propina));
     localStorage.setItem('propina', parseFloat(propina));
 }

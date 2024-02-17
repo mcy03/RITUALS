@@ -28,7 +28,7 @@
                                 <li><a href=<?=url.'?controller=producto&action=cuenta&usuarios'?>><img src="img/users.png" alt="icono gestion de usuarios"> Gestionar Usuarios</a></li>
                                 <li><a href=<?=url.'?controller=producto&action=cuenta&productos'?>><img src="img/productos.png" alt="icono gestion productos"> Gestionar Productos</a></li>
                             <?php } ?>
-                            <li><a href=<?=url.'?controller=producto&action=cerrar'?>><img src="img/salida.png" alt="icono cerrar sesiñon"> Cerrar Sesión</a></li>
+                            <li><a id="cerrar-sesion" href=<?=url.'?controller=producto&action=cerrar'?>><img src="img/salida.png" alt="icono cerrar sesiñon"> Cerrar Sesión</a></li>
                         </ul>
                     </section>
                     <hr class="separate">

@@ -1,16 +1,9 @@
-window.addEventListener("load", function() {
+window.addEventListener("load", async function() {
     obtenerUser();
 
-    if (localStorage.getItem('propina')) {
-        console.log(localStorage.getItem('propina'));
-        addPropina(parseFloat(localStorage.getItem('propina')));
-    }
-    
-    /*
-    pedidosApi();
-    pedidosUserApi();
-    productosPedidoApi();
-    */
+    const cerrarSesion = document.getElementById('cerrar-sesion');
+
+    cerrarSesion.addEventListener('click', borrarSesion);
 });
 
 async function obtenerUser() {
@@ -31,71 +24,15 @@ async function obtenerUser() {
 }
 
 function guardarUser(user) {
-    console.log(user);
-    localStorage.setItem("user", JSON.stringify(user));
-
-}
-
-
-async function pedidosApi() {
-    let formData = new FormData();
-        formData.append('accion', 'get_pedidos');
-
-    const url = 'https://testcaler.com/testCaler/RITUALS/?controller=ApiPedido&action=api';
-
-    try {
-        const response = await axios.post(url, formData);
-
-        console.log(await response.data);
-    } catch (error) {
-        console.error('Error:', error.message);
+    if (!localStorage.getItem('user') || localStorage.getItem('user') != user) {
+        localStorage.setItem("user", JSON.stringify(user));
     }
 }
 
-async function pedidosUserApi() {
-    let formData = new FormData();
-        formData.append('accion', 'get_pedidos_user');
-        formData.append('USUARIO_ID', 1);
-
-    const url = 'https://testcaler.com/testCaler/RITUALS/?controller=ApiPedido&action=api';
-
-    try {
-        const response = await axios.post(url, formData);
-
-        console.log(await response.data);
-    } catch (error) {
-        console.error('Error:', error.message);
+function borrarSesion() {
+    if (localStorage.getItem('user')) {
+        localStorage.removeItem("user");
     }
 }
 
-async function productosPedidoApi() {
-    let formData = new FormData();
-        formData.append('accion', 'get_products_pedido');
-        formData.append('PEDIDO_ID', 52);
 
-    const url = 'https://testcaler.com/testCaler/RITUALS/?controller=ApiPedido&action=api';
-
-    try {
-        const response = await axios.post(url, formData);
-
-        console.log(await response.data);
-    } catch (error) {
-        console.error('Error:', error.message);
-    }
-}
-
-async function addPropina(propina){
-    let formData = new FormData();
-        formData.append('accion', 'add_propina');
-        formData.append('propina', propina);
-
-    const url = 'https://testcaler.com/testCaler/RITUALS/?controller=ApiPedido&action=api';
-
-    try {
-        const response = await axios.post(url, formData);
-
-        console.log(await response.data);
-    } catch (error) {
-        console.error('Error:', error.message);
-    }
-}

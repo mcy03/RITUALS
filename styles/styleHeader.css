@@ -53,6 +53,21 @@
 .user-img{
     width: 20px;
 }
+.btn-user{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+}
+.btn-user p{
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-top: 3px;
+    align-self: flex-start;
+}
 .btn-carrito-icon{
     position:relative;
 }

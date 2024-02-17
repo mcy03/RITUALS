@@ -1,0 +1,27 @@
+.body-qr{
+    background-color: #efedea;
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+    font-family: 'ClassicalGaramondBT-Roman';
+}
+.resume-command{
+    background-color: #fff;
+    width: 30%;
+}
+
+.tittle-tiket{
+    font-size: 25px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.info{
+    padding: 25px 40px;
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+.info p{
+    margin: 0;
+}

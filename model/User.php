@@ -233,5 +233,34 @@
             $stmt->execute();// Ejecutar la consulta
             $conn->close(); // Cerrar la conexión a la base de datos
         }  
+
+
+        public static function getPointsById($id){
+            $conn = db::connect();
+
+            $stmt = $conn->prepare("SELECT PUNTOS as puntos FROM USUARIOS WHERE USUARIO_ID = $id");
+            
+            $stmt->execute();
+            $result = $stmt->get_result();
+            
+            $conn->close();
+            
+            $puntos = $result->fetch_assoc();
+            
+            return $puntos['puntos'];
+        }
+
+        public static function updatePuntos($id, $puntos){
+            $conn = db::connect(); // Establecer conexión a la base de datos
+        
+            // Preparar la consulta de actualización de usuario
+            $stmt = $conn->prepare("UPDATE USUARIOS SET PUNTOS = ? WHERE USUARIO_ID = ?");
+        
+            // Vincular parámetros a la consulta preparada
+            $stmt->bind_param("ii", $puntos, $id);
+        
+            $stmt->execute();// Ejecutar la consulta
+            $conn->close(); // Cerrar la conexión a la base de datos
+        }
     }      
 ?>

@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+    <style>
+        /* override styles here */
+        .notie-container {
+        box-shadow: none;
+        }
+    </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/styleCarrito.css">
     <title>Carrito Rituals</title>
@@ -110,15 +117,26 @@
                             <hr class="separate-resume-comand">
                             <div id="puntosFidelidad" class="envio">
                                 <h3 class="envio-text"><b>Aplicar puntos</b></h3>
-                                <input type="number" name="puntos-aplicados" placeholder="%">
+                                <a id="infoPuntos" href="">?</a>
+                                <a href="#" id="poner-puntos">Aplicar</a>
+
+                                <form id="form-puntos" action="">
+                                    <input type="number" id="puntos-aplicados" name="puntos-aplicados" placeholder="%">
+                                    <input type="submit" value="Usar">
+                                </form>
+
+                                <div id="descuentoPuntos">
+                                    <a href="#" id="quitar-puntos">Quitar</a>
+                                    <h3 id="h3descuento" class="envio-price"></h3>
+                                </div>
                             </div>
                             <hr class="separate-resume-comand">
                             <div id="propina" class="envio">
                                 <h3 class="envio-text"><b>Propina</b></h3>
                                 <a href="#" id="dar-propina">Dar propina</a>
-
+                                <input type="hidden" name="puntosUsados" value="">
                                 <form id="form-propina" action="">
-                                    <input type="number" name="porcentaje-propina" value="3">
+                                    <input type="number" name="porcentaje-propina" placeholder="3%">
                                     <input type="submit" value="Aplicar">
                                 </form>
 
@@ -198,7 +216,7 @@
             </div>
         </div>
     </div>
-
+    <script src="https://unpkg.com/notie"></script>
     <script src="./scripts/propinas.js"></script>
     <script src="./scripts/puntosFidelidad.js"></script>
 </body>

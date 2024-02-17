@@ -351,7 +351,7 @@ class productoController{
                 setcookie('infoPedido', serialize($infoPedido), time()+86400);
     
                 // Redirige a la página de cuenta mostrando los pedidos del usuario
-                header("location:".url.'?controller=producto&action=cuenta&misPedidos');
+                header("location:".url.'?controller=producto&action=qr');
             } else {
                 // Si no hay elementos en el pedido, redirige al carrito de compras
                 header("location:".url.'?controller=producto&action=carrito');
@@ -693,6 +693,6 @@ class productoController{
         }
 
         
-    }    
+    }  
 }
 

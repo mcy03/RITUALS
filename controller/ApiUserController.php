@@ -34,6 +34,26 @@ class ApiUserController{
             $id = $_POST['user_id'];
             $user = User::getUserById($id);
 
+            
+
+            echo json_encode($user, JSON_UNESCAPED_UNICODE);
+            return;
+        }elseif (trim($accion) == "get_points_user") {
+            $id = $_POST['user_id'];
+
+            $points = User::getPointsById($id);
+
+            echo json_encode($points, JSON_UNESCAPED_UNICODE);
+            return;
+        }elseif ($accion == 'update_puntos') {
+            $puntos = json_decode($_POST["puntos"]);
+            $user = json_decode($_POST["user"]);
+
+
+            $result = User::updatePuntos($user, $puntos);
+
+            echo json_encode($result, JSON_UNESCAPED_UNICODE);
+            return;
         }
     }
 }

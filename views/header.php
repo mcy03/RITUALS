@@ -35,7 +35,8 @@
                             <input class="input-search" type="search" placeholder="Estoy buscando..." aria-label="Search">
                         </form>
 
-                        <a href=<?=url.'?controller=producto&action=login'?> class="btn-user btn d-flex align-items-baseline">
+                        <a href=<?=url.'?controller=producto&action=login'?> class="btn d-flex align-items-baseline btn-user">
+                            <p class="puntos-user"></p>
                             <img class="user-img" src="img/user-icon.png" alt="icono cuenta usuario">
                         </a>
                         <a href=<?=url.'?controller=producto&action=carrito'?> class="btn-carrito-icon btn">
@@ -49,4 +50,6 @@
             </nav>
     </header>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
+<script src="./scripts/header.js"></script>
 </body>

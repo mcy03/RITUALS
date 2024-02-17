@@ -403,17 +403,36 @@ body{
     margin-top: 40px;
 }
 
-#dar-propina{
+#dar-propina, #poner-puntos{
     color: #886655;
 }
 
-#dar-propina:hover{
+#dar-propina:hover, #poner-puntos:hover{
     color: #886655;
     text-decoration: none;
 }
 
 
-#totalPropina{
+#totalPropina, #descuentoPuntos{
     display: flex;
     flex-direction: column;
+}
+
+#form-puntos input[type="number"], #form-propina input[type="number"]{
+    width: 50px;
+
+}
+
+#infoPuntos{
+    
+    color: #886655;
+}
+
+#infoPuntos:hover{
+    text-decoration: none;
+    color: #886655;
+}
+
+#h3descuento{
+    color: red;
 }

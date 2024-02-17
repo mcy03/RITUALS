@@ -431,20 +431,31 @@ class PedidosBBDD{
     public static function updatePropina($pedido, $propina){
         $conn = db::connect();
     
-       // Consulta para actualizar un pedido con nueva información
         $consulta = "UPDATE pedidos SET PROPINA = ? WHERE pedido_id = ?";   
 
-        // Preparar la consulta para la actualización
         $stmt = $conn->prepare($consulta);
-        $stmt->bind_param('di', $propina, $pedido); // 'd' para el tipo de dato de la propina, 'i' para el pedido_id
+        $stmt->bind_param('di', $propina, $pedido); 
 
-        echo $pedido.' '.$propina;
-
-        // Ejecutar la consulta de actualización
         if ($stmt->execute()) {
-            return true; // Si la ejecución es exitosa, se devuelve verdadero
+            return true; 
         } else {
-            return false; // Si hay algún problema al ejecutar la consulta, se devuelve falso
+            return false;
+        }
+
+    }
+
+    public static function updatePuntos($pedido, $puntos){
+        $conn = db::connect();
+    
+        $consulta = "UPDATE pedidos SET PUNTOS_APLICADOS = ? WHERE pedido_id = ?";   
+
+        $stmt = $conn->prepare($consulta);
+        $stmt->bind_param('ii', $puntos, $pedido); 
+
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
         }
 
     }

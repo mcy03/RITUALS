@@ -36,11 +36,7 @@ final class CalculadoraPrecios {
     public static function gastoEnvio($selecciones){
         $costeTotal = CalculadoraPrecios::calculadorPrecioPedido($selecciones);
 
-        if($costeTotal < 25){ //Comprobamos si el coste total del pedido es menor a el coste minimo para quitar gastos de envio
-            $gastos = 5.00;
-        }else{
-            $gastos = 0; //En caso de ser mayor al minimo establecido, el coste de envio sera 0
-        }
+        $gastos = 0; //En caso de ser mayor al minimo establecido, el coste de envio sera 0
         
         return $gastos;
     }
